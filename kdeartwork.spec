@@ -425,19 +425,19 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde3/kwin3_openlook.so
 %{_datadir}/apps/kwin/openlook.desktop
 
-%files -n kde-decoration-plastik
-%defattr(644,root,root,755)
-%{_libdir}/kde3/kwin3_plastik.la
-%attr(755,root,root) %{_libdir}/kde3/kwin3_plastik.so
-%{_libdir}/kde3/kwin_plastik_config.la
-%attr(755,root,root) %{_libdir}/kde3/kwin_plastik_config.so
-%{_datadir}/apps/kwin/plastik.desktop
+#files -n kde-decoration-plastik
+#defattr(644,root,root,755)
+#{_libdir}/kde3/kwin3_plastik.la
+#attr(755,root,root) %{_libdir}/kde3/kwin3_plastik.so
+#{_libdir}/kde3/kwin_plastik_config.la
+#attr(755,root,root) %{_libdir}/kde3/kwin_plastik_config.so
+#{_datadir}/apps/kwin/plastik.desktop
 
-#%files -n kde-decoration-riscos
-#%defattr(644,root,root,755)
-#%{_libdir}/kde3/kwin_riscos.la
-#%attr(755,root,root) %{_libdir}/kde3/kwin_riscos.so
-#%{_datadir}/apps/kwin/riscos*
+%files -n kde-decoration-riscos
+%defattr(644,root,root,755)
+%{_libdir}/kde3/kwin_riscos.la
+%attr(755,root,root) %{_libdir}/kde3/kwin_riscos.so
+%{_datadir}/apps/kwin/riscos*
 
 %files -n kde-decoration-system
 %defattr(644,root,root,755)
@@ -445,9 +445,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde3/kwin3_system.so
 %{_datadir}/apps/kwin/system.desktop
 
-%files -n kde-icons-Technical
-%defattr(644,root,root,755)
-%{_iconsdir}/Technical
+#files -n kde-icons-Technical
+#defattr(644,root,root,755)
+#{_iconsdir}/Technical
 
 %files -n kde-icons-ikons
 %defattr(644,root,root,755)
@@ -475,13 +475,13 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde3/plugins/styles/dotnet.so
 %{_datadir}/apps/kstyle/themes/dotnet*
 
-%files -n kde-style-plastik
-%defattr(644,root,root,755)
-%{_libdir}/kde3/kstyle_plastik_config.la
-%attr(755,root,root) %{_libdir}/kde3/kstyle_plastik_config.so
-%{_libdir}/kde3/plugins/styles/plastik.la
-%attr(755,root,root) %{_libdir}/kde3/plugins/styles/plastik.so
-%{_datadir}/apps/kstyle/themes/plastik.themerc
+#files -n kde-style-plastik
+#defattr(644,root,root,755)
+#{_libdir}/kde3/kstyle_plastik_config.la
+#attr(755,root,root) %{_libdir}/kde3/kstyle_plastik_config.so
+#{_libdir}/kde3/plugins/styles/plastik.la
+#attr(755,root,root) %{_libdir}/kde3/plugins/styles/plastik.so
+#{_datadir}/apps/kstyle/themes/plastik.themerc
 
 %files kworldclock
 %defattr(644,root,root,755)
