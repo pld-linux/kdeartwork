@@ -9,7 +9,7 @@ Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	%{_ver}
-Release:	0.1
+Release:	0.2
 Epoch:		7
 License:	LGPL
 Vendor:		The KDE Team
@@ -312,7 +312,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/apps/kscreensaver
-##{_datadir}/config/*
+%{_datadir}/config/*
 %{_applnkdir}/.hidden/ScreenSavers/*
 
 %files sounds
