@@ -393,8 +393,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n kde-decoration-kde1
 %defattr(644,root,root,755)
-%{_libdir}/kde3/kwin_kde1.la
-%attr(755,root,root) %{_libdir}/kde3/kwin_kde1.so
+%{_libdir}/kde3/kwin3_kde1.la
+%attr(755,root,root) %{_libdir}/kde3/kwin3_kde1.so
 %{_datadir}/apps/kwin/kde1*
 
 %files -n kde-decoration-kstep
