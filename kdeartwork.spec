@@ -1,7 +1,7 @@
 
 %define		_state		snapshots
 %define		_ver		3.1.92
-%define         _snap           031014
+%define         _snap           031024
 
 Summary:	K Desktop Environment - artwork
 Summary(es):	K Desktop Environment - Plugins e Scripts para aplicativos KDE
@@ -17,7 +17,7 @@ Vendor:		The KDE Team
 Group:		X11/Libraries
 #Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_ver}/src/%{name}-%{version}.tar.bz2
 Source0:        http://www.kernel.pl/~adgor/kde/%{name}-%{_snap}.tar.bz2
-# Source0-md5:	5487e01cd082c61aba2a71497eb9aec3
+# Source0-md5:	8d1ced2944a791b367bc37f81654ce45
 Patch0:		%{name}-screensavers.patch
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-devel
@@ -445,6 +445,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n kde-style-plastik
 %defattr(644,root,root,755)
+%{_libdir}/kde3/kstyle_plastik_config.la
+%attr(755,root,root) %{_libdir}/kde3/kstyle_plastik_config.so
 %{_libdir}/kde3/plugins/styles/plastik.la
 %attr(755,root,root) %{_libdir}/kde3/plugins/styles/plastik.so
 %{_datadir}/apps/kstyle/themes/plastik.themerc
