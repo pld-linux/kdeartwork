@@ -10,6 +10,10 @@ Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.bz2
 # generated from kde-i18n
 Source1:	kde-i18n-%{name}-%{version}.tar.bz2
+Patch0:		%{name}-fix-icon-in-about-dialogbox2.patch
+Patch1: 	%{name}-fix-icon-in-about-dialogbox3.patch
+Patch2: 	%{name}-fix-icon-in-about-dialogbox.patch
+Patch3: 	%{name}-fix-mem-leak.patch
 BuildRequires:	OpenGL-devel
 BuildRequires:	XFree86-devel
 BuildRequires:	kdebase-devel
@@ -18,6 +22,8 @@ BuildRequires:	libxml2-progs
 Requires:	kdelibs = %{version}
 URL:		http://www.kde.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+Obsoletes:	kdeartwork-locolor
+Obsoletes:	kdeartwork-kworldclock
 
 %define 	_noautoreqdep	libGL.so.1 libGLU.so.1
 %define		_prefix		/usr/X11R6
@@ -66,6 +72,10 @@ Motywy dla kworldclock.
 
 %prep
 %setup -q
+%patch0 -p1
+%patch1 -p1
+%patch2 -p1
+%patch3 -p1
 
 %build
 kde_htmldir="%{_htmldir}"; export kde_htmldir
