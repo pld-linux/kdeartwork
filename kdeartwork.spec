@@ -1,8 +1,8 @@
 Summary:	K Desktop Environment - artwork
-#Summary(pl):	K Desktop Environment - artwork
+Summary(pl):	K Desktop Environment - grafiki itp.
 Name:		kdeartwork
 Version:	3.0.3
-Release:	3
+Release:	4
 Epoch:		7
 License:	LGPL
 Vendor:		The KDE Team
@@ -10,10 +10,10 @@ Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.bz2
 # generated from kde-i18n
 Source1:	kde-i18n-%{name}-%{version}.tar.bz2
-BuildRequires:	XFree86-devel
 BuildRequires:	OpenGL-devel
-BuildRequires:	kdelibs-devel
+BuildRequires:	XFree86-devel
 BuildRequires:	kdebase-devel
+BuildRequires:	kdelibs-devel
 BuildRequires:	libxml2-progs
 Requires:	kdelibs = %{version}
 URL:		http://www.kde.org/
@@ -24,12 +24,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_htmldir	/usr/share/doc/kde/HTML
 
 %description
-This package contains various graphics, sounds, themes and such for
-KDE.
+This package contains various graphics and such for KDE.
 
 %description -l pl
-Ten pakiet zawiera ró¿ne grafiki, d¼wiêki, tematy i tym podobne dla
-KDE.
+Ten pakiet zawiera ró¿ne grafiki i tym podobne dla KDE.
 
 %package screensavers
 Summary:	Screen savers for KDE
@@ -44,25 +42,27 @@ Wygaszacze ekranu dla KDE.
 
 %package themes
 Summary:	Themes for KDE
-Summary(pl):	Tematy dla KDE
+Summary(pl):	Motywy dla KDE
 Group:		X11/Amusements
+Requires:	kdebase >= 3.0.0
 
 %description themes
 Themes for KDE.
 
 %description themes -l pl
-Tematy dla KDE.
+Motywy dla KDE.
 
 %package themes-kworldclock
 Summary:	Themes for kworldclock
-Summary(pl):	Tematy dla kworldclock
+Summary(pl):	Motywy dla kworldclock
 Group:		X11/Amusements
+Requires:	kdetoys-kworldclock
 
 %description themes-kworldclock
 Themes for kworldclock.
 
 %description themes-kworldclock -l pl
-Tematy dla kworldclock.
+Motywy dla kworldclock.
 
 %prep
 %setup -q
@@ -85,8 +85,25 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 mv $RPM_BUILD_ROOT%{_pixmapsdir}/{L,l}ocolor
-# Conflicts with kdebase:
-rm $RPM_BUILD_ROOT/usr/X11R6/share/pixmaps/locolor/{16x16,32x32}/apps/bell.png
+# Conflict with kdeaddons-kicker:
+rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/ktimemon.png
+# Conflict with kdebase:
+rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/bell.png
+# Conflict with kdegames-kspaceduel:
+rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/kspaceduel.png
+# Conflict with kdegames-lskat:
+rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/lskat.png
+# Conflict with kdenetwork-ksirc:
+rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/ksirc.png
+# Conflict with kdesdk:
+rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/16x16/mimetypes/gettext.png
+rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/16x16/apps/kbabel.png
+# Conflicts with kdetoys-kteatime:
+rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/16x16/apps/kteatime.png
+# Conflict with kdetoys-ktux:
+rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/ktux.png
+# Conflict with koffice-kspread:
+rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/kspreadcalc.png
 
 bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT
 
@@ -97,7 +114,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f kdeartwork.lang
 %defattr(644,root,root,755)
-%{_pixmapsdir}/*
+%{_pixmapsdir}/Technical
+%{_pixmapsdir}/ikons
+%{_pixmapsdir}/slick
+%{_pixmapsdir}/locolor/*/*/*.png
 %{_datadir}/wallpapers/*
 %{_datadir}/config/*
 
@@ -120,4 +140,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files themes-kworldclock
 %defattr(644,root,root,755)
-%{_datadir}/apps/kworldclock/*
+%{_datadir}/apps/kworldclock/maps/[^d]*
+%{_datadir}/apps/kworldclock/maps/depths/*
