@@ -1,7 +1,7 @@
 
 %define		_state		snapshots
-%define		_ver		3.1.90
-%define         _snap           030725
+%define		_ver		3.1.91
+%define         _snap           030918
 
 Summary:	K Desktop Environment - artwork
 Summary(es):	K Desktop Environment - Plugins e Scripts para aplicativos KDE
@@ -17,7 +17,7 @@ Vendor:		The KDE Team
 Group:		X11/Libraries
 #Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_ver}/src/%{name}-%{version}.tar.bz2
 Source0:        http://www.kernel.pl/~adgor/kde/%{name}-%{_snap}.tar.bz2
-# Source0-md5:	b68b3dc4f4aff287a0440274a0f1d0e4
+# Source0-md5:	a66465d835eea59a984f4bd54bde84b9
 Patch0:		%{name}-screensavers.patch
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-devel
@@ -29,8 +29,6 @@ Requires:	kdelibs = %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define 	_noautoreqdep	libGL.so.1 libGLU.so.1
-%define		_htmldir	%{_docdir}/kde/HTML
-%define		_icondir	%{_datadir}/icons
 
 %description
 This package contains various graphics and such for KDE.
@@ -129,6 +127,20 @@ KDE Window Decoration - OpenLook.
 
 %description -n kde-decoration-openlook -l pl
 Dekoracja okna dla KDE - OpenLook.
+
+%package -n kde-decoration-plastik
+Summary:	KDE Window Decoration - Plastik
+Summary(pl):	Dekoracja okna dla KDE - Plastik
+Group:		X11/Amusements
+Requires:	kdebase-desktop >= %{version}
+Obsoletes:	%{name}
+Obsoletes:	%{name}-themes
+
+%description -n kde-decoration-plastik
+KDE Window Decoration - Plastik.
+
+%description -n kde-decoration-plastik -l pl
+Dekoracja okna dla KDE - Plastik.
 
 %package -n kde-decoration-riscos
 Summary:        KDE Window Decoration - Risc OS
@@ -244,6 +256,21 @@ KDE Style - DotNet.
 %description -n kde-style-dotnet -l pl
 Styl dla KDE - DotNet.
 
+%package -n kde-style-plastik
+Summary:	KDE Style - Plastik
+Summary(pl):	Styl dla KDE - Plastik
+Group:		X11/Amusements
+Requires:	kdebase-core >= %{version}
+Obsoletes:	%{name}
+Obsoletes:	%{name}-themes
+
+%description -n kde-style-plastik
+KDE Style - Plastik.
+
+%description -n kde-style-plastik -l pl
+Styl dla KDE - Plastik.
+
+
 %package kworldclock
 Summary:	Themes for kworldclock
 Summary(pl):	Motywy dla kworldclock
@@ -311,8 +338,9 @@ for plik in `find ./ -name \*.desktop` ; do
 	sed -i -e "s/\[nb\]/\[no\]/g"  $plik
 done
 
+%{__make} -f admin/Makefile.common cvs
+
 %configure \
-	--%{?debug:en}%{!?debug:dis}able-debug \
 	--enable-final
 
 %{__make}
@@ -321,87 +349,99 @@ done
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	kde_appsdir=%{_applnkdir} \
-	kde_htmldir=%{_htmldir}
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -n kde-decoration-cde
-%defattr(644,root,root,755)
-%{_libdir}/kde3/kwin_cde*.la
-%attr(755,root,root) %{_libdir}/kde3/kwin_cde*.so
-%{_datadir}/apps/kwin/cde*
+#%files -n kde-decoration-cde
+#%defattr(644,root,root,755)
+#%{_libdir}/kde3/kwin_cde*.la
+#%attr(755,root,root) %{_libdir}/kde3/kwin_cde*.so
+#%{_datadir}/apps/kwin/cde*
 
-%files -n kde-decoration-icewm
-%defattr(644,root,root,755)
-%{_libdir}/kde3/kwin_icewm*.la
-%attr(755,root,root) %{_libdir}/kde3/kwin_icewm*.so
-%{_datadir}/apps/kwin/icewm-themes/*
-%{_datadir}/apps/kwin/icewm*.desktop
+#%files -n kde-decoration-icewm
+#%defattr(644,root,root,755)
+#%{_libdir}/kde3/kwin_icewm*.la
+#%attr(755,root,root) %{_libdir}/kde3/kwin_icewm*.so
+#%{_datadir}/apps/kwin/icewm-themes/*
+#%{_datadir}/apps/kwin/icewm*.desktop
 
-%files -n kde-decoration-glow
-%defattr(644,root,root,755)
-%{_libdir}/kde3/kwin_glow*.la
-%attr(755,root,root) %{_libdir}/kde3/kwin_glow*.so
-%{_datadir}/apps/kwin/glow*
+#%files -n kde-decoration-glow
+#%defattr(644,root,root,755)
+#%{_libdir}/kde3/kwin_glow*.la
+#%attr(755,root,root) %{_libdir}/kde3/kwin_glow*.so
+#%{_datadir}/apps/kwin/glow*
 
-%files -n kde-decoration-openlook
-%defattr(644,root,root,755)
-%{_libdir}/kde3/kwin_openlook.la
-%attr(755,root,root) %{_libdir}/kde3/kwin_openlook.so
-%{_datadir}/apps/kwin/openlook*
-
-%files -n kde-decoration-kde1
-%defattr(644,root,root,755)
-%{_libdir}/kde3/kwin_kde1.la
-%attr(755,root,root) %{_libdir}/kde3/kwin_kde1.so
-%{_datadir}/apps/kwin/kde1*
+#%files -n kde-decoration-kde1
+#%defattr(644,root,root,755)
+#%{_libdir}/kde3/kwin_kde1.la
+#%attr(755,root,root) %{_libdir}/kde3/kwin_kde1.so
+#%{_datadir}/apps/kwin/kde1*
 
 %files -n kde-decoration-kstep
 %defattr(644,root,root,755)
-%{_libdir}/kde3/kwin_kstep.la
-%attr(755,root,root) %{_libdir}/kde3/kwin_kstep.so
+%{_libdir}/kde3/kwin3_kstep.la
+%attr(755,root,root) %{_libdir}/kde3/kwin3_kstep.so
 %{_datadir}/apps/kwin/kstep*
 
-%files -n kde-decoration-riscos
-%defattr(644,root,root,755)
-%{_libdir}/kde3/kwin_riscos.la
-%attr(755,root,root) %{_libdir}/kde3/kwin_riscos.so
-%{_datadir}/apps/kwin/riscos*
+#%files -n kde-decoration-openlook
+#%defattr(644,root,root,755)
+#%{_libdir}/kde3/kwin_openlook.la
+#%attr(755,root,root) %{_libdir}/kde3/kwin_openlook.so
+#%{_datadir}/apps/kwin/openlook*
 
-%files -n kde-decoration-system
+%files -n kde-decoration-plastik
 %defattr(644,root,root,755)
-%{_libdir}/kde3/kwin_system.la
-%attr(755,root,root) %{_libdir}/kde3/kwin_system.so
-%{_datadir}/apps/kwin/system*
+%{_libdir}/kde3/kwin3_plastik.la
+%attr(755,root,root) %{_libdir}/kde3/kwin3_plastik.so
+%{_libdir}/kde3/kwin_plastik_config.la
+%attr(755,root,root) %{_libdir}/kde3/kwin_plastik_config.so
+%{_datadir}/apps/kwin/plastik.desktop
+
+#%files -n kde-decoration-riscos
+#%defattr(644,root,root,755)
+#%{_libdir}/kde3/kwin_riscos.la
+#%attr(755,root,root) %{_libdir}/kde3/kwin_riscos.so
+#%{_datadir}/apps/kwin/riscos*
+
+#%files -n kde-decoration-system
+#%defattr(644,root,root,755)
+#%{_libdir}/kde3/kwin_system.la
+#%attr(755,root,root) %{_libdir}/kde3/kwin_system.so
+#%{_datadir}/apps/kwin/system*
 
 %files -n kde-icons-Technical
 %defattr(644,root,root,755)
-%{_icondir}/Technical
+%{_iconsdir}/Technical
 
 %files -n kde-icons-ikons
 %defattr(644,root,root,755)
-%{_icondir}/ikons
+%{_iconsdir}/ikons
 
 %files -n kde-icons-kdeclassic
 %defattr(644,root,root,755)
-%{_icondir}/kdeclassic
+%{_iconsdir}/kdeclassic
 
 %files -n kde-icons-Locolor
 %defattr(644,root,root,755)
-%{_icondir}/Locolor
+%{_iconsdir}/Locolor
 
 %files -n kde-icons-slick
 %defattr(644,root,root,755)
-%{_icondir}/slick
+%{_iconsdir}/slick
 
 %files -n kde-style-dotnet
 %defattr(644,root,root,755)
 %{_libdir}/kde3/plugins/styles/dotnet.la
 %attr(755,root,root) %{_libdir}/kde3/plugins/styles/dotnet.so
 %{_datadir}/apps/kstyle/themes/dotnet*
+
+%files -n kde-style-plastik
+%defattr(644,root,root,755)
+%{_libdir}/kde3/plugins/styles/plastik.la
+%attr(755,root,root) %{_libdir}/kde3/plugins/styles/plastik.so
+%{_datadir}/apps/kstyle/themes/plastik.themerc
 
 %files kworldclock
 %defattr(644,root,root,755)
