@@ -1,5 +1,3 @@
-# TODO:
-# - Fix *.mo files.
 
 %define		_state		stable
 %define		_ver		3.1.1
@@ -11,7 +9,7 @@ Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	%{_ver}
-Release:	3.2
+Release:	4
 Epoch:		7
 License:	LGPL
 Vendor:		The KDE Team
@@ -260,7 +258,8 @@ CXXFLAGS="%{rpmcflags}"
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 #mv $RPM_BUILD_ROOT%{_pixmapsdir}/{L,l}ocolor
 # Conflict with kdeaddons-kicker: (not verified yet)
@@ -285,12 +284,32 @@ rm -rf $RPM_BUILD_ROOT
 
 bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT
 
-#%find_lang kdeartwork --with-kde --all-name
+:> screensavers.lang
+%find_lang kpartsaver		--with-kde
+%find_lang kxsconfig		--with-kde
+# Should be in kdegraphics
+%find_lang kpixmap2bitmap	--with-kde
+# No good place for that...
+%find_lang desktop_kdeartwork	--with-kde
+cat {kpartsaver,kxsconfig}.lang >> screensavers.lang
+cat {kpixmap2bitmap,desktop_kdeartwork}.lang >> screensavers.lang
+
+%find_lang kwin_cde_config	--with-kde
+%find_lang kwin_glow_config	--with-kde
+
+## These are not placed anywhere...
+# kdebase would be better...
+%find_lang klock		--with-kde
+%find_lang kless		--with-kde
+# should be in kdeutils-klpq
+%find_lang klpq			--with-kde
+# this should be in kdeadmin-ksysv...
+%find_lang ksysctrl		--with-kde
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -n kde-decoration-cde
+%files -n kde-decoration-cde -f kwin_cde_config.lang
 %defattr(644,root,root,755)
 %{_libdir}/kde3/kwin_cde*.la
 %attr(755,root,root) %{_libdir}/kde3/kwin_cde*.so
@@ -300,7 +319,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_datadir}/apps/kwin/icewm-themes/*
 
-%files -n kde-decoration-glow
+%files -n kde-decoration-glow -f kwin_glow_config.lang
 %defattr(644,root,root,755)
 %{_libdir}/kde3/kwin_glow*.la
 %attr(755,root,root) %{_libdir}/kde3/kwin_glow*.so
@@ -343,7 +362,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kworldclock/maps/[^d]*
 %{_datadir}/apps/kworldclock/maps/depths/*
 
-%files screensavers
+%files screensavers -f screensavers.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/apps/kscreensaver/*
