@@ -16,11 +16,11 @@ Vendor:		The KDE Team
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_ver}/src/%{name}-%{version}.tar.bz2
 # Source0-md5:	042e42ade90a8d137edea88eb7d3e11d
-Patch0:		%{name}-screensavers.patch
-Patch1:		%{name}-ac_am.patch
 # generated from kde-i18n
 Source1:	ftp://blysk.ds.pg.gda.pl/linux/kde-i18n-package/%{version}/kde-i18n-%{name}-%{version}.tar.bz2
 # Source1-md5:	2a083985bbe4074dedffed88b4217d94
+Patch0:		%{name}-screensavers.patch
+Patch1:		%{name}-ac_am.patch
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-devel
 BuildRequires:	XFree86-devel
