@@ -1,9 +1,12 @@
+#
+# TODO:
+# - Splitting kde-emoticons subpkg
 
 %define		_state		stable
-%define		_ver		3.3.2
+%define		_ver		3.4.0
 
-%define		_minlibsevr	9:3.3.2
-%define		_minbaseevr	9:3.3.2
+%define		_minlibsevr	9:3.4.0
+%define		_minbaseevr	9:3.4.0
 
 Summary:	K Desktop Environment - artwork
 Summary(es):	K Desktop Environment - Plugins e Scripts para aplicativos KDE
@@ -12,14 +15,13 @@ Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	%{_ver}
-Release:	1
+Release:	0.1
 Epoch:		8
 License:	LGPL
 Vendor:		The KDE Team
 Group:		X11/Libraries
-Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_ver}/src/%{name}-%{_ver}.tar.bz2	
-# Source0-md5:	9a712da253bacb87e0d4fd28cec183a1
-#Patch100:	%{name}-branch.diff
+Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{name}-%{_ver}.tar.bz2
+# Source0-md5:	89df94d9e6c63887e5a66312b6514d0d
 Patch0:		%{name}-screensavers.patch
 Patch1:		%{name}-xscreensaver-dir.patch
 URL:		http://www.kde.org/
@@ -28,7 +30,7 @@ BuildRequires:	OpenGL-devel
 BuildRequires:	ed
 BuildRequires:	kdebase-devel >= %{_minbaseevr}
 BuildRequires:	libxml2-progs
-BuildRequires:	unsermake
+#BuildRequires:	unsermake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define 	_noautoreqdep	libGL.so.1 libGLU.so.1
@@ -131,20 +133,6 @@ KDE Window Decoration - OpenLook.
 %description -n kde-decoration-openlook -l pl
 Dekoracja okna dla KDE - OpenLook.
 
-%package -n kde-decoration-plastik
-Summary:	KDE Window Decoration - Plastik
-Summary(pl):	Dekoracja okna dla KDE - Plastik
-Group:		X11/Amusements
-Requires:	kdebase-desktop >= %{_minbaseevr}
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes
-
-%description -n kde-decoration-plastik
-KDE Window Decoration - Plastik.
-
-%description -n kde-decoration-plastik -l pl
-Dekoracja okna dla KDE - Plastik.
-
 %package -n kde-decoration-riscos
 Summary:	KDE Window Decoration - Risc OS
 Summary(pl):	Dekoracja okna dla KDE - Risc OS
@@ -172,6 +160,22 @@ KDE Window Decoration - System.
 
 %description -n kde-decoration-system -l pl
 Dekoracja okna dla KDE - System.
+
+%package -n kde-emoticons
+Summary:	KDE emoticons themes
+Summary(pl):	Motywy emotikon dla KDE
+Group:		X11/Amusements
+Requires:	kdelibs >= %{_minlibsevr}
+Obsoletes:	%{name}
+Obsoletes:	%{name}-icons-locolor
+Obsoletes:	%{name}-locolor
+Obsoletes:	%{name}-themes
+
+%description -n kde-emoticons
+KDE emoticons themes.
+
+%description -n kde-emoticons -l pl
+Motywy emotikon dla KDE.
 
 %package -n kde-icons-Locolor
 Summary:	KDE Icons Theme - locolor
@@ -271,19 +275,19 @@ KDE Style - DotNet.
 %description -n kde-style-dotnet -l pl
 Styl dla KDE - DotNet.
 
-%package -n kde-style-plastik
-Summary:	KDE Style - Plastik
-Summary(pl):	Styl dla KDE - Plastik
+%package -n kde-style-phase
+Summary:	KDE Style - Phase
+Summary(pl):	Styl dla KDE - Phase
 Group:		X11/Amusements
 Requires:	kdebase-core >= %{_minbaseevr}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
 
-%description -n kde-style-plastik
-KDE Style - Plastik.
+%description -n kde-style-phase
+KDE Style - Phase.
 
-%description -n kde-style-plastik -l pl
-Styl dla KDE - Plastik.
+%description -n kde-style-phase -l pl
+Styl dla KDE - Phase.
 
 %package kworldclock
 Summary:	Themes for kworldclock
@@ -440,14 +444,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde3/kwin3_openlook.so
 %{_datadir}/apps/kwin/openlook.desktop
 
-%files -n kde-decoration-plastik
-%defattr(644,root,root,755)
-%{_libdir}/kde3/kwin3_plastik.la
-%attr(755,root,root) %{_libdir}/kde3/kwin3_plastik.so
-%{_libdir}/kde3/kwin_plastik_config.la
-%attr(755,root,root) %{_libdir}/kde3/kwin_plastik_config.so
-%{_datadir}/apps/kwin/plastik.desktop
-
 %files -n kde-decoration-riscos
 %defattr(644,root,root,755)
 %{_libdir}/kde3/kwin3_riscos.la
@@ -460,9 +456,13 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde3/kwin3_system.so
 %{_datadir}/apps/kwin/system.desktop
 
-%files -n kde-icons-Technical
+%files -n kde-emoticons
 %defattr(644,root,root,755)
-%{_iconsdir}/Technical
+%{_datadir}/emoticons
+
+%files -n kde-icons-Locolor
+%defattr(644,root,root,755)
+%{_iconsdir}/Locolor
 
 %files -n kde-icons-ikons
 %defattr(644,root,root,755)
@@ -476,10 +476,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_iconsdir}/kids
 
-%files -n kde-icons-Locolor
-%defattr(644,root,root,755)
-%{_iconsdir}/Locolor
-
 %files -n kde-icons-slick
 %defattr(644,root,root,755)
 %{_iconsdir}/slick
@@ -490,13 +486,13 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde3/plugins/styles/dotnet.so
 %{_datadir}/apps/kstyle/themes/dotnet*
 
-%files -n kde-style-plastik
+%files -n kde-style-phase
 %defattr(644,root,root,755)
-%{_libdir}/kde3/kstyle_plastik_config.la
-%attr(755,root,root) %{_libdir}/kde3/kstyle_plastik_config.so
-%{_libdir}/kde3/plugins/styles/plastik.la
-%attr(755,root,root) %{_libdir}/kde3/plugins/styles/plastik.so
-%{_datadir}/apps/kstyle/themes/plastik.themerc
+%{_libdir}/kde3/kstyle_phase_config.la
+%attr(755,root,root) %{_libdir}/kde3/kstyle_phase_config.so
+%{_libdir}/kde3/plugins/styles/phasestyle.la
+%attr(755,root,root) %{_libdir}/kde3/plugins/styles/phasestyle.so
+%{_datadir}/apps/kstyle/themes/phase.themerc
 
 %files kworldclock
 %defattr(644,root,root,755)
