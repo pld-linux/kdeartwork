@@ -270,6 +270,20 @@ KDE Style - DotNet.
 %description -n kde-style-dotnet -l pl
 Styl dla KDE - DotNet.
 
+%package -n kde-style-phase
+Summary:	KDE Style - Phase
+Summary(pl):	Styl dla KDE - Phase
+Group:		X11/Amusements
+Requires:	kdebase-core >= %{_minbaseevr}
+Obsoletes:	%{name}
+Obsoletes:	%{name}-themes
+
+%description -n kde-style-phase
+KDE Style - Phase.
+
+%description -n kde-style-phase -l pl
+Styl dla KDE - Phase.
+
 %package -n kde-style-plastik
 Summary:	KDE Style - Plastik
 Summary(pl):	Styl dla KDE - Plastik
@@ -435,8 +449,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n kde-decoration-riscos
 %defattr(644,root,root,755)
-%{_libdir}/kde3/kwin_riscos.la
-%attr(755,root,root) %{_libdir}/kde3/kwin_riscos.so
+%{_libdir}/kde3/kwin3_riscos.la
+%attr(755,root,root) %{_libdir}/kde3/kwin3_riscos.so
 %{_datadir}/apps/kwin/riscos*
 
 %files -n kde-decoration-system
@@ -474,6 +488,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/kde3/plugins/styles/dotnet.la
 %attr(755,root,root) %{_libdir}/kde3/plugins/styles/dotnet.so
 %{_datadir}/apps/kstyle/themes/dotnet*
+
+%files -n kde-style-phase
+%defattr(644,root,root,755)
+%{_libdir}/kde3/kstyle_phase_config.la
+%attr(755,root,root) %{_libdir}/kde3/kstyle_phase_config.so
+%{_libdir}/kde3/plugins/styles/phasestyle.la
+%attr(755,root,root) %{_libdir}/kde3/plugins/styles/phasestyle.so
+%{_datadir}/apps/kstyle/themes/phase.themerc
 
 #files -n kde-style-plastik
 #defattr(644,root,root,755)
