@@ -346,10 +346,6 @@ Tapety dla KDE.
 %patch1 -p1 -R
 
 %build
-for f in `find . -name \*.desktop | xargs grep -l '\[nb\]'` ; do
-	echo -e ',s/\[nb\]=/[no]=/\n,w' | ed $f 2>/dev/null
-done
-
 %{__make} -f admin/Makefile.common cvs
 
 %configure \
