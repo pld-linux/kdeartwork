@@ -1,7 +1,7 @@
 
 %define		_state		stable
 %define		_ver		3.2
-%define         _snap           030518
+%define         _snap           030602
 
 Summary:	K Desktop Environment - artwork
 Summary(es):	K Desktop Environment - Plugins e Scripts para aplicativos KDE
@@ -16,8 +16,8 @@ License:	LGPL
 Vendor:		The KDE Team
 Group:		X11/Libraries
 #Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_ver}/src/%{name}-%{version}.tar.bz2
-Source0:        http://team.pld.org.pl/~adgor/kde/%{name}-%{_snap}.tar.bz2
-# Source0-md5:	3fc78b139a31fb24d716629fe4ebc860
+# Source0-md5:	6c0b45eec2450374769ec8972c8fe862
+Source0:        http://www.kernel.pl/~adgor/kde/%{name}-%{_snap}.tar.bz2
 Patch0:		%{name}-screensavers.patch
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-devel
