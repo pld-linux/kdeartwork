@@ -1,0 +1,22 @@
+--- kdeartwork-3.0.3/kscreensaver/kdesavers/kvm.cpp--	2002-08-29 09:32:06.000000000 +0200
++++ kdeartwork-3.0.3/kscreensaver/kdesavers/kvm.cpp	2002-08-29 09:32:24.000000000 +0200
+@@ -395,7 +395,7 @@ void kVmSetup::slotOkPressed()
+ 
+ void kVmSetup::slotAbout()
+ {
+-	KMessageBox::about(this,
++	KMessageBox::information(this,
+ 		i18n("Virtual Machine Version 0.1\n\nCopyright (c) 2000 Artur Rataj <art@zeus.polsl.gliwice.pl>\n"),
+ 	        i18n("About The Virtual Machine")
+ 	);
+--- kdeartwork-3.0.3/kscreensaver/kdesavers/slideshow.cpp--	2002-08-29 09:31:56.000000000 +0200
++++ kdeartwork-3.0.3/kscreensaver/kdesavers/slideshow.cpp	2002-08-29 09:32:43.000000000 +0200
+@@ -1048,7 +1048,7 @@ void kSlideShowSetup::slotOkPressed()
+ //-----------------------------------------------------------------------------
+ void kSlideShowSetup::slotAbout()
+ {
+-  KMessageBox::about(this,
++  KMessageBox::information(this,
+      i18n("SlideShow Version 1.1\n\n"
+ 			"Copyright (c) 1999 by\n"
+ 			"Stefan Taferner <taferner@kde.org>\n"));

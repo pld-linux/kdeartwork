@@ -1,0 +1,77 @@
+--- kdeartwork-3.0.3/kscreensaver/xsavers/bouboule.cpp--	2002-08-29 08:55:31.000000000 +0200
++++ kdeartwork-3.0.3/kscreensaver/xsavers/bouboule.cpp	2002-08-29 09:02:43.000000000 +0200
+@@ -1171,7 +1171,7 @@ void kBoubouleSetup::slotOkPressed()
+ 
+ void kBoubouleSetup::slotAbout()
+ {
+-	KMessageBox::about(this,
++	KMessageBox::information(this,
+ 			     i18n("Bouboule v0.1 -- a glob of spheres twisting and changing size\n\nCopyright (c) 1996 by Jeremie PETIT\n\nPorted to kscreensave by Cedric Tefft"));
+ }
+ 
+--- kdeartwork-3.0.3/kscreensaver/xsavers/morph3d.cpp--	2002-08-29 08:55:37.000000000 +0200
++++ kdeartwork-3.0.3/kscreensaver/xsavers/morph3d.cpp	2002-08-29 09:03:01.000000000 +0200
+@@ -1134,7 +1134,7 @@ void kMorph3dSetup::slotOk()
+ 
+ void kMorph3dSetup::slotAbout()
+ {
+-	KMessageBox::about(this,
++	KMessageBox::information(this,
+ 			     i18n("Morph3D\n\nCopyright (c) 1997 by Marcelo F. Vianna\n\nPorted to kscreensave by Emanuel Pirker."));
+ }
+ 
+--- kdeartwork-3.0.3/kscreensaver/xsavers/pipes.cpp--	2002-08-29 08:55:42.000000000 +0200
++++ kdeartwork-3.0.3/kscreensaver/xsavers/pipes.cpp	2002-08-29 09:03:14.000000000 +0200
+@@ -814,7 +814,7 @@ void kPipesSetup::slotOk()
+ 
+ void kPipesSetup::slotAbout()
+ {
+-  KMessageBox::about(this,
++  KMessageBox::information(this,
+ 	i18n("KPipes\nCopyright (c) 1998-2000\n"
+ 	   "Lars Doelle <lars.doelle@on-line.de>"));
+ }
+--- kdeartwork-3.0.3/kscreensaver/xsavers/pyro.cpp--	2002-08-29 08:55:47.000000000 +0200
++++ kdeartwork-3.0.3/kscreensaver/xsavers/pyro.cpp	2002-08-29 09:03:25.000000000 +0200
+@@ -617,7 +617,7 @@ void kPyroSetup::slotOkPressed()
+ 
+ void kPyroSetup::slotAbout()
+ {
+-	KMessageBox::about(this,
++	KMessageBox::information(this,
+ 		i18n("Pyro Version 3.4\n\n"
+ 				   "Copyright (c) 1991 by Patrick J. Naughton\n\n"
+ 				   "Ported to kscreensave by Martin Jones."));
+--- kdeartwork-3.0.3/kscreensaver/xsavers/rock.cpp--	2002-08-29 08:55:52.000000000 +0200
++++ kdeartwork-3.0.3/kscreensaver/xsavers/rock.cpp	2002-08-29 09:03:41.000000000 +0200
+@@ -686,7 +686,7 @@ void kRockSetup::slotOkPressed()
+ 
+ void kRockSetup::slotAbout()
+ {
+-	KMessageBox::about(this,
++	KMessageBox::information(this,
+ 			     i18n("Rock Version 3.3\n\nCopyright (c) 1992 by Jamie Zawinski\n\nPorted to kscreensave by Martin Jones."));
+ }
+ 
+--- kdeartwork-3.0.3/kscreensaver/xsavers/slidescreen.cpp--	2002-08-29 08:55:57.000000000 +0200
++++ kdeartwork-3.0.3/kscreensaver/xsavers/slidescreen.cpp	2002-08-29 09:03:52.000000000 +0200
+@@ -550,7 +550,7 @@ void kSlideScreenSetup::slotOkPressed()
+ 
+ void kSlideScreenSetup::slotAbout()
+ {
+-	KMessageBox::about(this,
++	KMessageBox::information(this,
+ 		i18n("SlideScreen Version 1.1\n\n"
+ 				   "Copyright (c) 1992-1997 by Jamie Zawinski <jwz@jwz.org>\n\n"
+ 				   "Ported to kscreensaver by:\n\n"
+--- kdeartwork-3.0.3/kscreensaver/xsavers/space.cpp--	2002-08-29 08:56:02.000000000 +0200
++++ kdeartwork-3.0.3/kscreensaver/xsavers/space.cpp	2002-08-29 09:04:01.000000000 +0200
+@@ -675,7 +675,7 @@ void kSpaceSetup::slotOk()
+ 
+ void kSpaceSetup::slotAbout()
+ {
+-	KMessageBox::about(this,
++	KMessageBox::information(this,
+ 		i18n("KSpace\nCopyright (c) 1998\n"
+ 				   "Bernd Johannes Wuebben <wuebben@kde.org>"));
+ }

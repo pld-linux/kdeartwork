@@ -1,0 +1,11 @@
+--- kdeartwork-3.0.3/kwin-styles/glow/glowbutton.cpp--	2002-08-28 18:01:02.000000000 +0200
++++ kdeartwork-3.0.3/kwin-styles/glow/glowbutton.cpp	2002-08-28 18:02:13.000000000 +0200
+@@ -62,7 +62,7 @@ GlowButton::GlowButton(QWidget *parent, 
+ 	m_updateTime = 50;
+ 	m_pixmapName = QString::null;
+ 
+-	m_timer = new QTimer();
++	m_timer = new QTimer(this);
+ 	QObject::connect(m_timer, SIGNAL(timeout()), this, SLOT(slotTimeout()));
+ 	m_pos = 0;
+ 	m_timerStatus = Stop;
