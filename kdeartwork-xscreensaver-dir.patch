@@ -1,18 +1,19 @@
---- kdeartwork-3.2.0/kscreensaver/kxsconfig/configure.in.in.orig	Sun Oct 26 11:45:03 2003
-+++ kdeartwork-3.2.0/kscreensaver/kxsconfig/configure.in.in	Fri Feb  6 11:18:00 2004
-@@ -32,6 +32,7 @@
+diff -urN kdeartwork-3.3.0.org/kscreensaver/kxsconfig/configure.in.in kdeartwork-3.3.0/kscreensaver/kxsconfig/configure.in.in
+--- kdeartwork-3.3.0.org/kscreensaver/kxsconfig/configure.in.in	2004-08-10 15:03:37.223073712 +0200
++++ kdeartwork-3.3.0/kscreensaver/kxsconfig/configure.in.in	2004-08-10 15:04:33.248556544 +0200
+@@ -44,6 +44,7 @@
       XSCREENSAVER_HACKS_DIR=`echo $XSCREENSAVER | sed -e 's,/flame$,,'`
       AC_DEFINE_UNQUOTED(XSCREENSAVER_HACKS_DIR, "$XSCREENSAVER_HACKS_DIR", [Defines where xscreensaver stores its graphic hacks])
  
 +     if test -z "$XSCREENSAVER_CONFIG"; then
       AC_MSG_CHECKING([for flame.xml])
-      AC_FIND_FILE(lib/xscreensaver/config/flame.xml, [ $xscreensaver_prefixes ], XSCREENSAVER_CONFIG)
-      if test "$XSCREENSAVER_CONFIG" = NO; then
-@@ -61,6 +62,7 @@
-      else
- 	XSCREENSAVER_CONFIG="$XSCREENSAVER_CONFIG/lib/xscreensaver/config"
-      fi
-+     fi
+      for subdir in lib/xscreensaver/config \
+ 		   lib/X11/xscreensaver/config \
+@@ -58,6 +59,7 @@
+          fi
+      done
       AC_MSG_RESULT([$XSCREENSAVER_CONFIG])
++     fi
       AC_DEFINE_UNQUOTED(XSCREENSAVER_CONFIG_DIR, "$XSCREENSAVER_CONFIG", 
  	[Defines where xscreensaver stores it's config files])
+ fi
