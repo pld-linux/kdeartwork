@@ -22,8 +22,8 @@ Source0:	http://download.kde.org/%{_state}/%{_ver}/src/%{name}-%{_ver}.tar.bz2
 # Source0-md5:	8c539b4ba4550e8355df03992c36cf58
 #Source0:	http://ep09.pld-linux.org/~djurban/kde/%{name}-%{version}.tar.bz2
 %if %{with i18n}
-Source1:        http://ep09.pld-linux.org/~djurban/kde/i18n/kde-i18n-%{name}-%{version}.tar.bz2
-# Source1-md5:	e1d979cdd225df242239885c364c0db5
+Source1:        kde-i18n-%{name}-%{version}.tar.bz2
+# Source1-md5:	a6792ec69ac0aebe6e65294217fc3333
 %endif
 Patch0:		%{name}-screensavers.patch
 Patch1:		%{name}-xscreensaver-dir.patch
