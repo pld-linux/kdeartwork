@@ -1,5 +1,8 @@
 Summary:	K Desktop Environment - artwork
+Summary(es):	K Desktop Environment - Plugins e Scripts para aplicativos KDE
+Summary:	KDE¿ë
 Summary(pl):	K Desktop Environment - grafiki itp.
+Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	3.0.3
 Release:	6
@@ -11,9 +14,9 @@ Source0:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.
 # generated from kde-i18n
 Source1:	kde-i18n-%{name}-%{version}.tar.bz2
 Patch0:		%{name}-fix-icon-in-about-dialogbox2.patch
-Patch1: 	%{name}-fix-icon-in-about-dialogbox3.patch
-Patch2: 	%{name}-fix-icon-in-about-dialogbox.patch
-Patch3: 	%{name}-fix-mem-leak.patch
+Patch1:		%{name}-fix-icon-in-about-dialogbox3.patch
+Patch2:		%{name}-fix-icon-in-about-dialogbox.patch
+Patch3:		%{name}-fix-mem-leak.patch
 BuildRequires:	OpenGL-devel
 BuildRequires:	XFree86-devel
 BuildRequires:	kdebase-devel
@@ -32,8 +35,16 @@ Obsoletes:	kdeartwork-kworldclock
 %description
 This package contains various graphics and such for KDE.
 
+%description -l es
+kdeartwork possue temas, sonidos, wallpapers, e estilos adicionais a
+KDE.
+
 %description -l pl
-Ten pakiet zawiera ró¿ne grafiki i tym podobne dla KDE.
+Pakiet ten zawiera ró¿ne grafiki i tym podobne dla KDE.
+
+%description -l pt_BR
+kdeartwork contém temas, sons, papéis de parede e estilos de janelas
+adicionais para o KDE.
 
 %package screensavers
 Summary:	Screen savers for KDE
