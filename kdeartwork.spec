@@ -5,7 +5,7 @@ Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	3.0.4
-Release:	2
+Release:	3
 Epoch:		7
 License:	LGPL
 Vendor:		The KDE Team
@@ -157,7 +157,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/kxs*
 %attr(755,root,root) %{_bindir}/*.kss
 %{_datadir}/apps/kscreensaver
-%{_applnkdir}/System/ScreenSavers
+%{_applnkdir}/System/ScreenSavers/*.desktop
 %{_mandir}/man1/*
 
 %files themes
