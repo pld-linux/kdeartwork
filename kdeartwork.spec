@@ -9,7 +9,7 @@ Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	%{_ver}
-Release:	1.1
+Release:	1.2
 Epoch:		7
 License:	LGPL
 Vendor:		The KDE Team
@@ -20,13 +20,14 @@ Patch0:		%{name}-screensavers.patch
 Patch1:		%{name}-ac_am.patch
 # generated from kde-i18n
 Source1:	ftp://blysk.ds.pg.gda.pl/linux/kde-i18n-package/%{version}/kde-i18n-%{name}-%{version}.tar.bz2
+# Source1-md5:	6060af477724ab78ae80ab93fb16e3e1
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-devel
 BuildRequires:	XFree86-devel
 BuildRequires:	kdebase-devel
 BuildRequires:	kdelibs-devel
 BuildRequires:	libxml2-progs
-Requires:	kdelibs = %{version}
+Requires:	kdelibs = 8:%{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define 	_noautoreqdep	libGL.so.1 libGLU.so.1
@@ -252,9 +253,9 @@ CFLAGS="%{rpmcflags}"
 CXXFLAGS="%{rpmcflags}"
 
 for plik in `find ./ -name \*.desktop` ; do
-		echo $plik
-		sed -e 's/\[nb\]/[no]/g' $plik > ${plik}.1
-		mv -f ${plik}.1 $plik
+	echo $plik
+	sed -e 's/\[nb\]/[no]/g' $plik > ${plik}.1
+	mv -f ${plik}.1 $plik
 done
 
 %{__make} -f admin/Makefile.common cvs
@@ -269,7 +270,8 @@ done
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 #mv $RPM_BUILD_ROOT%{_pixmapsdir}/{L,l}ocolor
 # Conflict with kdeaddons-kicker: (not verified yet)
@@ -292,7 +294,7 @@ rm -rf $RPM_BUILD_ROOT
 # Conflict with koffice-kspread: (not verified yet)
 #rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/kspreadcalc.png
 
-#bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT
+bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT
 
 #%find_lang kdeartwork --with-kde --all-name
 
