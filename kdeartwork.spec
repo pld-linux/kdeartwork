@@ -1,11 +1,11 @@
 
 %define		_state		snapshots
-%define		_ver		3.2.90
-%define		_snap		040525
+%define		_ver		3.2.91
+%define		_snap		040703
 %define		_packager	adgor
 
-%define		_minlibsevr	9:3.2.90.040524
-%define		_minbaseevr	9:3.2.90.040524
+%define		_minlibsevr	9:3.2.91.040629
+%define		_minbaseevr	9:3.2.91.040629
 
 Summary:	K Desktop Environment - artwork
 Summary(es):	K Desktop Environment - Plugins e Scripts para aplicativos KDE
@@ -494,6 +494,7 @@ rm -rf $RPM_BUILD_ROOT
 %files screensavers
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*.kss
+%{_datadir}/apps/kfiresaver
 %{_datadir}/apps/kscreensaver/K*.desktop
 %{_datadir}/apps/kscreensaver/kpartsaver.desktop
 %{_datadir}/apps/kscreensaver/*.png
@@ -505,7 +506,7 @@ rm -rf $RPM_BUILD_ROOT
 # extrusion.desktop is for xscreensaver-GLE, the rest for xscreensaver{,-GL}
 %{_datadir}/apps/kscreensaver/[!Kk]*.desktop
 %{_datadir}/apps/kscreensaver/k[!p]*.desktop
-%{_datadir}/config/*rc
+#%{_datadir}/config/*rc
 %{_mandir}/man1/kxsconfig.1*
 %{_mandir}/man1/kxsrun.1*
 
