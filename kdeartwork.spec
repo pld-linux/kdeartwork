@@ -21,6 +21,8 @@ License:	LGPL
 Vendor:		The KDE Team
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{_ftpdir}/%{version}/src/%{name}-%{version}.tar.bz2
+# generated from kde-i18n
+Source1:	kde-i18n-%{name}-%{version}.tar.bz2
 BuildRequires:	XFree86-devel
 BuildRequires:	OpenGL-devel
 BuildRequires:	kdelibs-devel
@@ -98,6 +100,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 mv $RPM_BUILD_ROOT%{_pixmapsdir}/{L,l}ocolor
+
+bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT%
 
 %clean
 rm -rf $RPM_BUILD_ROOT
