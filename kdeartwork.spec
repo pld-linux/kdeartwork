@@ -19,6 +19,7 @@ Group:		X11/Libraries
 Source0:	http://ep09.pld-linux.org/~djurban/kde/%{name}-%{_snap}.tar.bz2
 # Source0-md5:	dee0223ce83bc2287fee31ee4d4d4658	
 Patch0:		%{name}-screensavers.patch
+Patch1:         %{name}-fix_plastik.patch
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-devel
 BuildRequires:	XFree86-devel
@@ -342,6 +343,7 @@ Tapety dla KDE.
 %prep
 %setup -q -n %{name}-%{_snap}
 %patch0 -p1
+%patch1 -p1 -R
 
 %build
 for f in `find . -name \*.desktop | xargs grep -l '\[nb\]'` ; do
