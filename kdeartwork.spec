@@ -436,11 +436,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde3/kwin_plastik_config.so
 %{_datadir}/apps/kwin/plastik.desktop
 
-%files -n kde-decoration-riscos
-%defattr(644,root,root,755)
-%{_libdir}/kde3/kwin_riscos.la
-%attr(755,root,root) %{_libdir}/kde3/kwin_riscos.so
-%{_datadir}/apps/kwin/riscos*
+#%files -n kde-decoration-riscos
+#%defattr(644,root,root,755)
+#%{_libdir}/kde3/kwin_riscos.la
+#%attr(755,root,root) %{_libdir}/kde3/kwin_riscos.so
+#%{_datadir}/apps/kwin/riscos*
 
 %files -n kde-decoration-system
 %defattr(644,root,root,755)
