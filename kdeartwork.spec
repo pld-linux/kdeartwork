@@ -1,4 +1,3 @@
-#$Revision: 1.36 $, $Date: 2003-05-26 16:25:17 $
 
 %define		_state		stable
 %define		_ver		3.1.2
