@@ -1,7 +1,7 @@
 
 %define		_state		snapshots
 %define		_ver		3.1.90
-%define         _snap           030622
+%define         _snap           030725
 
 Summary:	K Desktop Environment - artwork
 Summary(es):	K Desktop Environment - Plugins e Scripts para aplicativos KDE
@@ -17,7 +17,7 @@ Vendor:		The KDE Team
 Group:		X11/Libraries
 #Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_ver}/src/%{name}-%{version}.tar.bz2
 Source0:        http://www.kernel.pl/~adgor/kde/%{name}-%{_snap}.tar.bz2
-# Source0-md5:	edcd15ab4bb8820f7bdabc51366d9bc7	
+# Source0-md5:	b68b3dc4f4aff287a0440274a0f1d0e4
 Patch0:		%{name}-screensavers.patch
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-devel
@@ -51,7 +51,7 @@ adicionais para o KDE.
 Summary:	KDE Window Decoration - CDE
 Summary(pl):	Dekoracja okna dla KDE - CDE
 Group:		X11/Amusements
-Requires:	kdebase >= %{version}
+Requires:	kdebase-desktop >= %{version}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
 
@@ -65,7 +65,7 @@ Dekoracja okna dla KDE - CDE.
 Summary:	KDE Window Decoration - Glow
 Summary(pl):	Dekoracja okna dla KDE - Glow
 Group:		X11/Amusements
-Requires:	kdebase >= %{version}
+Requires:	kdebase-desktop >= %{version}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
 
@@ -79,7 +79,7 @@ Dekoracja okna dla KDE - Glow.
 Summary:	Extensions for KDE IceWM decoration
 Summary(pl):	Rozszerzenie dekoracji okna "IceWM" dla KDE
 Group:		X11/Amusements
-Requires:	kdebase >= %{version}
+Requires:	kdebase-desktop >= %{version}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
 
@@ -93,7 +93,7 @@ Rozszerzenie dekoracji okna IceWM dla KDE.
 Summary:        KDE Window Decoration - KDE 1
 Summary(pl):    Dekoracja okna dla KDE - KDE 1
 Group:          X11/Amusements
-Requires:	kdebase >= %{version}
+Requires:	kdebase-desktop >= %{version}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
 
@@ -107,7 +107,7 @@ Dekoracja okna dla KDE - KDE 1.
 Summary:        KDE Window Decoration - Kstep
 Summary(pl):    Dekoracja okna dla KDE - Kstep
 Group:          X11/Amusements
-Requires:	kdebase >= %{version}
+Requires:	kdebase-desktop >= %{version}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
 
@@ -121,7 +121,7 @@ Dekoracja okna dla KDE - Kstep.
 Summary:	KDE Window Decoration - OpenLook
 Summary(pl):	Dekoracja okna dla KDE - OpenLook
 Group:		X11/Amusements
-Requires:	kdebase >= %{version}
+Requires:	kdebase-desktop >= %{version}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
 
@@ -134,7 +134,7 @@ Dekoracja okna dla KDE - OpenLook.
 %package -n kde-decoration-riscos
 Summary:        KDE Window Decoration - Risc OS
 Summary(pl):    Dekoracja okna dla KDE - Risc OS
-Requires:	kdebase >= %{version}
+Requires:	kdebase-desktop >= %{version}
 Group:          X11/Amusements
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
@@ -149,7 +149,7 @@ Dekoracja okna dla KDE - Risc OS.
 Summary:        KDE Window Decoration - System
 Summary(pl):    Dekoracja okna dla KDE - System
 Group:          X11/Amusements
-Requires:	kdebase >= %{version}
+Requires:	kdebase-desktop >= %{version}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
 
@@ -277,7 +277,7 @@ Wygaszacze ekranu dla KDE.
 Summary:	KDE Sounds
 Summary(pl):	D¼wiêki dla KDE
 Group:		X11/Amusements
-Requires:	kdebase >= %{version}
+Requires:	kdebase-desktop >= %{version}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
 
