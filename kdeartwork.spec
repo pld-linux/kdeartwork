@@ -1,4 +1,4 @@
-#$Revision: 1.35 $, $Date: 2003-05-25 05:49:16 $
+#$Revision: 1.36 $, $Date: 2003-05-26 16:25:17 $
 
 %define		_state		stable
 %define		_ver		3.1.2
@@ -16,6 +16,7 @@ License:	LGPL
 Vendor:		The KDE Team
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_ver}/src/%{name}-%{version}.tar.bz2
+# Source0-md5:	0ac7fda2acfa32ce26913ff864722e44
 Patch0:         %{name}-screensavers.patch
 Patch1:		%{name}-ac_am.patch
 # generated from kde-i18n
