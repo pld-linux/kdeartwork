@@ -1,9 +1,13 @@
+#
+# TODO:
+# - pack kopete emoticons
+#
 
 %define		_state		unstable
-%define		_ver		3.3.91
+%define		_ver		3.3.92
 
-%define		_minlibsevr	9:3.3.91
-%define		_minbaseevr	9:3.3.91
+%define		_minlibsevr	9:3.3.92
+%define		_minbaseevr	9:3.3.92
 
 Summary:	K Desktop Environment - artwork
 Summary(es):	K Desktop Environment - Plugins e Scripts para aplicativos KDE
@@ -18,7 +22,7 @@ License:	LGPL
 Vendor:		The KDE Team
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{name}-%{_ver}.tar.bz2
-# Source0-md5:	2792be4f92ac0112112b9c42614f8522
+# Source0-md5:	abb464c358126e389af6c744e4770010
 #Source0:	ftp://ftp.pld-linux.org/software/kde/%{name}-%{_snap}.tar.bz2
 Patch0:		%{name}-screensavers.patch
 Patch1:		%{name}-xscreensaver-dir.patch
