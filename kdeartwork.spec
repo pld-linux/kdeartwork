@@ -3,7 +3,7 @@
 %bcond_without	i18n	# don't build i18n subpackages
 #
 %define		_state		stable
-%define		_ver		3.2.1
+%define		_ver		3.2.2
 ##%define		_snap		040110
 
 Summary:	K Desktop Environment - artwork
@@ -19,11 +19,11 @@ License:	LGPL
 Vendor:		The KDE Team
 Group:		X11/Libraries
 Source0:	http://download.kde.org/%{_state}/%{_ver}/src/%{name}-%{_ver}.tar.bz2
-# Source0-md5:	8c539b4ba4550e8355df03992c36cf58
+# Source0-md5:	cc2b1f2116c998387ea4ea998720934a
 #Source0:	http://ep09.pld-linux.org/~djurban/kde/%{name}-%{version}.tar.bz2
 %if %{with i18n}
 Source1:        kde-i18n-%{name}-%{version}.tar.bz2
-# Source1-md5:	a6792ec69ac0aebe6e65294217fc3333
+# Source1-md5:	32264c4eec5e03ec6d5a9d27877e4016
 %endif
 Patch0:		%{name}-screensavers.patch
 Patch1:		%{name}-xscreensaver-dir.patch
