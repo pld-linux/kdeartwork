@@ -256,9 +256,8 @@ kde_icondir="%{_pixmapsdir}"; export kde_icondir
 CFLAGS="%{rpmcflags}"
 CXXFLAGS="%{rpmcflags}"
 
-for plik in `find ./ -name \*.desktop | grep -l '\[nb\]'` ; do
-	echo $plik
-	echo -e ',s/\[nb\]/[no]/\n,w' | ed $plik
+for plik in `find . -name \*.desktop -o -name \*rc | xargs grep -l '\[nb\]'` ; do
+	echo -e ',s/\[nb\]=/[no]=/\n,w' | ed $plik
 done
 
 %{__make} -f admin/Makefile.common cvs
