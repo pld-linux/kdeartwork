@@ -1,0 +1,12 @@
+diff -urN -x CVS kdeartwork.orig/styles/plastik/plastik.cpp kdeartwork/styles/plastik/plastik.cpp
+--- kdeartwork.orig/styles/plastik/plastik.cpp	Sat May 22 22:21:41 2004
++++ kdeartwork/styles/plastik/plastik.cpp	Mon May 31 01:19:36 2004
+@@ -215,7 +215,7 @@
+             ::qt_cast<QCheckBox*>(widget) || ::qt_cast<QRadioButton*>(widget) ||
+             ::qt_cast<QToolButton*>(widget) || widget->inherits("QSplitterHandle") )
+     {
+-        widget->setBackgroundMode(PaletteBackground);
++//         widget->setBackgroundMode(PaletteBackground);
+         widget->installEventFilter(this);
+     } else if (::qt_cast<QTabBar*>(widget)) {
+         widget->setMouseTracking(true);
