@@ -9,7 +9,7 @@ Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	%{_ver}
-Release:	0.1
+Release:	0.2
 Epoch:		7
 License:	LGPL
 Vendor:		The KDE Team
@@ -32,6 +32,8 @@ Requires:	kdelibs = 8:%{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define 	_noautoreqdep	libGL.so.1 libGLU.so.1
+
+%define		_prefix		/usr/X11R6
 %define		_htmldir	/usr/share/doc/kde/HTML
 
 %description
