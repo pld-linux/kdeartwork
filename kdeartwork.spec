@@ -13,7 +13,7 @@ Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	%{_ver}
-Release:	2
+Release:	3
 Epoch:		8
 License:	LGPL
 Vendor:		The KDE Team
@@ -26,6 +26,7 @@ Source1:        http://ep09.pld-linux.org/~djurban/kde/i18n/kde-i18n-%{name}-%{v
 # Source1-md5:	e1d979cdd225df242239885c364c0db5
 %endif
 Patch0:		%{name}-screensavers.patch
+Patch1:		%{name}-xscreensaver-dir.patch
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-devel
 BuildRequires:	XFree86-devel
@@ -445,12 +446,15 @@ Pliki umiêdzynarodawiaj±ce dla screensavers.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 cp -f /usr/share/automake/config.sub admin
 %{__make} -f admin/Makefile.common cvs
 
 %configure \
+	XSCREENSAVER=/usr/%{_lib}/xscreensaver/flame \
+	XSCREENSAVER_CONFIG=/etc/X11/xscreensaver \
 	--with-qt-libraries=%{_libdir} \
 	--disable-rpath \
 	--enable-final
@@ -462,6 +466,17 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+# Makefile installs these basing on XSCREENSAVER_DIR/* files -
+# let's do it manually to avoid BR: xscreensaver{,-GL,-GLE}
+install kscreensaver/kxsconfig/ScreenSavers/*.desktop $RPM_BUILD_ROOT%{_datadir}/apps/kscreensaver
+rm -f $RPM_BUILD_ROOT%{_datadir}/apps/kscreensaver/pixmaps.desktop
+
+# Debian manpages
+install -d $RPM_BUILD_ROOT%{_mandir}/man1
+# these don't exist in 3.2:
+rm -f debian/{kbouboule,kmatrix,kmorph3d,kpipes,kpyro,krock,kslidescreen}.kss.1
+install debian/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
 %if %{with i18n}
 if [ -f "%{SOURCE1}" ] ; then
@@ -616,10 +631,21 @@ rm -rf $RPM_BUILD_ROOT
 
 %files screensavers
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/*
-%{_datadir}/apps/kscreensaver/*
-# TODO: Why these aren't installing??
-#%{_datadir}/config/*
+%attr(755,root,root) %{_bindir}/*.kss
+%{_datadir}/apps/kscreensaver/K*.desktop
+%{_datadir}/apps/kscreensaver/kpartsaver.desktop
+%{_datadir}/apps/kscreensaver/*.png
+%{_mandir}/man1/*.kss.1*
+
+# KDE xscreensaver wrappers (should R: xscreensaver?)
+%attr(755,root,root) %{_bindir}/kxsconfig
+%attr(755,root,root) %{_bindir}/kxsrun
+# extrusion.desktop is for xscreensaver-GLE, the rest for xscreensaver{,-GL}
+%{_datadir}/apps/kscreensaver/[!Kk]*.desktop
+%{_datadir}/apps/kscreensaver/k[!p]*.desktop
+%{_datadir}/config/*rc
+%{_mandir}/man1/kxsconfig.1*
+%{_mandir}/man1/kxsrun.1*
 
 %files sounds
 %defattr(644,root,root,755)
