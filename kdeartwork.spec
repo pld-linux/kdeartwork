@@ -2,12 +2,11 @@
 # TODO:
 # - Splitting kde-emoticons subpkg
 
-%define		_state		unstable
-%define		_ver		3.3.92
-%define		_snap		050217
+%define		_state		stable
+%define		_ver		3.4.0
 
-%define		_minlibsevr	9:3.3.92.050217
-%define		_minbaseevr	9:3.3.92.050217
+%define		_minlibsevr	9:3.4.0
+%define		_minbaseevr	9:3.4.0
 
 Summary:	K Desktop Environment - artwork
 Summary(es):	K Desktop Environment - Plugins e Scripts para aplicativos KDE
@@ -15,16 +14,14 @@ Summary(ko):	KDE¿ë
 Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
-Version:	%{_ver}.%{_snap}
-#Version:	%{_ver}
-Release:	1
+Version:	%{_ver}
+Release:	0.1
 Epoch:		8
 License:	LGPL
 Vendor:		The KDE Team
 Group:		X11/Libraries
-Source0:	ftp://ftp.pld-linux.org/software/kde/%{name}-%{_snap}.tar.bz2
-#Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{name}-%{_ver}.tar.bz2
-#%% Source0-md5:	abb464c358126e389af6c744e4770010
+Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{name}-%{_ver}.tar.bz2
+# Source0-md5:	89df94d9e6c63887e5a66312b6514d0d
 Patch0:		%{name}-screensavers.patch
 Patch1:		%{name}-xscreensaver-dir.patch
 URL:		http://www.kde.org/
@@ -348,8 +345,7 @@ KDE Wallpapers.
 Tapety dla KDE.
 
 %prep
-%setup -q -n %{name}-%{_snap}
-#%setup -q
+%setup -q
 %patch0 -p1
 %patch1 -p1
 
