@@ -3,7 +3,7 @@
 %bcond_without	i18n	# don't build i18n subpackages
 #
 %define		_state		stable
-%define		_ver		3.2.0
+%define		_ver		3.2.1
 ##%define		_snap		040110
 
 Summary:	K Desktop Environment - artwork
@@ -13,14 +13,14 @@ Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	%{_ver}
-Release:	3
+Release:	0.1
 Epoch:		8
 License:	LGPL
 Vendor:		The KDE Team
 Group:		X11/Libraries
-Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_ver}/src/%{name}-%{version}.tar.bz2
+Source0:	http://download.kde.org/%{_state}/%{_ver}/src/%{name}-%{_ver}.tar.bz2
+# Source0-md5:	8c539b4ba4550e8355df03992c36cf58
 #Source0:	http://ep09.pld-linux.org/~djurban/kde/%{name}-%{version}.tar.bz2
-# Source0-md5:	882a798e09e9529f102599d24bb7daee
 %if %{with i18n}
 Source1:        http://ep09.pld-linux.org/~djurban/kde/i18n/kde-i18n-%{name}-%{version}.tar.bz2
 # Source1-md5:	e1d979cdd225df242239885c364c0db5
