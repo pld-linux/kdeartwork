@@ -23,6 +23,7 @@ BuildRequires:	XFree86-devel
 BuildRequires:	kdebase-devel
 BuildRequires:	kdelibs-devel
 BuildRequires:	libxml2-progs
+BuildRequires:	perl
 Requires:	kdelibs = %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	kdeartwork-locolor
@@ -208,6 +209,11 @@ Tapety dla KDE.
 kde_appsdir="%{_applnkdir}"; export kde_appsdir
 kde_htmldir="%{_htmldir}"; export kde_htmldir
 kde_icondir="%{_pixmapsdir}"; export kde_icondir
+
+for plik in `find ./ -name \*.desktop` ; do
+		echo $plik
+		perl -pi -e "s/\[nb\]/\[no\]/g" $plik
+done
 
 CFLAGS="%{rpmcflags}"
 CXXFLAGS="%{rpmcflags}"
