@@ -1,10 +1,9 @@
 
-%define		_state		snapshots
-%define		_ver		3.2.91
-%define		_snap		040703
+%define		_state		unstable
+%define		_ver		3.3.91
 
-%define		_minlibsevr	9:3.2.91.040629
-%define		_minbaseevr	9:3.2.91.040629
+%define		_minlibsevr	9:3.3.91
+%define		_minbaseevr	9:3.3.91
 
 Summary:	K Desktop Environment - artwork
 Summary(es):	K Desktop Environment - Plugins e Scripts para aplicativos KDE
@@ -12,13 +11,15 @@ Summary(ko):	KDE¿ë
 Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
-Version:	%{_ver}.%{_snap}
+Version:	%{_ver}
 Release:	1
 Epoch:		8
 License:	LGPL
 Vendor:		The KDE Team
 Group:		X11/Libraries
-Source0:	ftp://ftp.pld-linux.org/software/kde/%{name}-%{_snap}.tar.bz2
+Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{name}-%{_ver}.tar.bz2
+# Source0-md5:	2792be4f92ac0112112b9c42614f8522
+#Source0:	ftp://ftp.pld-linux.org/software/kde/%{name}-%{_snap}.tar.bz2
 Patch0:		%{name}-screensavers.patch
 Patch1:		%{name}-xscreensaver-dir.patch
 URL:		http://www.kde.org/
@@ -340,7 +341,7 @@ KDE Wallpapers.
 Tapety dla KDE.
 
 %prep
-%setup -q -n %{name}-%{_snap}
+%setup -q
 %patch0 -p1
 %patch1 -p1
 
