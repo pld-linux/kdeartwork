@@ -1,7 +1,7 @@
 
 %define		_state		snapshots
 %define		_ver		3.1.93
-%define         _snap           031105
+%define		_snap		031105
 
 Summary:	K Desktop Environment - artwork
 Summary(es):	K Desktop Environment - Plugins e Scripts para aplicativos KDE
@@ -10,21 +10,21 @@ Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	%{_ver}.%{_snap}
-Release:        1
+Release:	1
 Epoch:		8
 License:	LGPL
 Vendor:		The KDE Team
 Group:		X11/Libraries
 #Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_ver}/src/%{name}-%{version}.tar.bz2
-Source0:        http://www.kernel.pl/~adgor/kde/%{name}-%{_snap}.tar.bz2
+Source0:	http://www.kernel.pl/~adgor/kde/%{name}-%{_snap}.tar.bz2
 # Source0-md5:	9a8abf019a29be3c4d45d35f6306ebf1
 Patch0:		%{name}-screensavers.patch
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-devel
 BuildRequires:	XFree86-devel
+BuildRequires:	ed
 BuildRequires:	kdebase-devel >= 9:%{version}
 BuildRequires:	libxml2-progs
-BuildRequires:	sed >= 4.0
 Requires:	kdelibs = 9:%{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -87,9 +87,9 @@ Extensions for KDE "IceWM" decoration.
 Rozszerzenie dekoracji okna IceWM dla KDE.
 
 %package -n kde-decoration-kde1
-Summary:        KDE Window Decoration - KDE 1
-Summary(pl):    Dekoracja okna dla KDE - KDE 1
-Group:          X11/Amusements
+Summary:	KDE Window Decoration - KDE 1
+Summary(pl):	Dekoracja okna dla KDE - KDE 1
+Group:		X11/Amusements
 Requires:	kdebase-desktop >= 9:%{version}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
@@ -101,9 +101,9 @@ KDE Window Decoration - KDE 1.
 Dekoracja okna dla KDE - KDE 1.
 
 %package -n kde-decoration-kstep
-Summary:        KDE Window Decoration - Kstep
-Summary(pl):    Dekoracja okna dla KDE - Kstep
-Group:          X11/Amusements
+Summary:	KDE Window Decoration - Kstep
+Summary(pl):	Dekoracja okna dla KDE - Kstep
+Group:		X11/Amusements
 Requires:	kdebase-desktop >= 9:%{version}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
@@ -143,10 +143,10 @@ KDE Window Decoration - Plastik.
 Dekoracja okna dla KDE - Plastik.
 
 %package -n kde-decoration-riscos
-Summary:        KDE Window Decoration - Risc OS
-Summary(pl):    Dekoracja okna dla KDE - Risc OS
+Summary:	KDE Window Decoration - Risc OS
+Summary(pl):	Dekoracja okna dla KDE - Risc OS
 Requires:	kdebase-desktop >= 9:%{version}
-Group:          X11/Amusements
+Group:		X11/Amusements
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
 
@@ -157,9 +157,9 @@ KDE Window Decoration - Risc OS.
 Dekoracja okna dla KDE - Risc OS.
 
 %package -n kde-decoration-system
-Summary:        KDE Window Decoration - System
-Summary(pl):    Dekoracja okna dla KDE - System
-Group:          X11/Amusements
+Summary:	KDE Window Decoration - System
+Summary(pl):	Dekoracja okna dla KDE - System
+Group:		X11/Amusements
 Requires:	kdebase-desktop >= 9:%{version}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
@@ -333,8 +333,8 @@ Tapety dla KDE.
 
 %build
 
-for f in `find . -name *.desktop` ; do
-	sed -i 's/\[nb\]/\[no\]/g'  $f
+for f in `find . -name *.desktop | grep -l '\[nb\]'` ; do
+	echo -e ',s/\[nb\]/[no]/\n,w' | ed  $f
 done
 
 %{__make} -f admin/Makefile.common cvs
