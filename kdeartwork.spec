@@ -4,7 +4,7 @@
 #
 %define		_state		snapshots
 %define		_ver		3.2.90
-%define		_snap		040504
+%define		_snap		040506
 %define		_packager	adgor
 
 %define		_minlibsevr	9:3.2.90.040503
@@ -23,8 +23,9 @@ License:	LGPL
 Vendor:		The KDE Team
 Group:		X11/Libraries
 #Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_ver}/src/%{name}-%{version}.tar.bz2
-Source0:	http://ep09.pld-linux.org/~%{_packager}/kde/%{name}-%{_snap}.tar.bz2
-##%% Source0-md5:	d018b0630af479131314c06ab90a0f93
+#Source0:	http://ep09.pld-linux.org/~%{_packager}/kde/%{name}-%{_snap}.tar.bz2
+Source0:	%{name}-%{_snap}.tar.bz2
+# Source0-md5:	0903dab250ab0cf72582934dbc9d4231
 #Source1:        http://ep09.pld-linux.org/~djurban/kde/i18n/kde-i18n-%{name}-%{version}.tar.bz2
 ##%% Source1-md5:	e1d979cdd225df242239885c364c0db5
 Patch0:		%{name}-screensavers.patch
