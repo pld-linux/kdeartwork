@@ -491,8 +491,6 @@ else
 	exit 1
 fi
 
-%find_lang desktop_kdeartwork --with-kde
-
 %find_lang kstyle_plastik_config --with-kde
 %find_lang kwin_cde_config --with-kde
 %find_lang kwin_glow_config --with-kde
@@ -513,7 +511,6 @@ cat kxsconfig.lang >> screensavers.lang
 rm -rf $RPM_BUILD_ROOT
 
 %if %{with i18n}
-%files i18n -f desktop_kdeartwork.lang
 %files -n kde-decoration-cde-i18n -f kwin_cde_config.lang
 %files -n kde-decoration-icewm-i18n -f kwin_icewm_config.lang
 %files -n kde-decoration-glow-i18n -f kwin_glow_config.lang
@@ -580,11 +577,11 @@ rm -rf $RPM_BUILD_ROOT
 #%attr(755,root,root) %{_libdir}/kde3/kwin_riscos.so
 #%{_datadir}/apps/kwin/riscos*
 
-#%files -n kde-decoration-system
-#%defattr(644,root,root,755)
-#%{_libdir}/kde3/kwin_system.la
-#%attr(755,root,root) %{_libdir}/kde3/kwin_system.so
-#%{_datadir}/apps/kwin/system*
+%files -n kde-decoration-system
+%defattr(644,root,root,755)
+%{_libdir}/kde3/kwin3_system.la
+%attr(755,root,root) %{_libdir}/kde3/kwin3_system.so
+%{_datadir}/apps/kwin/system*
 
 %files -n kde-icons-Technical
 %defattr(644,root,root,755)
