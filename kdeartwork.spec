@@ -351,11 +351,12 @@ Tapety dla KDE.
 #%%patch100 -p1
 %patch0 -p1
 %patch1 -p1
-# MAKE SURE SOMEONE CHEKCS IT IN 3.3.3
-%if "%{version}" == "3.3.2"
-echo "SUBDIRS = kstep plastik glow cde icewm openlook kde1 system riscos" > kwin-styles/Makefile.am
+# MAKE SURE SOMEONE CHEKCS IT IN 3.4.0+
+%if "%{version}" == "3.4.0"
+# ls ../BUILD/kdeartwork-3.4.0/kwin-styles/*/ -d |cut -d/ -f5
+echo "SUBDIRS = cde glow icewm kde1 kstep openlook riscos system" > kwin-styles/Makefile.am
 %else
-echo "Please check line 352 of and confirm whether it should/nt be used"
+echo "Please check line 352 of and confirm whether it shouldn't be used"
 exit 1
 %endif
 
