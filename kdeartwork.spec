@@ -5,7 +5,7 @@ Summary(pl):	K Desktop Environment - grafiki itp
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	3.0.5a
-Release:	0.1
+Release:	0.2
 Epoch:		7
 License:	LGPL
 Vendor:		The KDE Team
@@ -19,8 +19,8 @@ Patch2:		%{name}-fix-icon-in-about-dialogbox.patch
 Patch3:		%{name}-fix-mem-leak.patch
 BuildRequires:	OpenGL-devel
 BuildRequires:	XFree86-devel
-BuildRequires:	kdebase-devel
-BuildRequires:	kdelibs-devel
+BuildRequires:	kdebase-devel >= %{version}
+BuildRequires:	kdelibs-devel >= %{version}
 BuildRequires:	libxml2-progs
 Requires:	kdelibs = %{version}
 URL:		http://www.kde.org/
