@@ -104,12 +104,12 @@ mv $RPM_BUILD_ROOT%{_pixmapsdir}/{L,l}ocolor
 
 bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT
 
-%find_lang %{name} --with-kde --all-name
+%find_lang kdeartwork --with-kde --all-name
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f %{name}
+%files -f kdeartwork.lang
 %defattr(644,root,root,755)
 %{_pixmapsdir}/*
 %{_datadir}/wallpapers/*
