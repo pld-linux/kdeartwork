@@ -2,7 +2,7 @@ Summary:	K Desktop Environment - artwork
 Summary(pl):	K Desktop Environment - grafiki itp.
 Name:		kdeartwork
 Version:	3.0.3
-Release:	4
+Release:	5
 Epoch:		7
 License:	LGPL
 Vendor:		The KDE Team
@@ -97,7 +97,7 @@ rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/lskat.png
 rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/ksirc.png
 # Conflict with kdesdk:
 rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/16x16/mimetypes/gettext.png
-rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/16x16/apps/kbabel.png
+rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/kbabel.png
 # Conflicts with kdetoys-kteatime:
 rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/16x16/apps/kteatime.png
 # Conflict with kdetoys-ktux:
