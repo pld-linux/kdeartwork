@@ -22,8 +22,7 @@ Patch0:		%{name}-screensavers.patch
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-devel
 BuildRequires:	XFree86-devel
-BuildRequires:	kdebase-devel
-BuildRequires:	kdelibs-devel
+BuildRequires:	kdebase-devel >= 9:%{version}
 BuildRequires:	libxml2-progs
 BuildRequires:	sed >= 4.0
 Requires:	kdelibs = %{version}
