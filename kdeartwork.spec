@@ -1,8 +1,8 @@
 # NOTE:	cc1plus takes 136+MB at one time so better prepare a lot of swap
 # 	space.
-%define		_ver		3.0
+%define		_ver		3.0.1
 #define		_sub_ver
-%define		_rel		2
+%define		_rel		1
 
 %{?_sub_ver:	%define	_version	%{_ver}%{_sub_ver}}
 %{!?_sub_ver:	%define	_version	%{_ver}}
@@ -16,7 +16,7 @@ Summary:	K Desktop Environment - artwork
 Name:		kdeartwork
 Version:	%{_version}
 Release:	%{_release}
-#Epoch:		6
+Epoch:		7
 License:	LGPL
 Vendor:		The KDE Team
 Group:		X11/Libraries
