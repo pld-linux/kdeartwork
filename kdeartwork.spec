@@ -1,6 +1,6 @@
 
 %define		_state		stable
-%define		_ver		3.1
+%define		_ver		3.1.1
 
 Summary:	K Desktop Environment - artwork
 Summary(es):	K Desktop Environment - Plugins e Scripts para aplicativos KDE
@@ -9,7 +9,7 @@ Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	%{_ver}
-Release:	3
+Release:	0.1
 Epoch:		7
 License:	LGPL
 Vendor:		The KDE Team
