@@ -10,7 +10,7 @@ Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	%{_ver}.%{_snap}
-Release:	1
+Release:	2
 Epoch:		8
 License:	LGPL
 Vendor:		The KDE Team
@@ -391,11 +391,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kwin/glow-themes
 %{_datadir}/apps/kwin/glow.desktop
 
-#%files -n kde-decoration-kde1
-#%defattr(644,root,root,755)
-#%{_libdir}/kde3/kwin_kde1.la
-#%attr(755,root,root) %{_libdir}/kde3/kwin_kde1.so
-#%{_datadir}/apps/kwin/kde1*
+%files -n kde-decoration-kde1
+%defattr(644,root,root,755)
+%{_libdir}/kde3/kwin_kde1.la
+%attr(755,root,root) %{_libdir}/kde3/kwin_kde1.so
+%{_datadir}/apps/kwin/kde1*
 
 %files -n kde-decoration-kstep
 %defattr(644,root,root,755)
