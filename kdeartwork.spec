@@ -1,6 +1,7 @@
 
-%define		_state		stable
-%define		_ver		3.1.4
+%define		_state		snapshots
+%define		_ver		3.1.94
+%define		_snap		031204
 
 Summary:	K Desktop Environment - artwork
 Summary(es):	K Desktop Environment - Plugins e Scripts para aplicativos KDE
@@ -8,30 +9,26 @@ Summary(ko):	KDE¿ë
 Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
-Version:	%{_ver}
-Release:	0.1
-Epoch:		7
+Version:	%{_ver}.%{_snap}
+Release:	1
+Epoch:		8
 License:	LGPL
 Vendor:		The KDE Team
 Group:		X11/Libraries
-Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_ver}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	042e42ade90a8d137edea88eb7d3e11d
+#Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_ver}/src/%{name}-%{version}.tar.bz2
+Source0:	http://www.kernel.pl/~adgor/kde/%{name}-%{_snap}.tar.bz2
+# Source0-md5:	9c27c42669f075c2c9f54d2c0a2d7358
 Patch0:		%{name}-screensavers.patch
-Patch1:		%{name}-ac_am.patch
-# generated from kde-i18n
-Source1:	ftp://blysk.ds.pg.gda.pl/linux/kde-i18n-package/%{version}/kde-i18n-%{name}-%{version}.tar.bz2
-# Source1-md5:	2a083985bbe4074dedffed88b4217d94
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-devel
 BuildRequires:	XFree86-devel
-BuildRequires:	kdebase-devel
-BuildRequires:	kdelibs-devel
+BuildRequires:	ed
+BuildRequires:	kdebase-devel >= 9:%{version}
 BuildRequires:	libxml2-progs
-Requires:	kdelibs = 8:%{version}
+Requires:	kdelibs = 9:%{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define 	_noautoreqdep	libGL.so.1 libGLU.so.1
-%define		_htmldir	/usr/share/doc/kde/HTML
 
 %description
 This package contains various graphics and such for KDE.
@@ -51,7 +48,7 @@ adicionais para o KDE.
 Summary:	KDE Window Decoration - CDE
 Summary(pl):	Dekoracja okna dla KDE - CDE
 Group:		X11/Amusements
-Requires:	kdebase >= %{_version}
+Requires:	kdebase-desktop >= 9:%{version}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
 
@@ -61,25 +58,11 @@ KDE Window Decoration - CDE.
 %description -n kde-decoration-cde -l pl
 Dekoracja okna dla KDE - CDE.
 
-%package -n kde-decoration-icewm-ext
-Summary:	Extensions for KDE IceWM decoration
-Summary(pl):	Rozszerzenie dekoracji okna "IceWM" dla KDE
-Group:		X11/Amusements
-Requires:	kde-decoration-icewm >= %{_version}
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes
-
-%description -n kde-decoration-icewm-ext
-Extensions for KDE "IceWM" decoration.
-
-%description -n kde-decoration-icewm-ext -l pl
-Rozszerzenie dekoracji okna IceWM dla KDE.
-
 %package -n kde-decoration-glow
 Summary:	KDE Window Decoration - Glow
 Summary(pl):	Dekoracja okna dla KDE - Glow
 Group:		X11/Amusements
-Requires:	kdebase >= %{_version}
+Requires:	kdebase-desktop >= 9:%{version}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
 
@@ -89,11 +72,53 @@ KDE Window Decoration - Glow.
 %description -n kde-decoration-glow -l pl
 Dekoracja okna dla KDE - Glow.
 
+%package -n kde-decoration-icewm
+Summary:	Extensions for KDE IceWM decoration
+Summary(pl):	Rozszerzenie dekoracji okna "IceWM" dla KDE
+Group:		X11/Amusements
+Requires:	kdebase-desktop >= 9:%{version}
+Obsoletes:	%{name}
+Obsoletes:	%{name}-themes
+
+%description -n kde-decoration-icewm
+Extensions for KDE "IceWM" decoration.
+
+%description -n kde-decoration-icewm -l pl
+Rozszerzenie dekoracji okna IceWM dla KDE.
+
+%package -n kde-decoration-kde1
+Summary:	KDE Window Decoration - KDE 1
+Summary(pl):	Dekoracja okna dla KDE - KDE 1
+Group:		X11/Amusements
+Requires:	kdebase-desktop >= 9:%{version}
+Obsoletes:	%{name}
+Obsoletes:	%{name}-themes
+
+%description -n kde-decoration-kde1
+KDE Window Decoration - KDE 1.
+
+%description -n kde-decoration-kde1 -l pl
+Dekoracja okna dla KDE - KDE 1.
+
+%package -n kde-decoration-kstep
+Summary:	KDE Window Decoration - Kstep
+Summary(pl):	Dekoracja okna dla KDE - Kstep
+Group:		X11/Amusements
+Requires:	kdebase-desktop >= 9:%{version}
+Obsoletes:	%{name}
+Obsoletes:	%{name}-themes
+
+%description -n kde-decoration-kstep
+KDE Window Decoration - Kstep.
+
+%description -n kde-decoration-kstep -l pl
+Dekoracja okna dla KDE - Kstep.
+
 %package -n kde-decoration-openlook
 Summary:	KDE Window Decoration - OpenLook
 Summary(pl):	Dekoracja okna dla KDE - OpenLook
 Group:		X11/Amusements
-Requires:	kdebase >= %{_version}
+Requires:	kdebase-desktop >= 9:%{version}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
 
@@ -103,10 +128,69 @@ KDE Window Decoration - OpenLook.
 %description -n kde-decoration-openlook -l pl
 Dekoracja okna dla KDE - OpenLook.
 
+%package -n kde-decoration-plastik
+Summary:	KDE Window Decoration - Plastik
+Summary(pl):	Dekoracja okna dla KDE - Plastik
+Group:		X11/Amusements
+Requires:	kdebase-desktop >= 9:%{version}
+Obsoletes:	%{name}
+Obsoletes:	%{name}-themes
+
+%description -n kde-decoration-plastik
+KDE Window Decoration - Plastik.
+
+%description -n kde-decoration-plastik -l pl
+Dekoracja okna dla KDE - Plastik.
+
+%package -n kde-decoration-riscos
+Summary:	KDE Window Decoration - Risc OS
+Summary(pl):	Dekoracja okna dla KDE - Risc OS
+Requires:	kdebase-desktop >= 9:%{version}
+Group:		X11/Amusements
+Obsoletes:	%{name}
+Obsoletes:	%{name}-themes
+
+%description -n kde-decoration-riscos
+KDE Window Decoration - Risc OS.
+
+%description -n kde-decoration-riscos -l pl
+Dekoracja okna dla KDE - Risc OS.
+
+%package -n kde-decoration-system
+Summary:	KDE Window Decoration - System
+Summary(pl):	Dekoracja okna dla KDE - System
+Group:		X11/Amusements
+Requires:	kdebase-desktop >= 9:%{version}
+Obsoletes:	%{name}
+Obsoletes:	%{name}-themes
+
+%description -n kde-decoration-system
+KDE Window Decoration - System.
+
+%description -n kde-decoration-system -l pl
+Dekoracja okna dla KDE - System.
+
+%package -n kde-icons-Locolor
+Summary:	KDE Icons Theme - locolor
+Summary(pl):	Motyw ikon dla KDE - locolor
+Group:		X11/Amusements
+Requires:	kdelibs >= 9:%{version}
+Obsoletes:	%{name}
+Obsoletes:	%{name}-icons-locolor
+Obsoletes:	%{name}-locolor
+Obsoletes:	%{name}-themes
+
+%description -n kde-icons-Locolor
+KDE Icons Theme - locolor.
+
+%description -n kde-icons-Locolor -l pl
+Motyw ikon dla KDE - locolor.
+
 %package -n kde-icons-Technical
 Summary:	KDE Icons Theme - Technical
 Summary(pl):	Motyw ikon dla KDE - Technical
 Group:		X11/Amusements
+Requires:	kdelibs >= 9:%{version}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
 
@@ -120,6 +204,7 @@ Motyw ikon dla KDE - Technical.
 Summary:	KDE Icons Theme - ikons
 Summary(pl):	Motyw ikon dla KDE - ikons
 Group:		X11/Amusements
+Requires:	kdelibs >= 9:%{version}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
 
@@ -133,6 +218,7 @@ Motyw ikon dla KDE - ikons.
 Summary:	KDE Icons Theme - kdeclassic
 Summary(pl):	Motyw ikon dla KDE - kdeclassic
 Group:		X11/Amusements
+Requires:	kdelibs >= 9:%{version}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
 
@@ -142,25 +228,23 @@ KDE Icons Theme - kdeclassic.
 %description -n kde-icons-kdeclassic -l pl
 Motyw ikon dla KDE - kdeclassic.
 
-%package -n kde-icons-Locolor
-Summary:	KDE Icons Theme - locolor
-Summary(pl):	Motyw ikon dla KDE - locolor
+%package -n kde-icons-kids
+Summary:	KDE Icons Theme - kids
+Summary(pl):	Motyw ikon dla KDE - kids
 Group:		X11/Amusements
-Obsoletes:	%{name}
-Obsoletes:	%{name}-icons-locolor
-Obsoletes:	%{name}-locolor
-Obsoletes:	%{name}-themes
+Requires:	kdelibs >= 9:%{version}
 
-%description -n kde-icons-Locolor
-KDE Icons Theme - locolor.
+%description -n kde-icons-kids
+KDE Icons Theme - kids.
 
-%description -n kde-icons-Locolor -l pl
-Motyw ikon dla KDE - locolor.
+%description -n kde-icons-kids -l pl
+Motyw ikon dla KDE - kids.
 
 %package -n kde-icons-slick
 Summary:	KDE Icons Theme - slick
 Summary(pl):	Motyw ikon dla KDE - slick
 Group:		X11/Amusements
+Requires:	kdelibs >= 9:%{version}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
 
@@ -174,6 +258,7 @@ Motyw ikon dla KDE - slick.
 Summary:	KDE Style - DotNet
 Summary(pl):	Styl dla KDE - DotNet
 Group:		X11/Amusements
+Requires:	kdebase-core >= 9:%{version}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
 
@@ -183,11 +268,26 @@ KDE Style - DotNet.
 %description -n kde-style-dotnet -l pl
 Styl dla KDE - DotNet.
 
+%package -n kde-style-plastik
+Summary:	KDE Style - Plastik
+Summary(pl):	Styl dla KDE - Plastik
+Group:		X11/Amusements
+Requires:	kdebase-core >= 9:%{version}
+Obsoletes:	%{name}
+Obsoletes:	%{name}-themes
+
+%description -n kde-style-plastik
+KDE Style - Plastik.
+
+%description -n kde-style-plastik -l pl
+Styl dla KDE - Plastik.
+
+
 %package kworldclock
 Summary:	Themes for kworldclock
 Summary(pl):	Motywy dla kworldclock
 Group:		X11/Amusements
-Requires:	kdetoys-kworldclock
+Requires:	kdetoys-kworldclock >= %{version}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes-kworldclock
 
@@ -201,7 +301,7 @@ Motywy dla kworldclock.
 Summary:	Screen savers for KDE
 Summary(pl):	Wygaszacze ekranu dla KDE
 Group:		X11/Amusements
-Requires:	kdebase-screensavers
+Requires:	kdebase-screensavers >= 9:%{version}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
 
@@ -215,6 +315,7 @@ Wygaszacze ekranu dla KDE.
 Summary:	KDE Sounds
 Summary(pl):	D¼wiêki dla KDE
 Group:		X11/Amusements
+Requires:	kdebase-desktop >= 9:%{version}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
 
@@ -228,8 +329,7 @@ D¼wiêki dla KDE.
 Summary:	KDE Wallpapers
 Summary(pl):	Tapety dla KDE
 Group:		X11/Amusements
-# Holds %{_datadir}/wallpapers
-Requires:	kdebase >= %{_version}
+Requires:	kdelibs >= 9:%{version}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
 
@@ -240,28 +340,17 @@ KDE Wallpapers.
 Tapety dla KDE.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{_snap}
 %patch0 -p1
-%patch1 -p1
 
 %build
-kde_appsdir="%{_applnkdir}"; export kde_appsdir
-kde_htmldir="%{_htmldir}"; export kde_htmldir
-kde_icondir="%{_pixmapsdir}"; export kde_icondir
-
-CFLAGS="%{rpmcflags}"
-CXXFLAGS="%{rpmcflags}"
-
-for plik in `find ./ -name \*.desktop` ; do
-	echo $plik
-	sed -e 's/\[nb\]/[no]/g' $plik > ${plik}.1
-	mv -f ${plik}.1 $plik
+for f in `find . -name \*.desktop | xargs grep -l '\[nb\]'` ; do
+	echo -e ',s/\[nb\]=/[no]=/\n,w' | ed $f 2>/dev/null
 done
 
 %{__make} -f admin/Makefile.common cvs
 
 %configure \
-	--%{?debug:en}%{!?debug:dis}able-debug \
 	--disable-rpath \
 	--enable-final
 
@@ -273,81 +362,110 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-#mv $RPM_BUILD_ROOT%{_pixmapsdir}/{L,l}ocolor
-# Conflict with kdeaddons-kicker: (not verified yet)
-#rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/ktimemon.png
-# Conflict with kdebase:
-#rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/bell.png
-# Conflict with kdegames-kspaceduel: (not verifiet yet)
-#rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/kspaceduel.png
-# Conflict with kdegames-lskat:
-#rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/lskat.png
-# Conflict with kdenetwork-ksirc:
-#rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/ksirc.png
-# Conflict with kdesdk:
-#rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/mimetypes/gettext.png
-#rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/kbabel.png
-# Conflicts with kdetoys-kteatime:
-#rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/16x16/apps/kteatime.png
-# Conflict with kdetoys-ktux:
-#rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/ktux.png
-# Conflict with koffice-kspread: (not verified yet)
-#rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/kspreadcalc.png
-
-bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT
-
-#%find_lang kdeartwork --with-kde --all-name
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files -n kde-decoration-cde
 %defattr(644,root,root,755)
-%{_libdir}/kde3/kwin_cde*.la
-%attr(755,root,root) %{_libdir}/kde3/kwin_cde*.so
-%{_datadir}/apps/kwin/cde*
+%{_libdir}/kde3/kwin3_cde.la
+%attr(755,root,root) %{_libdir}/kde3/kwin3_cde.so
+%{_libdir}/kde3/kwin_cde_config.la
+%attr(755,root,root) %{_libdir}/kde3/kwin_cde_config.so
+%{_datadir}/apps/kwin/cde.desktop
 
-%files -n kde-decoration-icewm-ext
+%files -n kde-decoration-icewm
 %defattr(644,root,root,755)
-%{_datadir}/apps/kwin/icewm-themes/*
+%{_libdir}/kde3/kwin3_icewm.la
+%attr(755,root,root) %{_libdir}/kde3/kwin3_icewm.so
+%{_libdir}/kde3/kwin_icewm_config.la
+%attr(755,root,root) %{_libdir}/kde3/kwin_icewm_config.so
+%{_datadir}/apps/kwin/icewm-themes
+%{_datadir}/apps/kwin/icewm.desktop
 
 %files -n kde-decoration-glow
 %defattr(644,root,root,755)
-%{_libdir}/kde3/kwin_glow*.la
-%attr(755,root,root) %{_libdir}/kde3/kwin_glow*.so
-%{_datadir}/apps/kwin/glow*
+%{_libdir}/kde3/kwin3_glow.la
+%attr(755,root,root) %{_libdir}/kde3/kwin3_glow.so
+%{_libdir}/kde3/kwin_glow_config.la
+%attr(755,root,root) %{_libdir}/kde3/kwin_glow_config.so
+%{_datadir}/apps/kwin/glow-themes
+%{_datadir}/apps/kwin/glow.desktop
+
+#%files -n kde-decoration-kde1
+#%defattr(644,root,root,755)
+#%{_libdir}/kde3/kwin_kde1.la
+#%attr(755,root,root) %{_libdir}/kde3/kwin_kde1.so
+#%{_datadir}/apps/kwin/kde1*
+
+%files -n kde-decoration-kstep
+%defattr(644,root,root,755)
+%{_libdir}/kde3/kwin3_kstep.la
+%attr(755,root,root) %{_libdir}/kde3/kwin3_kstep.so
+%{_datadir}/apps/kwin/kstep*
 
 %files -n kde-decoration-openlook
 %defattr(644,root,root,755)
-%{_libdir}/kde3/kwin_openlook.la
-%attr(755,root,root) %{_libdir}/kde3/kwin_openlook.so
-%{_datadir}/apps/kwin/openlook*
+%{_libdir}/kde3/kwin3_openlook.la
+%attr(755,root,root) %{_libdir}/kde3/kwin3_openlook.so
+%{_datadir}/apps/kwin/openlook.desktop
+
+%files -n kde-decoration-plastik
+%defattr(644,root,root,755)
+%{_libdir}/kde3/kwin3_plastik.la
+%attr(755,root,root) %{_libdir}/kde3/kwin3_plastik.so
+%{_libdir}/kde3/kwin_plastik_config.la
+%attr(755,root,root) %{_libdir}/kde3/kwin_plastik_config.so
+%{_datadir}/apps/kwin/plastik.desktop
+
+#%files -n kde-decoration-riscos
+#%defattr(644,root,root,755)
+#%{_libdir}/kde3/kwin_riscos.la
+#%attr(755,root,root) %{_libdir}/kde3/kwin_riscos.so
+#%{_datadir}/apps/kwin/riscos*
+
+#%files -n kde-decoration-system
+#%defattr(644,root,root,755)
+#%{_libdir}/kde3/kwin_system.la
+#%attr(755,root,root) %{_libdir}/kde3/kwin_system.so
+#%{_datadir}/apps/kwin/system*
 
 %files -n kde-icons-Technical
 %defattr(644,root,root,755)
-%{_pixmapsdir}/Technical
+%{_iconsdir}/Technical
 
 %files -n kde-icons-ikons
 %defattr(644,root,root,755)
-%{_pixmapsdir}/ikons
+%{_iconsdir}/ikons
 
 %files -n kde-icons-kdeclassic
 %defattr(644,root,root,755)
-%{_pixmapsdir}/kdeclassic
+%{_iconsdir}/kdeclassic
+
+%files -n kde-icons-kids
+%defattr(644,root,root,755)
+%{_iconsdir}/kids
 
 %files -n kde-icons-Locolor
 %defattr(644,root,root,755)
-%{_pixmapsdir}/Locolor
+%{_iconsdir}/Locolor
 
 %files -n kde-icons-slick
 %defattr(644,root,root,755)
-%{_pixmapsdir}/slick
+%{_iconsdir}/slick
 
 %files -n kde-style-dotnet
 %defattr(644,root,root,755)
 %{_libdir}/kde3/plugins/styles/dotnet.la
 %attr(755,root,root) %{_libdir}/kde3/plugins/styles/dotnet.so
 %{_datadir}/apps/kstyle/themes/dotnet*
+
+%files -n kde-style-plastik
+%defattr(644,root,root,755)
+%{_libdir}/kde3/kstyle_plastik_config.la
+%attr(755,root,root) %{_libdir}/kde3/kstyle_plastik_config.so
+%{_libdir}/kde3/plugins/styles/plastik.la
+%attr(755,root,root) %{_libdir}/kde3/plugins/styles/plastik.so
+%{_datadir}/apps/kstyle/themes/plastik.themerc
 
 %files kworldclock
 %defattr(644,root,root,755)
@@ -358,6 +476,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/apps/kscreensaver/*
+# TODO: Why these aren't installing??
 #%{_datadir}/config/*
 
 %files sounds
