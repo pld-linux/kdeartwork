@@ -26,6 +26,7 @@ BuildRequires:	OpenGL-devel
 BuildRequires:	XFree86-devel
 BuildRequires:	ed
 BuildRequires:	kdebase-devel
+BuildRequires:	kdebase-kwin_plugin
 BuildRequires:	kdelibs-devel
 BuildRequires:	libxml2-progs
 Requires:	kdelibs = 8:%{version}
