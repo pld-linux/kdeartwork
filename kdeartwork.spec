@@ -1,7 +1,7 @@
 
 %define		_state		snapshots
 %define		_ver		3.1.90
-%define         _snap           030616
+%define         _snap           030622
 
 Summary:	K Desktop Environment - artwork
 Summary(es):	K Desktop Environment - Plugins e Scripts para aplicativos KDE
@@ -17,7 +17,7 @@ Vendor:		The KDE Team
 Group:		X11/Libraries
 #Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_ver}/src/%{name}-%{version}.tar.bz2
 Source0:        http://www.kernel.pl/~adgor/kde/%{name}-%{_snap}.tar.bz2
-# Source0-md5:	5c8923e96a1386b706ab2b1cb73ad630
+# Source0-md5:	edcd15ab4bb8820f7bdabc51366d9bc7	
 Patch0:		%{name}-screensavers.patch
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-devel
