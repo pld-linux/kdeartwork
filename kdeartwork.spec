@@ -26,7 +26,6 @@ BuildRequires:	libxml2-progs
 Requires:	kdelibs = %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	kdeartwork-locolor
-Obsoletes:	kdeartwork-kworldclock
 
 %define 	_noautoreqdep	libGL.so.1 libGLU.so.1
 %define		_prefix		/usr/X11R6
