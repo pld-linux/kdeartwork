@@ -22,15 +22,13 @@ Patch100:	%{name}-branch.diff
 Patch0:		%{name}-screensavers.patch
 Patch1:		%{name}-xscreensaver-dir.patch
 URL:		http://www.kde.org/
-BuildRequires:	autoconf
-BuildRequires:	unsermake >= 040511
-BuildRequires:	kdelibs-devel
-BuildRequires:	automake
 BuildRequires:	OpenGL-devel
 BuildRequires:	XFree86-devel
-BuildRequires:	ed
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	kdebase-devel >= 9:%{version}
 BuildRequires:	libxml2-progs
+BuildRequires:	unsermake >= 040511
 Requires:	kdelibs = 9:%{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
