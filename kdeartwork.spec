@@ -1,10 +1,10 @@
 #
 # Conditional build:
-%bcond_without	i18n	# don't build i18n subpackages
+%bcond_with i18n	# w/wo i18n subpackages
 #
-%define		_state		stable
-%define		_ver		3.2.0
-##%define		_snap		040110
+%define		_state		snapshots
+%define		_ver		3.2.90
+%define		_snap		040216
 
 Summary:	K Desktop Environment - artwork
 Summary(es):	K Desktop Environment - Plugins e Scripts para aplicativos KDE
@@ -12,19 +12,18 @@ Summary(ko):	KDE¿ë
 Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
-Version:	%{_ver}
-Release:	3
+Version:	%{_ver}.%{_snap}
+Release:	1
 Epoch:		8
 License:	LGPL
 Vendor:		The KDE Team
 Group:		X11/Libraries
-Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_ver}/src/%{name}-%{version}.tar.bz2
+#Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_ver}/src/%{name}-%{version}.tar.bz2
 #Source0:	http://ep09.pld-linux.org/~djurban/kde/%{name}-%{version}.tar.bz2
-# Source0-md5:	882a798e09e9529f102599d24bb7daee
-%if %{with i18n}
-Source1:        http://ep09.pld-linux.org/~djurban/kde/i18n/kde-i18n-%{name}-%{version}.tar.bz2
-# Source1-md5:	e1d979cdd225df242239885c364c0db5
-%endif
+Source0:	http://ep09.pld-linux.org/~adgor/kde/%{name}.tar.bz2
+##%% Source0-md5:	882a798e09e9529f102599d24bb7daee
+#Source1:        http://ep09.pld-linux.org/~djurban/kde/i18n/kde-i18n-%{name}-%{version}.tar.bz2
+##%% Source1-md5:	e1d979cdd225df242239885c364c0db5
 Patch0:		%{name}-screensavers.patch
 Patch1:		%{name}-xscreensaver-dir.patch
 URL:		http://www.kde.org/
@@ -33,6 +32,7 @@ BuildRequires:	XFree86-devel
 BuildRequires:	ed
 BuildRequires:	kdebase-devel >= 9:%{version}
 BuildRequires:	libxml2-progs
+BuildRequires:	unsermake
 Requires:	kdelibs = 9:%{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -444,20 +444,23 @@ Internationalization and localization files for screensavers.
 Pliki umiêdzynarodawiaj±ce dla screensavers.
 
 %prep
-%setup -q
+%setup -q -n %{name}
 %patch0 -p1
 %patch1 -p1
 
 %build
 cp -f /usr/share/automake/config.sub admin
+
+export UNSERMAKE=/usr/share/unsermake/unsermake
+
 %{__make} -f admin/Makefile.common cvs
 
 %configure \
 	XSCREENSAVER=/usr/%{_lib}/xscreensaver/flame \
 	XSCREENSAVER_CONFIG=/etc/X11/xscreensaver \
-	--with-qt-libraries=%{_libdir} \
 	--disable-rpath \
-	--enable-final
+	--enable-final \
+	--with-qt-libraries=%{_libdir}
 
 %{__make}
 
@@ -475,7 +478,7 @@ rm -f $RPM_BUILD_ROOT%{_datadir}/apps/kscreensaver/pixmaps.desktop
 # Debian manpages
 install -d $RPM_BUILD_ROOT%{_mandir}/man1
 # these don't exist in 3.2:
-rm -f debian/{kbouboule,kmatrix,kmorph3d,kpipes,kpyro,krock,kslidescreen}.kss.1
+#rm -f debian/{kbouboule,kmatrix,kmorph3d,kpipes,kpyro,krock,kslidescreen}.kss.1
 install debian/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
 %if %{with i18n}
@@ -491,20 +494,19 @@ else
 	exit 1
 fi
 
-%find_lang desktop_kdeartwork --with-kde
-
-%find_lang kstyle_plastik_config --with-kde
-%find_lang kwin_cde_config --with-kde
-%find_lang kwin_glow_config --with-kde
-%find_lang kwin_icewm_config --with-kde
-%find_lang kwin_plastik_config --with-kde
+%find_lang desktop_kdeartwork		--with-kde
+%find_lang kstyle_plastik_config	--with-kde
+%find_lang kwin_cde_config		--with-kde
+%find_lang kwin_glow_config		--with-kde
+%find_lang kwin_icewm_config		--with-kde
+%find_lang kwin_plastik_config		--with-kde
 
 > screensavers.lang
-%find_lang klock --with-kde
+%find_lang klock	--with-kde
 cat klock.lang >> screensavers.lang
-%find_lang kpartsaver --with-kde
+%find_lang kpartsaver	--with-kde
 cat kpartsaver.lang >> screensavers.lang
-%find_lang kxsconfig --with-kde
+%find_lang kxsconfig	--with-kde
 cat kxsconfig.lang >> screensavers.lang
 
 %endif
@@ -580,11 +582,11 @@ rm -rf $RPM_BUILD_ROOT
 #%attr(755,root,root) %{_libdir}/kde3/kwin_riscos.so
 #%{_datadir}/apps/kwin/riscos*
 
-#%files -n kde-decoration-system
-#%defattr(644,root,root,755)
-#%{_libdir}/kde3/kwin_system.la
-#%attr(755,root,root) %{_libdir}/kde3/kwin_system.so
-#%{_datadir}/apps/kwin/system*
+%files -n kde-decoration-system
+%defattr(644,root,root,755)
+%{_libdir}/kde3/kwin3_system.la
+%attr(755,root,root) %{_libdir}/kde3/kwin3_system.so
+%{_datadir}/apps/kwin/system.desktop
 
 %files -n kde-icons-Technical
 %defattr(644,root,root,755)
