@@ -1,6 +1,6 @@
 
 %define		_state		unstable
-%define		_kdever		kde-3.1-rc3
+%define		_kdever		kde-3.1-rc5
 
 Summary:	K Desktop Environment - artwork
 Summary(es):	K Desktop Environment - Plugins e Scripts para aplicativos KDE
@@ -8,7 +8,7 @@ Summary(ko):	KDE¿ë
 Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
-Version:	3.0.99
+Version:	3.1
 Release:	1
 Epoch:		7
 License:	LGPL
@@ -17,10 +17,6 @@ Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_kdever}/src/%{name}-%{version}.tar.bz2
 # generated from kde-i18n
 #Source1:	kde-i18n-%{name}-%{version}.tar.bz2
-#Patch0:		%{name}-fix-icon-in-about-dialogbox2.patch
-#Patch1:		%{name}-fix-icon-in-about-dialogbox3.patch
-#Patch2:		%{name}-fix-icon-in-about-dialogbox.patch
-#Patch3:		%{name}-fix-mem-leak.patch
 BuildRequires:	OpenGL-devel
 BuildRequires:	XFree86-devel
 BuildRequires:	kdebase-devel
@@ -208,10 +204,6 @@ Tapety dla KDE
 
 %prep
 %setup -q
-#%patch0 -p1
-#%patch1 -p1
-#%patch2 -p1
-#%patch3 -p1
 
 %build
 kde_htmldir="%{_htmldir}"; export kde_htmldir
@@ -230,6 +222,10 @@ CXXFLAGS="%{rpmcflags}"
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
+
+ALD=$RPM_BUILD_ROOT%{_applnkdir}
+install -d $ALD/.hidden
+mv $ALD/{System/ScreenSavers,.hidden}
 
 #mv $RPM_BUILD_ROOT%{_pixmapsdir}/{L,l}ocolor
 # Conflict with kdeaddons-kicker: (not verified yet)
@@ -312,7 +308,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/apps/kscreensaver
-%{_applnkdir}/System/ScreenSavers/*
+%{_applnkdir}/.hidden/ScreenSavers/*
 
 %files sounds
 %defattr(644,root,root,755)
