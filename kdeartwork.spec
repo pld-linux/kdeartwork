@@ -9,12 +9,13 @@ Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	%{_ver}
-Release:	1
+Release:	2
 Epoch:		7
 License:	LGPL
 Vendor:		The KDE Team
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_ver}/src/%{name}-%{version}.tar.bz2
+Patch0:         %{name}-screensavers.patch
 # generated from kde-i18n
 #Source1:	kde-i18n-%{name}-%{version}.tar.bz2
 URL:		http://www.kde.org/
@@ -203,6 +204,7 @@ Tapety dla KDE.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 kde_appsdir="%{_applnkdir}"; export kde_appsdir
@@ -233,8 +235,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 ALD=$RPM_BUILD_ROOT%{_applnkdir}
-install -d $ALD/.hidden
-mv $ALD/{System/ScreenSavers,.hidden}
+#install -d $ALD/.hidden
+#mv $ALD/{System/ScreenSavers,.hidden}
 
 #mv $RPM_BUILD_ROOT%{_pixmapsdir}/{L,l}ocolor
 # Conflict with kdeaddons-kicker: (not verified yet)
@@ -320,9 +322,8 @@ rm -rf $RPM_BUILD_ROOT
 %files screensavers
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
-%{_datadir}/apps/kscreensaver
-%{_datadir}/config/*
-%{_applnkdir}/.hidden/ScreenSavers/*
+%{_datadir}/apps/kscreensaver/*
+#%{_datadir}/config/*
 
 %files sounds
 %defattr(644,root,root,755)
