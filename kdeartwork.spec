@@ -57,8 +57,8 @@ Summary:	KDE Window Decoration - CDE
 Summary(pl):	Dekoracja okna dla KDE - CDE
 Group:		X11/Amusements
 Requires:	kdebase-desktop >= 9:%{version}
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-themes
 
 %description -n kde-decoration-cde
 KDE Window Decoration - CDE.
@@ -71,8 +71,8 @@ Summary:	KDE Window Decoration - Glow
 Summary(pl):	Dekoracja okna dla KDE - Glow
 Group:		X11/Amusements
 Requires:	kdebase-desktop >= 9:%{version}
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-themes
 
 %description -n kde-decoration-glow
 KDE Window Decoration - Glow.
@@ -85,8 +85,8 @@ Summary:	Extensions for KDE IceWM decoration
 Summary(pl):	Rozszerzenie dekoracji okna "IceWM" dla KDE
 Group:		X11/Amusements
 Requires:	kdebase-desktop >= 9:%{version}
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-themes
 
 %description -n kde-decoration-icewm
 Extensions for KDE "IceWM" decoration.
@@ -99,8 +99,8 @@ Summary:	KDE Window Decoration - KDE 1
 Summary(pl):	Dekoracja okna dla KDE - KDE 1
 Group:		X11/Amusements
 Requires:	kdebase-desktop >= 9:%{version}
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-themes
 
 %description -n kde-decoration-kde1
 KDE Window Decoration - KDE 1.
@@ -113,8 +113,8 @@ Summary:	KDE Window Decoration - Kstep
 Summary(pl):	Dekoracja okna dla KDE - Kstep
 Group:		X11/Amusements
 Requires:	kdebase-desktop >= 9:%{version}
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-themes
 
 %description -n kde-decoration-kstep
 KDE Window Decoration - Kstep.
@@ -127,8 +127,8 @@ Summary:	KDE Window Decoration - OpenLook
 Summary(pl):	Dekoracja okna dla KDE - OpenLook
 Group:		X11/Amusements
 Requires:	kdebase-desktop >= 9:%{version}
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-themes
 
 %description -n kde-decoration-openlook
 KDE Window Decoration - OpenLook.
@@ -141,8 +141,8 @@ Summary:	KDE Window Decoration - Plastik
 Summary(pl):	Dekoracja okna dla KDE - Plastik
 Group:		X11/Amusements
 Requires:	kdebase-desktop >= 9:%{version}
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-themes
 
 %description -n kde-decoration-plastik
 KDE Window Decoration - Plastik.
@@ -155,8 +155,8 @@ Summary:	KDE Window Decoration - Risc OS
 Summary(pl):	Dekoracja okna dla KDE - Risc OS
 Requires:	kdebase-desktop >= 9:%{version}
 Group:		X11/Amusements
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-themes
 
 %description -n kde-decoration-riscos
 KDE Window Decoration - Risc OS.
@@ -169,8 +169,8 @@ Summary:	KDE Window Decoration - System
 Summary(pl):	Dekoracja okna dla KDE - System
 Group:		X11/Amusements
 Requires:	kdebase-desktop >= 9:%{version}
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-themes
 
 %description -n kde-decoration-system
 KDE Window Decoration - System.
@@ -183,10 +183,10 @@ Summary:	KDE Icons Theme - locolor
 Summary(pl):	Motyw ikon dla KDE - locolor
 Group:		X11/Amusements
 Requires:	kdelibs >= 9:%{version}
-Obsoletes:	%{name}
-Obsoletes:	%{name}-icons-locolor
-Obsoletes:	%{name}-locolor
-Obsoletes:	%{name}-themes
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-icons-locolor
+Obsoletes:	kdeartwork-locolor
+Obsoletes:	kdeartwork-themes
 
 %description -n kde-icons-Locolor
 KDE Icons Theme - locolor.
@@ -199,8 +199,8 @@ Summary:	KDE Icons Theme - Technical
 Summary(pl):	Motyw ikon dla KDE - Technical
 Group:		X11/Amusements
 Requires:	kdelibs >= 9:%{version}
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-themes
 
 %description -n kde-icons-Technical
 KDE Icons Theme - Technical.
@@ -213,8 +213,8 @@ Summary:	KDE Icons Theme - ikons
 Summary(pl):	Motyw ikon dla KDE - ikons
 Group:		X11/Amusements
 Requires:	kdelibs >= 9:%{version}
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-themes
 
 %description -n kde-icons-ikons
 KDE Icons Theme - ikons.
@@ -227,8 +227,8 @@ Summary:	KDE Icons Theme - kdeclassic
 Summary(pl):	Motyw ikon dla KDE - kdeclassic
 Group:		X11/Amusements
 Requires:	kdelibs >= 9:%{version}
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-themes
 
 %description -n kde-icons-kdeclassic
 KDE Icons Theme - kdeclassic.
@@ -253,8 +253,8 @@ Summary:	KDE Icons Theme - slick
 Summary(pl):	Motyw ikon dla KDE - slick
 Group:		X11/Amusements
 Requires:	kdelibs >= 9:%{version}
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-themes
 
 %description -n kde-icons-slick
 KDE Icons Theme - slick.
@@ -267,8 +267,8 @@ Summary:	KDE Style - DotNet
 Summary(pl):	Styl dla KDE - DotNet
 Group:		X11/Amusements
 Requires:	kdebase-core >= 9:%{version}
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-themes
 
 %description -n kde-style-dotnet
 KDE Style - DotNet.
@@ -281,8 +281,8 @@ Summary:	KDE Style - Plastik
 Summary(pl):	Styl dla KDE - Plastik
 Group:		X11/Amusements
 Requires:	kdebase-core >= 9:%{version}
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-themes
 
 %description -n kde-style-plastik
 KDE Style - Plastik.
@@ -295,8 +295,8 @@ Summary:	Themes for kworldclock
 Summary(pl):	Motywy dla kworldclock
 Group:		X11/Amusements
 Requires:	kdetoys-kworldclock >= %{version}
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes-kworldclock
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-themes-kworldclock
 
 %description kworldclock
 Themes for kworldclock.
@@ -309,8 +309,8 @@ Summary:	Screen savers for KDE
 Summary(pl):	Wygaszacze ekranu dla KDE
 Group:		X11/Amusements
 Requires:	kdebase-screensavers >= 9:%{version}
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-themes
 
 %description screensavers
 Screen savers for KDE.
@@ -323,8 +323,8 @@ Summary:	KDE Sounds
 Summary(pl):	D¼wiêki dla KDE
 Group:		X11/Amusements
 Requires:	kdebase-desktop >= 9:%{version}
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-themes
 
 %description sounds
 KDE Sounds.
@@ -337,27 +337,14 @@ Summary:	KDE Wallpapers
 Summary(pl):	Tapety dla KDE
 Group:		X11/Amusements
 Requires:	kdelibs >= 9:%{version}
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-themes
 
 %description wallpapers
 KDE Wallpapers.
 
 %description wallpapers -l pl
 Tapety dla KDE.
-
-%package i18n
-Summary:	Common internationalization and localization files for kdeartwork
-Summary(pl):	Wspó³dzielone pliki umiêdzynarodawiaj±ce dla kdeartwork
-Group:		X11/Applications
-#Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	kdelibs-i18n  >= 9:%{version}
-
-%description i18n
-Internationalization and localization files for kdeartwork.
-
-%description i18n -l pl
-Pliki umiêdzynarodawiaj±ce dla kdeartwork.
 
 %package -n kde-decoration-cde-i18n
 Summary:	Internationalization and localization files for kde-decoration-cde
