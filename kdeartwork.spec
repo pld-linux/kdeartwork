@@ -96,6 +96,7 @@ CFLAGS="%{rpmcflags}"
 CXXFLAGS="%{rpmcflags}"
 %configure \
 	--%{?debug:en}%{!?debug:dis}able-debug \
+	--disable-rpath \
 	--enable-final
 
 %{__make}
