@@ -300,15 +300,14 @@ install -d $RPM_BUILD_ROOT%{_mandir}/man1
 
 bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT
 
-#%find_lang kdeartwork --with-kde --all-name
-
 %find_lang	klock			--with-kde
 %find_lang	kpartsaver		--with-kde
 cat klock.lang kpartsaver.lang > screensavers.lang
-#%find_lang	kxsconfig		--with-kde
-#%find_lang	hacks			--with-kde
 %find_lang	kwin_cde_config		--with-kde
 %find_lang	kwin_glow_config	--with-kde
+
+# does not build
+#%find_lang	kxsconfig		--with-kde
 
 # probably obsolete
 #%find_lang	kless			--with-kde
