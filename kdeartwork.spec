@@ -13,7 +13,7 @@ Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	%{_ver}
-Release:	1
+Release:	2
 Epoch:		8
 License:	LGPL
 Vendor:		The KDE Team
@@ -364,7 +364,6 @@ Summary:	Internationalization and localization files for kde-decoration-cde
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde-decoration-cde
 Group:		X11/Applications
 Requires:	kde-decoration-cde = %{epoch}:%{version}-%{release}
-Requires:	%{name}-i18n = %{epoch}:%{version}-%{release}
 Requires:	kdebase-desktop-i18n >= 9:%{version}
 
 %description -n kde-decoration-cde-i18n
@@ -378,7 +377,6 @@ Summary:	Internationalization and localization files for kde-decoration-icewm
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde-decoration-icewm
 Group:		X11/Applications
 Requires:	kde-decoration-icewm = %{epoch}:%{version}-%{release}
-Requires:	%{name}-i18n = %{epoch}:%{version}-%{release}
 Requires:	kdebase-desktop-i18n >= 9:%{version}
 
 %description -n kde-decoration-icewm-i18n
@@ -392,7 +390,6 @@ Summary:	Internationalization and localization files for kde-decoration-glow
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde-decoration-glow
 Group:		X11/Applications
 Requires:	kde-decoration-glow = %{epoch}:%{version}-%{release}
-Requires:	%{name}-i18n = %{epoch}:%{version}-%{release}
 Requires:	kdebase-desktop-i18n >= 9:%{version}
 
 %description -n kde-decoration-glow-i18n
@@ -406,7 +403,6 @@ Summary:	Internationalization and localization files for kde-decoration-plastik
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde-decoration-plastik
 Group:		X11/Applications
 Requires:	kde-decoration-plastik = %{epoch}:%{version}-%{release}
-Requires:	%{name}-i18n = %{epoch}:%{version}-%{release}
 Requires:	kdebase-desktop-i18n >= 9:%{version}
 
 %description -n kde-decoration-plastik-i18n
@@ -420,7 +416,6 @@ Summary:	Internationalization and localization files for kde-style-plastik
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde-style-plastik
 Group:		X11/Applications
 Requires:	kde-style-plastik = %{epoch}:%{version}-%{release}
-Requires:	%{name}-i18n = %{epoch}:%{version}-%{release}
 Requires:	kdebase-core-i18n >= 9:%{version}
 
 %description -n kde-style-plastik-i18n
@@ -434,7 +429,6 @@ Summary:	Internationalization and localization files for screensavers
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla screensavers
 Group:		X11/Applications
 Requires:	%{name}-screensavers = %{epoch}:%{version}-%{release}
-Requires:	%{name}-i18n = %{epoch}:%{version}-%{release}
 Requires:	kdebase-screensavers-i18n >= 9:%{version}
 
 %description screensavers-i18n
