@@ -1,0 +1,5 @@
+- Added screensavers.patch
+- Updated %%files section
+- Fixed nb->no script
+- Release 2
+- djurban, why do You still comment out screensavers config files???
