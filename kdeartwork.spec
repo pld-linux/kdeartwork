@@ -1,7 +1,9 @@
 
-%define		_state		snapshots
-%define		_ver		3.1.94
-%define		_snap		040110
+%bcond_without  i18n    # dont build i18n subpackage
+
+%define		_state		stable
+%define		_ver		3.2.0
+##%define		_snap		040110
 
 Summary:	K Desktop Environment - artwork
 Summary(es):	K Desktop Environment - Plugins e Scripts para aplicativos KDE
@@ -9,17 +11,20 @@ Summary(ko):	KDE¿ë
 Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
-Version:	%{_ver}.%{_snap}
-Release:	2
+Version:	%{_ver}
+Release:	0.1
 Epoch:		8
 License:	LGPL
 Vendor:		The KDE Team
 Group:		X11/Libraries
 #Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_ver}/src/%{name}-%{version}.tar.bz2
-Source0:	http://ep09.pld-linux.org/~djurban/kde/%{name}-%{_snap}.tar.bz2
-# Source0-md5:	dee0223ce83bc2287fee31ee4d4d4658	
+Source0:	http://ep09.pld-linux.org/~djurban/kde/%{name}-%{version}.tar.bz2
+# Source0-md5:	882a798e09e9529f102599d24bb7daee
+%if %{with i18n}
+Source1:        http://ep09.pld-linux.org/~djurban/kde/i18n/kde-i18n-%{name}-%{version}.tar.bz2
+# Source1-md5:	e1d979cdd225df242239885c364c0db5
+%endif
 Patch0:		%{name}-screensavers.patch
-Patch1:         %{name}-fix_plastik.patch
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-devel
 BuildRequires:	XFree86-devel
@@ -340,10 +345,536 @@ KDE Wallpapers.
 %description wallpapers -l pl
 Tapety dla KDE.
 
+%package i18n
+Summary:	Common internationalization and localization files for kdeartwork
+Summary(pl):	Wspó³dzielone pliki umiêdzynarodawiaj±ce dla kdeartwork
+Group:	X11/Applications
+#Requires:	%{name} = %{epoch}:%{version}-%{release}
+Obsoletes:	kde-i18n-Affrikaans
+Obsoletes:	kde-i18n-Afrikaans
+Obsoletes:	kde-i18n-Arabic
+Obsoletes:	kde-i18n-Azerbaijani
+Obsoletes:	kde-i18n-Bulgarian
+Obsoletes:	kde-i18n-Bosnian
+Obsoletes:	kde-i18n-Catalan
+Obsoletes:	kde-i18n-Czech
+Obsoletes:	kde-i18n-Danish
+Obsoletes:	kde-i18n-German
+Obsoletes:	kde-i18n-Greek
+Obsoletes:	kde-i18n-English_UK
+Obsoletes:	kde-i18n-British
+Obsoletes:	kde-i18n-Esperanto
+Obsoletes:	kde-i18n-Spanish
+Obsoletes:	kde-i18n-Estonian
+Obsoletes:	kde-i18n-Finnish
+Obsoletes:	kde-i18n-French
+Obsoletes:	kde-i18n-Hebrew
+Obsoletes:	kde-i18n-Hindi
+Obsoletes:	kde-i18n-Croatian
+Obsoletes:	kde-i18n-Hungarian
+Obsoletes:	kde-i18n-Indonesian
+Obsoletes:	kde-i18n-Icelandic
+Obsoletes:	kde-i18n-Italian
+Obsoletes:	kde-i18n-Japanese
+Obsoletes:	kde-i18n-Korean
+Obsoletes:	kde-i18n-Lithuanian
+Obsoletes:	kde-i18n-Latvian
+Obsoletes:	kde-i18n-Maltese
+Obsoletes:	kde-i18n-Malay
+Obsoletes:	kde-i18n-Mongolian
+Obsoletes:	kde-i18n-Dutch
+Obsoletes:	kde-i18n-Norwegian
+Obsoletes:	kde-i18n-Norwegian_Bokmaal
+Obsoletes:	kde-i18n-Norwegian_Bookmal
+Obsoletes:	kde-i18n-Norwegian_Nynorsk
+Obsoletes:	kde-i18n-Polish
+Obsoletes:	kde-i18n-Portugnese
+Obsoletes:	kde-i18n-Portuguese
+Obsoletes:	kde-i18n-Brazil
+Obsoletes:	kde-i18n-Brazil_Portugnese
+Obsoletes:	kde-i18n-Brazil_Portuguese
+Obsoletes:	kde-i18n-Romanian
+Obsoletes:	kde-i18n-Russian
+Obsoletes:	kde-i18n-Slovak
+Obsoletes:	kde-i18n-Slovenian
+Obsoletes:	kde-i18n-Serbian
+Obsoletes:	kde-i18n-Swedish
+Obsoletes:	kde-i18n-Tamil
+Obsoletes:	kde-i18n-Thai
+Obsoletes:	kde-i18n-Turkish
+Obsoletes:	kde-i18n-Ukrainian
+Obsoletes:	kde-i18n-Uzbek
+Obsoletes:	kde-i18n-Venda
+Obsoletes:	kde-i18n-Vietnamese
+Obsoletes:	kde-i18n-Xhosa
+Obsoletes:	kde-i18n-Simplified_Chinese
+Obsoletes:	kde-i18n-Chinese
+Obsoletes:	kde-i18n-Chinese-Big5
+Obsoletes:	kde-i18n-Zulu
+Obsoletes:	kde-i18n-kdelibs
+Obsoletes:	kde-i18n
+
+%description i18n
+Internationalization and localization files for kdeartwork.
+
+%description -l pl i18n
+Pliki umiêdzynarodawiaj±ce dla kdeartwork.
+
+
+%package  -n  kde-decoration-cde-i18n
+Summary:	Internationalization and localization files for kde-decoration-cde
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde-decoration-cde
+Group:	X11/Applications
+Requires:	%{name}-kde-decoration-cde = %{epoch}:%{version}-%{release}
+Obsoletes:	kde-i18n-Affrikaans
+Obsoletes:	kde-i18n-Afrikaans
+Obsoletes:	kde-i18n-Arabic
+Obsoletes:	kde-i18n-Azerbaijani
+Obsoletes:	kde-i18n-Bulgarian
+Obsoletes:	kde-i18n-Bosnian
+Obsoletes:	kde-i18n-Catalan
+Obsoletes:	kde-i18n-Czech
+Obsoletes:	kde-i18n-Danish
+Obsoletes:	kde-i18n-German
+Obsoletes:	kde-i18n-Greek
+Obsoletes:	kde-i18n-English_UK
+Obsoletes:	kde-i18n-British
+Obsoletes:	kde-i18n-Esperanto
+Obsoletes:	kde-i18n-Spanish
+Obsoletes:	kde-i18n-Estonian
+Obsoletes:	kde-i18n-Finnish
+Obsoletes:	kde-i18n-French
+Obsoletes:	kde-i18n-Hebrew
+Obsoletes:	kde-i18n-Hindi
+Obsoletes:	kde-i18n-Croatian
+Obsoletes:	kde-i18n-Hungarian
+Obsoletes:	kde-i18n-Indonesian
+Obsoletes:	kde-i18n-Icelandic
+Obsoletes:	kde-i18n-Italian
+Obsoletes:	kde-i18n-Japanese
+Obsoletes:	kde-i18n-Korean
+Obsoletes:	kde-i18n-Lithuanian
+Obsoletes:	kde-i18n-Latvian
+Obsoletes:	kde-i18n-Maltese
+Obsoletes:	kde-i18n-Malay
+Obsoletes:	kde-i18n-Mongolian
+Obsoletes:	kde-i18n-Dutch
+Obsoletes:	kde-i18n-Norwegian
+Obsoletes:	kde-i18n-Norwegian_Bokmaal
+Obsoletes:	kde-i18n-Norwegian_Bookmal
+Obsoletes:	kde-i18n-Norwegian_Nynorsk
+Obsoletes:	kde-i18n-Polish
+Obsoletes:	kde-i18n-Portugnese
+Obsoletes:	kde-i18n-Portuguese
+Obsoletes:	kde-i18n-Brazil
+Obsoletes:	kde-i18n-Brazil_Portugnese
+Obsoletes:	kde-i18n-Brazil_Portuguese
+Obsoletes:	kde-i18n-Romanian
+Obsoletes:	kde-i18n-Russian
+Obsoletes:	kde-i18n-Slovak
+Obsoletes:	kde-i18n-Slovenian
+Obsoletes:	kde-i18n-Serbian
+Obsoletes:	kde-i18n-Swedish
+Obsoletes:	kde-i18n-Tamil
+Obsoletes:	kde-i18n-Thai
+Obsoletes:	kde-i18n-Turkish
+Obsoletes:	kde-i18n-Ukrainian
+Obsoletes:	kde-i18n-Uzbek
+Obsoletes:	kde-i18n-Venda
+Obsoletes:	kde-i18n-Vietnamese
+Obsoletes:	kde-i18n-Xhosa
+Obsoletes:	kde-i18n-Simplified_Chinese
+Obsoletes:	kde-i18n-Chinese
+Obsoletes:	kde-i18n-Chinese-Big5
+Obsoletes:	kde-i18n-Zulu
+Obsoletes:	kde-i18n-kdelibs
+Obsoletes:	kde-i18n
+
+%description -n  kde-decoration-cde-i18n
+Internationalization and localization files for kde-decoration-cde.
+
+%description -l pl  -n kde-decoration-cde-i18n
+Pliki umiêdzynarodawiaj±ce dla kde-decoration-cde.
+
+%package -n kde-decoration-icewm-i18n
+Summary:	Internationalization and localization files for kde-decoration-icewm
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde-decoration-icewm
+Group:	X11/Applications
+Requires:	%{name}-kde-decoration-icewm = %{epoch}:%{version}-%{release}
+Obsoletes:	kde-i18n-Affrikaans
+Obsoletes:	kde-i18n-Afrikaans
+Obsoletes:	kde-i18n-Arabic
+Obsoletes:	kde-i18n-Azerbaijani
+Obsoletes:	kde-i18n-Bulgarian
+Obsoletes:	kde-i18n-Bosnian
+Obsoletes:	kde-i18n-Catalan
+Obsoletes:	kde-i18n-Czech
+Obsoletes:	kde-i18n-Danish
+Obsoletes:	kde-i18n-German
+Obsoletes:	kde-i18n-Greek
+Obsoletes:	kde-i18n-English_UK
+Obsoletes:	kde-i18n-British
+Obsoletes:	kde-i18n-Esperanto
+Obsoletes:	kde-i18n-Spanish
+Obsoletes:	kde-i18n-Estonian
+Obsoletes:	kde-i18n-Finnish
+Obsoletes:	kde-i18n-French
+Obsoletes:	kde-i18n-Hebrew
+Obsoletes:	kde-i18n-Hindi
+Obsoletes:	kde-i18n-Croatian
+Obsoletes:	kde-i18n-Hungarian
+Obsoletes:	kde-i18n-Indonesian
+Obsoletes:	kde-i18n-Icelandic
+Obsoletes:	kde-i18n-Italian
+Obsoletes:	kde-i18n-Japanese
+Obsoletes:	kde-i18n-Korean
+Obsoletes:	kde-i18n-Lithuanian
+Obsoletes:	kde-i18n-Latvian
+Obsoletes:	kde-i18n-Maltese
+Obsoletes:	kde-i18n-Malay
+Obsoletes:	kde-i18n-Mongolian
+Obsoletes:	kde-i18n-Dutch
+Obsoletes:	kde-i18n-Norwegian
+Obsoletes:	kde-i18n-Norwegian_Bokmaal
+Obsoletes:	kde-i18n-Norwegian_Bookmal
+Obsoletes:	kde-i18n-Norwegian_Nynorsk
+Obsoletes:	kde-i18n-Polish
+Obsoletes:	kde-i18n-Portugnese
+Obsoletes:	kde-i18n-Portuguese
+Obsoletes:	kde-i18n-Brazil
+Obsoletes:	kde-i18n-Brazil_Portugnese
+Obsoletes:	kde-i18n-Brazil_Portuguese
+Obsoletes:	kde-i18n-Romanian
+Obsoletes:	kde-i18n-Russian
+Obsoletes:	kde-i18n-Slovak
+Obsoletes:	kde-i18n-Slovenian
+Obsoletes:	kde-i18n-Serbian
+Obsoletes:	kde-i18n-Swedish
+Obsoletes:	kde-i18n-Tamil
+Obsoletes:	kde-i18n-Thai
+Obsoletes:	kde-i18n-Turkish
+Obsoletes:	kde-i18n-Ukrainian
+Obsoletes:	kde-i18n-Uzbek
+Obsoletes:	kde-i18n-Venda
+Obsoletes:	kde-i18n-Vietnamese
+Obsoletes:	kde-i18n-Xhosa
+Obsoletes:	kde-i18n-Simplified_Chinese
+Obsoletes:	kde-i18n-Chinese
+Obsoletes:	kde-i18n-Chinese-Big5
+Obsoletes:	kde-i18n-Zulu
+Obsoletes:	kde-i18n-kdelibs
+Obsoletes:	kde-i18n
+
+%description -n kde-decoration-icewm-i18n
+Internationalization and localization files for kde-decoration-icewm.
+
+%description -l pl -n kde-decoration-icewm-i18n
+Pliki umiêdzynarodawiaj±ce dla kde-decoration-icewm.
+
+%package -n kde-decoration-glow-i18n
+Summary:	Internationalization and localization files for kde-decoration-glow
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde-decoration-glow
+Group:	X11/Applications
+Requires:	%{name}-kde-decoration-glow = %{epoch}:%{version}-%{release}
+Obsoletes:	kde-i18n-Affrikaans
+Obsoletes:	kde-i18n-Afrikaans
+Obsoletes:	kde-i18n-Arabic
+Obsoletes:	kde-i18n-Azerbaijani
+Obsoletes:	kde-i18n-Bulgarian
+Obsoletes:	kde-i18n-Bosnian
+Obsoletes:	kde-i18n-Catalan
+Obsoletes:	kde-i18n-Czech
+Obsoletes:	kde-i18n-Danish
+Obsoletes:	kde-i18n-German
+Obsoletes:	kde-i18n-Greek
+Obsoletes:	kde-i18n-English_UK
+Obsoletes:	kde-i18n-British
+Obsoletes:	kde-i18n-Esperanto
+Obsoletes:	kde-i18n-Spanish
+Obsoletes:	kde-i18n-Estonian
+Obsoletes:	kde-i18n-Finnish
+Obsoletes:	kde-i18n-French
+Obsoletes:	kde-i18n-Hebrew
+Obsoletes:	kde-i18n-Hindi
+Obsoletes:	kde-i18n-Croatian
+Obsoletes:	kde-i18n-Hungarian
+Obsoletes:	kde-i18n-Indonesian
+Obsoletes:	kde-i18n-Icelandic
+Obsoletes:	kde-i18n-Italian
+Obsoletes:	kde-i18n-Japanese
+Obsoletes:	kde-i18n-Korean
+Obsoletes:	kde-i18n-Lithuanian
+Obsoletes:	kde-i18n-Latvian
+Obsoletes:	kde-i18n-Maltese
+Obsoletes:	kde-i18n-Malay
+Obsoletes:	kde-i18n-Mongolian
+Obsoletes:	kde-i18n-Dutch
+Obsoletes:	kde-i18n-Norwegian
+Obsoletes:	kde-i18n-Norwegian_Bokmaal
+Obsoletes:	kde-i18n-Norwegian_Bookmal
+Obsoletes:	kde-i18n-Norwegian_Nynorsk
+Obsoletes:	kde-i18n-Polish
+Obsoletes:	kde-i18n-Portugnese
+Obsoletes:	kde-i18n-Portuguese
+Obsoletes:	kde-i18n-Brazil
+Obsoletes:	kde-i18n-Brazil_Portugnese
+Obsoletes:	kde-i18n-Brazil_Portuguese
+Obsoletes:	kde-i18n-Romanian
+Obsoletes:	kde-i18n-Russian
+Obsoletes:	kde-i18n-Slovak
+Obsoletes:	kde-i18n-Slovenian
+Obsoletes:	kde-i18n-Serbian
+Obsoletes:	kde-i18n-Swedish
+Obsoletes:	kde-i18n-Tamil
+Obsoletes:	kde-i18n-Thai
+Obsoletes:	kde-i18n-Turkish
+Obsoletes:	kde-i18n-Ukrainian
+Obsoletes:	kde-i18n-Uzbek
+Obsoletes:	kde-i18n-Venda
+Obsoletes:	kde-i18n-Vietnamese
+Obsoletes:	kde-i18n-Xhosa
+Obsoletes:	kde-i18n-Simplified_Chinese
+Obsoletes:	kde-i18n-Chinese
+Obsoletes:	kde-i18n-Chinese-Big5
+Obsoletes:	kde-i18n-Zulu
+Obsoletes:	kde-i18n-kdelibs
+Obsoletes:	kde-i18n
+
+%description -n kde-decoration-glow-i18n
+Internationalization and localization files for kde-decoration-glow.
+
+%description -l pl -n kde-decoration-glow-i18n
+Pliki umiêdzynarodawiaj±ce dla kde-decoration-glow.
+
+%package -n kde-decoration-plastik-i18n
+Summary:	Internationalization and localization files for kde-decoration-plastik
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde-decoration-plastik
+Group:	X11/Applications
+Requires:	%{name}-kde-decoration-plastik = %{epoch}:%{version}-%{release}
+Obsoletes:	kde-i18n-Affrikaans
+Obsoletes:	kde-i18n-Afrikaans
+Obsoletes:	kde-i18n-Arabic
+Obsoletes:	kde-i18n-Azerbaijani
+Obsoletes:	kde-i18n-Bulgarian
+Obsoletes:	kde-i18n-Bosnian
+Obsoletes:	kde-i18n-Catalan
+Obsoletes:	kde-i18n-Czech
+Obsoletes:	kde-i18n-Danish
+Obsoletes:	kde-i18n-German
+Obsoletes:	kde-i18n-Greek
+Obsoletes:	kde-i18n-English_UK
+Obsoletes:	kde-i18n-British
+Obsoletes:	kde-i18n-Esperanto
+Obsoletes:	kde-i18n-Spanish
+Obsoletes:	kde-i18n-Estonian
+Obsoletes:	kde-i18n-Finnish
+Obsoletes:	kde-i18n-French
+Obsoletes:	kde-i18n-Hebrew
+Obsoletes:	kde-i18n-Hindi
+Obsoletes:	kde-i18n-Croatian
+Obsoletes:	kde-i18n-Hungarian
+Obsoletes:	kde-i18n-Indonesian
+Obsoletes:	kde-i18n-Icelandic
+Obsoletes:	kde-i18n-Italian
+Obsoletes:	kde-i18n-Japanese
+Obsoletes:	kde-i18n-Korean
+Obsoletes:	kde-i18n-Lithuanian
+Obsoletes:	kde-i18n-Latvian
+Obsoletes:	kde-i18n-Maltese
+Obsoletes:	kde-i18n-Malay
+Obsoletes:	kde-i18n-Mongolian
+Obsoletes:	kde-i18n-Dutch
+Obsoletes:	kde-i18n-Norwegian
+Obsoletes:	kde-i18n-Norwegian_Bokmaal
+Obsoletes:	kde-i18n-Norwegian_Bookmal
+Obsoletes:	kde-i18n-Norwegian_Nynorsk
+Obsoletes:	kde-i18n-Polish
+Obsoletes:	kde-i18n-Portugnese
+Obsoletes:	kde-i18n-Portuguese
+Obsoletes:	kde-i18n-Brazil
+Obsoletes:	kde-i18n-Brazil_Portugnese
+Obsoletes:	kde-i18n-Brazil_Portuguese
+Obsoletes:	kde-i18n-Romanian
+Obsoletes:	kde-i18n-Russian
+Obsoletes:	kde-i18n-Slovak
+Obsoletes:	kde-i18n-Slovenian
+Obsoletes:	kde-i18n-Serbian
+Obsoletes:	kde-i18n-Swedish
+Obsoletes:	kde-i18n-Tamil
+Obsoletes:	kde-i18n-Thai
+Obsoletes:	kde-i18n-Turkish
+Obsoletes:	kde-i18n-Ukrainian
+Obsoletes:	kde-i18n-Uzbek
+Obsoletes:	kde-i18n-Venda
+Obsoletes:	kde-i18n-Vietnamese
+Obsoletes:	kde-i18n-Xhosa
+Obsoletes:	kde-i18n-Simplified_Chinese
+Obsoletes:	kde-i18n-Chinese
+Obsoletes:	kde-i18n-Chinese-Big5
+Obsoletes:	kde-i18n-Zulu
+Obsoletes:	kde-i18n-kdelibs
+Obsoletes:	kde-i18n
+
+%description -n kde-decoration-plastik-i18n
+Internationalization and localization files for kde-decoration-plastik.
+
+%description -l pl -n kde-decoration-plastik-i18n
+Pliki umiêdzynarodawiaj±ce dla kde-decoration-plastik.
+
+%package -n kde-style-plastik-i18n
+Summary:	Internationalization and localization files for kde-style-plastik
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde-style-plastik
+Group:	X11/Applications
+Requires:	%{name}-kde-style-plastik = %{epoch}:%{version}-%{release}
+Obsoletes:	kde-i18n-Affrikaans
+Obsoletes:	kde-i18n-Afrikaans
+Obsoletes:	kde-i18n-Arabic
+Obsoletes:	kde-i18n-Azerbaijani
+Obsoletes:	kde-i18n-Bulgarian
+Obsoletes:	kde-i18n-Bosnian
+Obsoletes:	kde-i18n-Catalan
+Obsoletes:	kde-i18n-Czech
+Obsoletes:	kde-i18n-Danish
+Obsoletes:	kde-i18n-German
+Obsoletes:	kde-i18n-Greek
+Obsoletes:	kde-i18n-English_UK
+Obsoletes:	kde-i18n-British
+Obsoletes:	kde-i18n-Esperanto
+Obsoletes:	kde-i18n-Spanish
+Obsoletes:	kde-i18n-Estonian
+Obsoletes:	kde-i18n-Finnish
+Obsoletes:	kde-i18n-French
+Obsoletes:	kde-i18n-Hebrew
+Obsoletes:	kde-i18n-Hindi
+Obsoletes:	kde-i18n-Croatian
+Obsoletes:	kde-i18n-Hungarian
+Obsoletes:	kde-i18n-Indonesian
+Obsoletes:	kde-i18n-Icelandic
+Obsoletes:	kde-i18n-Italian
+Obsoletes:	kde-i18n-Japanese
+Obsoletes:	kde-i18n-Korean
+Obsoletes:	kde-i18n-Lithuanian
+Obsoletes:	kde-i18n-Latvian
+Obsoletes:	kde-i18n-Maltese
+Obsoletes:	kde-i18n-Malay
+Obsoletes:	kde-i18n-Mongolian
+Obsoletes:	kde-i18n-Dutch
+Obsoletes:	kde-i18n-Norwegian
+Obsoletes:	kde-i18n-Norwegian_Bokmaal
+Obsoletes:	kde-i18n-Norwegian_Bookmal
+Obsoletes:	kde-i18n-Norwegian_Nynorsk
+Obsoletes:	kde-i18n-Polish
+Obsoletes:	kde-i18n-Portugnese
+Obsoletes:	kde-i18n-Portuguese
+Obsoletes:	kde-i18n-Brazil
+Obsoletes:	kde-i18n-Brazil_Portugnese
+Obsoletes:	kde-i18n-Brazil_Portuguese
+Obsoletes:	kde-i18n-Romanian
+Obsoletes:	kde-i18n-Russian
+Obsoletes:	kde-i18n-Slovak
+Obsoletes:	kde-i18n-Slovenian
+Obsoletes:	kde-i18n-Serbian
+Obsoletes:	kde-i18n-Swedish
+Obsoletes:	kde-i18n-Tamil
+Obsoletes:	kde-i18n-Thai
+Obsoletes:	kde-i18n-Turkish
+Obsoletes:	kde-i18n-Ukrainian
+Obsoletes:	kde-i18n-Uzbek
+Obsoletes:	kde-i18n-Venda
+Obsoletes:	kde-i18n-Vietnamese
+Obsoletes:	kde-i18n-Xhosa
+Obsoletes:	kde-i18n-Simplified_Chinese
+Obsoletes:	kde-i18n-Chinese
+Obsoletes:	kde-i18n-Chinese-Big5
+Obsoletes:	kde-i18n-Zulu
+Obsoletes:	kde-i18n-kdelibs
+Obsoletes:	kde-i18n
+
+%description -n kde-style-plastik-i18n
+Internationalization and localization files for kde-style-plastik.
+
+%description -l pl -n kde-style-plastik-i18n
+Pliki umiêdzynarodawiaj±ce dla kde-style-plastik.
+
+%package screensavers-i18n
+Summary:	Internationalization and localization files for screensavers
+Summary(pl):	Pliki umiêdzynarodawiaj±ce dla screensavers
+Group:	X11/Applications
+Requires:	%{name}-screensavers = %{epoch}:%{version}-%{release}
+Obsoletes:	kde-i18n-Affrikaans
+Obsoletes:	kde-i18n-Afrikaans
+Obsoletes:	kde-i18n-Arabic
+Obsoletes:	kde-i18n-Azerbaijani
+Obsoletes:	kde-i18n-Bulgarian
+Obsoletes:	kde-i18n-Bosnian
+Obsoletes:	kde-i18n-Catalan
+Obsoletes:	kde-i18n-Czech
+Obsoletes:	kde-i18n-Danish
+Obsoletes:	kde-i18n-German
+Obsoletes:	kde-i18n-Greek
+Obsoletes:	kde-i18n-English_UK
+Obsoletes:	kde-i18n-British
+Obsoletes:	kde-i18n-Esperanto
+Obsoletes:	kde-i18n-Spanish
+Obsoletes:	kde-i18n-Estonian
+Obsoletes:	kde-i18n-Finnish
+Obsoletes:	kde-i18n-French
+Obsoletes:	kde-i18n-Hebrew
+Obsoletes:	kde-i18n-Hindi
+Obsoletes:	kde-i18n-Croatian
+Obsoletes:	kde-i18n-Hungarian
+Obsoletes:	kde-i18n-Indonesian
+Obsoletes:	kde-i18n-Icelandic
+Obsoletes:	kde-i18n-Italian
+Obsoletes:	kde-i18n-Japanese
+Obsoletes:	kde-i18n-Korean
+Obsoletes:	kde-i18n-Lithuanian
+Obsoletes:	kde-i18n-Latvian
+Obsoletes:	kde-i18n-Maltese
+Obsoletes:	kde-i18n-Malay
+Obsoletes:	kde-i18n-Mongolian
+Obsoletes:	kde-i18n-Dutch
+Obsoletes:	kde-i18n-Norwegian
+Obsoletes:	kde-i18n-Norwegian_Bokmaal
+Obsoletes:	kde-i18n-Norwegian_Bookmal
+Obsoletes:	kde-i18n-Norwegian_Nynorsk
+Obsoletes:	kde-i18n-Polish
+Obsoletes:	kde-i18n-Portugnese
+Obsoletes:	kde-i18n-Portuguese
+Obsoletes:	kde-i18n-Brazil
+Obsoletes:	kde-i18n-Brazil_Portugnese
+Obsoletes:	kde-i18n-Brazil_Portuguese
+Obsoletes:	kde-i18n-Romanian
+Obsoletes:	kde-i18n-Russian
+Obsoletes:	kde-i18n-Slovak
+Obsoletes:	kde-i18n-Slovenian
+Obsoletes:	kde-i18n-Serbian
+Obsoletes:	kde-i18n-Swedish
+Obsoletes:	kde-i18n-Tamil
+Obsoletes:	kde-i18n-Thai
+Obsoletes:	kde-i18n-Turkish
+Obsoletes:	kde-i18n-Ukrainian
+Obsoletes:	kde-i18n-Uzbek
+Obsoletes:	kde-i18n-Venda
+Obsoletes:	kde-i18n-Vietnamese
+Obsoletes:	kde-i18n-Xhosa
+Obsoletes:	kde-i18n-Simplified_Chinese
+Obsoletes:	kde-i18n-Chinese
+Obsoletes:	kde-i18n-Chinese-Big5
+Obsoletes:	kde-i18n-Zulu
+Obsoletes:	kde-i18n-kdelibs
+Obsoletes:	kde-i18n
+
+%description screensavers-i18n
+Internationalization and localization files for screensavers.
+
+%description -l pl screensavers-i18n
+Pliki umiêdzynarodawiaj±ce dla screensavers.
+
+
 %prep
-%setup -q -n %{name}-%{_snap}
+%setup -q
 %patch0 -p1
-%patch1 -p1 -R
 
 %build
 %{__make} -f admin/Makefile.common cvs
@@ -360,8 +891,51 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%if %{with i18n}
+if [ -f "%{SOURCE1}" ] ; then
+	bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT
+	for f in $RPM_BUILD_ROOT%{_datadir}/locale/*/LC_MESSAGES/*.mo; do
+		if [ "`file $f | sed -e 's/.*,//' -e 's/message.*//'`" -le 1 ] ; then
+			rm -f $f
+		fi
+	done
+else
+	echo "No i18n sources found and building --with i18n. FIXIT!"
+	exit 1
+fi
+
+%find_lang desktop_kdeartwork --with-kde
+
+
+%find_lang kstyle_plastik_config --with-kde
+%find_lang kwin_cde_config --with-kde
+%find_lang kwin_glow_config --with-kde
+%find_lang kwin_icewm_config --with-kde
+%find_lang kwin_plastik_config --with-kde
+
+> screensavers.lang
+%find_lang klock --with-kde
+cat klock.lang >> screensavers.lang
+%find_lang kpartsaver --with-kde
+cat kpartsaver.lang >> screensavers.lang
+%find_lang kxsconfig --with-kde
+cat kxsconfig.lang >> screensavers.lang
+
+
+%endif
+
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%if %{with i18n}
+%files -n kde-decoration-cde-i18n -f kwin_cde_config.lang
+%files -n kde-decoration-icewm-i18n -f kwin_icewm_config.lang
+%files -n kde-decoration-glow-i18n -f kwin_glow_config.lang
+%files -n kde-decoration-plastik-i18n -f kwin_plastik_config.lang
+%files -n kde-style-plastik-i18n -f kstyle_plastik_config.lang
+%files screensavers-i18n -f screensavers.lang
+%files i18n -f desktop_kdeartwork.lang
+%endif
 
 %files -n kde-decoration-cde
 %defattr(644,root,root,755)
