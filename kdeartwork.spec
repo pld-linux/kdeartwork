@@ -1,6 +1,6 @@
 
 %define		_state		stable
-%define		_ver		3.1.3
+%define		_ver		3.1.4
 
 Summary:	K Desktop Environment - artwork
 Summary(es):	K Desktop Environment - Plugins e Scripts para aplicativos KDE
@@ -9,18 +9,18 @@ Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	%{_ver}
-Release:	1.2
+Release:	0.1
 Epoch:		7
 License:	LGPL
 Vendor:		The KDE Team
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_ver}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	a68f5b45060777b5d81952ec188db749
+# Source0-md5:	042e42ade90a8d137edea88eb7d3e11d
 Patch0:		%{name}-screensavers.patch
 Patch1:		%{name}-ac_am.patch
 # generated from kde-i18n
 Source1:	ftp://blysk.ds.pg.gda.pl/linux/kde-i18n-package/%{version}/kde-i18n-%{name}-%{version}.tar.bz2
-# Source1-md5:	6060af477724ab78ae80ab93fb16e3e1
+# Source1-md5:	2a083985bbe4074dedffed88b4217d94
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-devel
 BuildRequires:	XFree86-devel
