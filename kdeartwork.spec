@@ -2,7 +2,7 @@ Summary:	K Desktop Environment - artwork
 Summary(pl):	K Desktop Environment - grafiki itp.
 Name:		kdeartwork
 Version:	3.0.3
-Release:	5
+Release:	6
 Epoch:		7
 License:	LGPL
 Vendor:		The KDE Team
@@ -127,6 +127,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_pixmapsdir}/Technical
 %{_pixmapsdir}/ikons
 %{_pixmapsdir}/slick
+%{_pixmapsdir}/locolor/index.desktop
 %{_pixmapsdir}/locolor/*/*/*.png
 %{_datadir}/wallpapers/*
 %{_datadir}/config/*
