@@ -29,6 +29,7 @@ Obsoletes:	kdeartwork-locolor
 Obsoletes:	kdeartwork-kworldclock
 
 %define 	_noautoreqdep	libGL.so.1 libGLU.so.1
+%define		_prefix		/usr/X11R6
 %define		_htmldir	/usr/share/doc/kde/HTML
 
 %description
