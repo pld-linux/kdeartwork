@@ -350,7 +350,7 @@ Summary:	Common internationalization and localization files for kdeartwork
 Summary(pl):	Wspó³dzielone pliki umiêdzynarodawiaj±ce dla kdeartwork
 Group:	X11/Applications
 #Requires:	%{name} = %{epoch}:%{version}-%{release}
-Requires:	%{name}-i18n = %{epoch}:%{version}-%{release}
+Requires:	kdelibs-i18n
 
 %description i18n
 Internationalization and localization files for kdeartwork.
