@@ -1,7 +1,7 @@
 
 %define		_state		snapshots
 %define		_ver		3.1.92
-%define         _snap           031006
+%define         _snap           031014
 
 Summary:	K Desktop Environment - artwork
 Summary(es):	K Desktop Environment - Plugins e Scripts para aplicativos KDE
@@ -17,7 +17,7 @@ Vendor:		The KDE Team
 Group:		X11/Libraries
 #Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_ver}/src/%{name}-%{version}.tar.bz2
 Source0:        http://www.kernel.pl/~adgor/kde/%{name}-%{_snap}.tar.bz2
-# Source0-md5:	1273269086653f61b0604b90a1d99548
+# Source0-md5:	5487e01cd082c61aba2a71497eb9aec3
 Patch0:		%{name}-screensavers.patch
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-devel
@@ -333,9 +333,8 @@ Tapety dla KDE.
 
 %build
 
-for plik in `find ./ -name \*.desktop` ; do
-	echo $plik
-	sed -i -e "s/\[nb\]/\[no\]/g"  $plik
+for f in `find . -name *.desktop` ; do
+	sed -i 's/\[nb\]/\[no\]/g'  $f
 done
 
 %{__make} -f admin/Makefile.common cvs
@@ -362,12 +361,14 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde3/kwin_cde_config.so
 %{_datadir}/apps/kwin/cde.desktop
 
-#%files -n kde-decoration-icewm
-#%defattr(644,root,root,755)
-#%{_libdir}/kde3/kwin_icewm*.la
-#%attr(755,root,root) %{_libdir}/kde3/kwin_icewm*.so
-#%{_datadir}/apps/kwin/icewm-themes/*
-#%{_datadir}/apps/kwin/icewm*.desktop
+%files -n kde-decoration-icewm
+%defattr(644,root,root,755)
+%{_libdir}/kde3/kwin3_icewm.la
+%attr(755,root,root) %{_libdir}/kde3/kwin3_icewm.so
+%{_libdir}/kde3/kwin_icewm_config.la
+%attr(755,root,root) %{_libdir}/kde3/kwin_icewm_config.so
+%{_datadir}/apps/kwin/icewm-themes
+%{_datadir}/apps/kwin/icewm.desktop
 
 %files -n kde-decoration-glow
 %defattr(644,root,root,755)
@@ -390,11 +391,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde3/kwin3_kstep.so
 %{_datadir}/apps/kwin/kstep*
 
-#%files -n kde-decoration-openlook
-#%defattr(644,root,root,755)
-#%{_libdir}/kde3/kwin_openlook.la
-#%attr(755,root,root) %{_libdir}/kde3/kwin_openlook.so
-#%{_datadir}/apps/kwin/openlook*
+%files -n kde-decoration-openlook
+%defattr(644,root,root,755)
+%{_libdir}/kde3/kwin3_openlook.la
+%attr(755,root,root) %{_libdir}/kde3/kwin3_openlook.so
+%{_datadir}/apps/kwin/openlook.desktop
 
 %files -n kde-decoration-plastik
 %defattr(644,root,root,755)
