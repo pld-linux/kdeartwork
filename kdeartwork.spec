@@ -1,5 +1,5 @@
 
-%define		_state		stable
+%define		_state		unstable
 %define		_ver		3.2
 %define         _snap           030602
 
