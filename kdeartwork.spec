@@ -52,8 +52,8 @@ adicionais para o KDE.
 Summary:	KDE Window Decoration - CDE
 Summary(pl):	Dekoracja okna dla KDE - CDE
 Group:		X11/Amusements
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-themes
 
 %description -n kde-decoration-cde
 KDE Window Decoration - CDE.
@@ -65,8 +65,8 @@ Dekoracja okna dla KDE - CDE.
 Summary:	Extensions for KDE IceWM decoration
 Summary(pl):	Rozszerzenie dekoracji okna "IceWM" dla KDE
 Group:		X11/Amusements
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-themes
 
 %description -n kde-decoration-icewm
 Extensions for KDE "IceWM" decoration.
@@ -78,8 +78,8 @@ Rozszerzenie dekoracji okna IceWM dla KDE.
 Summary:	KDE Window Decoration - Glow
 Summary(pl):	Dekoracja okna dla KDE - Glow
 Group:		X11/Amusements
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-themes
 
 %description -n kde-decoration-glow
 KDE Window Decoration - Glow.
@@ -91,8 +91,8 @@ Dekoracja okna dla KDE - Glow.
 Summary:	KDE Window Decoration - OpenLook
 Summary(pl):	Dekoracja okna dla KDE - OpenLook
 Group:		X11/Amusements
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-themes
 
 %description -n kde-decoration-openlook
 KDE Window Decoration - OpenLook.
@@ -104,8 +104,8 @@ Dekoracja okna dla KDE - OpenLook.
 Summary:	KDE Icons Theme - Technical
 Summary(pl):	Motyw ikon dla KDE - Technical
 Group:		X11/Amusements
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-themes
 
 %description -n kde-icons-Technical
 KDE Icons Theme - Technical.
@@ -117,8 +117,8 @@ Motyw ikon dla KDE - Technical.
 Summary:	KDE Icons Theme - ikons
 Summary(pl):	Motyw ikon dla KDE - ikons
 Group:		X11/Amusements
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-themes
 
 %description -n kde-icons-ikons
 KDE Icons Theme - ikons.
@@ -130,8 +130,8 @@ Motyw ikon dla KDE - ikons.
 Summary:	KDE Icons Theme - kdeclassic
 Summary(pl):	Motyw ikon dla KDE - kdeclassic
 Group:		X11/Amusements
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-themes
 
 %description -n kde-icons-kdeclassic
 KDE Icons Theme - kdeclassic.
@@ -143,10 +143,10 @@ Motyw ikon dla KDE - kdeclassic.
 Summary:	KDE Icons Theme - locolor
 Summary(pl):	Motyw ikon dla KDE - locolor
 Group:		X11/Amusements
-Obsoletes:	%{name}
-Obsoletes:	%{name}-icons-locolor
-Obsoletes:	%{name}-locolor
-Obsoletes:	%{name}-themes
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-icons-locolor
+Obsoletes:	kdeartwork-locolor
+Obsoletes:	kdeartwork-themes
 
 %description -n kde-icons-Locolor
 KDE Icons Theme - locolor.
@@ -158,8 +158,8 @@ Motyw ikon dla KDE - locolor.
 Summary:	KDE Icons Theme - slick
 Summary(pl):	Motyw ikon dla KDE - slick
 Group:		X11/Amusements
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-themes
 
 %description -n kde-icons-slick
 KDE Icons Theme - slick.
@@ -171,8 +171,8 @@ Motyw ikon dla KDE - slick.
 Summary:	KDE Style - DotNet
 Summary(pl):	Styl dla KDE - DotNet
 Group:		X11/Amusements
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-themes
 
 %description -n kde-style-dotnet
 KDE Style - DotNet.
@@ -185,8 +185,8 @@ Summary:	Themes for kworldclock
 Summary(pl):	Motywy dla kworldclock
 Group:		X11/Amusements
 Requires:	kdetoys-kworldclock
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes-kworldclock
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-themes-kworldclock
 
 %description kworldclock
 Themes for kworldclock.
@@ -210,8 +210,8 @@ Wygaszacze ekranu dla KDE.
 Summary:	KDE Sounds
 Summary(pl):	D¼wiêki dla KDE
 Group:		X11/Amusements
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-themes
 
 %description sounds
 KDE Sounds.
@@ -223,8 +223,8 @@ D¼wiêki dla KDE.
 Summary:	KDE Wallpapers
 Summary(pl):	Tapety dla KDE
 Group:		X11/Amusements
-Obsoletes:	%{name}
-Obsoletes:	%{name}-themes
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-themes
 
 %description wallpapers
 KDE Wallpapers.
