@@ -1,7 +1,7 @@
 
-%define		_state		unstable
-%define		_ver		3.2
-%define         _snap           030613
+%define		_state		snapshots
+%define		_ver		3.1.90
+%define         _snap           030616
 
 Summary:	K Desktop Environment - artwork
 Summary(es):	K Desktop Environment - Plugins e Scripts para aplicativos KDE
@@ -9,15 +9,15 @@ Summary(ko):	KDE¿ë
 Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
-Version:	%{_ver}
-Release:        0.%{_snap}.1
-Epoch:		7
+Version:	%{_ver}.%{_snap}
+Release:        1
+Epoch:		8
 License:	LGPL
 Vendor:		The KDE Team
 Group:		X11/Libraries
 #Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_ver}/src/%{name}-%{version}.tar.bz2
 Source0:        http://www.kernel.pl/~adgor/kde/%{name}-%{_snap}.tar.bz2
-# Source0-md5:	5f9382bd7ede48e1134fbea57b1c6ec7
+# Source0-md5:	5c8923e96a1386b706ab2b1cb73ad630
 Patch0:		%{name}-screensavers.patch
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-devel
