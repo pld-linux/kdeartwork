@@ -298,6 +298,12 @@ install -d $RPM_BUILD_ROOT%{_mandir}/man1
 # Conflict with koffice-kspread: (not verified yet)
 #rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/kspreadcalc.png
 
+for i in `find $RPM_BUILD_ROOT%{_applnkdir} -type f`; do
+	if grep '^Icon=.[^.]*$' $i >/dev/null; then
+		echo -e ',s/\(^Icon=.*$\)/\\1.png/\n,w' | ed $i
+	fi
+done
+
 bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT
 
 %find_lang	klock			--with-kde
