@@ -1,9 +1,9 @@
 
 %define		_state		stable
-%define		_ver		3.3.1
+%define		_ver		3.3.2
 
-%define		_minlibsevr	9:3.3.1
-%define		_minbaseevr	9:3.3.1
+%define		_minlibsevr	9:3.3.2
+%define		_minbaseevr	9:3.3.2
 
 Summary:	K Desktop Environment - artwork
 Summary(es):	K Desktop Environment - Plugins e Scripts para aplicativos KDE
@@ -12,14 +12,14 @@ Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	%{_ver}
-Release:	2
+Release:	0.1
 Epoch:		8
 License:	LGPL
 Vendor:		The KDE Team
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_ver}/src/%{name}-%{_ver}.tar.bz2	
-# Source0-md5:	b983255aabdc6aadb2b9f66145d5ecfb
-Patch100:	%{name}-branch.diff
+# Source0-md5:	9a712da253bacb87e0d4fd28cec183a1
+#Patch100:	%{name}-branch.diff
 Patch0:		%{name}-screensavers.patch
 Patch1:		%{name}-xscreensaver-dir.patch
 URL:		http://www.kde.org/
@@ -343,17 +343,16 @@ Tapety dla KDE.
 
 %prep
 %setup -q
-%patch100 -p1
+#%%patch100 -p1
 %patch0 -p1
 %patch1 -p1
-# MAKE SURE SOMEONE CHEKCS IT IN 3.3.2 
-%if "%{version}" == "3.3.1"
+# MAKE SURE SOMEONE CHEKCS IT IN 3.3.3
+%if "%{version}" == "3.3.2"
 echo "SUBDIRS = kstep plastik glow cde icewm openlook kde1 system riscos" > kwin-styles/Makefile.am
 %else
 echo "Please check line 352 of and confirm whether it should/nt be used"
 exit 1
 %endif
-
 
 %build
 cp -f /usr/share/automake/config.sub admin
