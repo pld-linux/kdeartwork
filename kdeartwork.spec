@@ -257,7 +257,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n kde-decoration-cde
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/kde3/kwin_cde*
+%{_libdir}/kde3/kwin_cde*.la
+%attr(755,root,root) %{_libdir}/kde3/kwin_cde*.so
 %{_datadir}/apps/kwin/cde*
 
 %files -n kde-decoration-icewm
@@ -266,12 +267,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n kde-decoration-glow
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/kde3/kwin_glow*
+%{_libdir}/kde3/kwin_glow*.la
+%attr(755,root,root) %{_libdir}/kde3/kwin_glow*.so
 %{_datadir}/apps/kwin/glow*
 
 %files -n kde-decoration-openlook
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/kde3/kwin_openlook*
+%{_libdir}/kde3/kwin_openlook.la
+%attr(755,root,root) %{_libdir}/kde3/kwin_openlook.so
 %{_datadir}/apps/kwin/openlook*
 
 %files -n kde-icons-Technical
@@ -296,7 +299,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n kde-style-dotnet
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/kde3/plugins/styles/dotnet*
+%{_libdir}/kde3/plugins/styles/dotnet.la
+%attr(755,root,root) %{_libdir}/kde3/plugins/styles/dotnet.so
 %{_datadir}/apps/kstyle/themes/dotnet*
 
 %files kworldclock
@@ -308,7 +312,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/apps/kscreensaver
-#{_datadir}/config/*
+%{_datadir}/config/*
 %{_applnkdir}/.hidden/ScreenSavers/*
 
 %files sounds
