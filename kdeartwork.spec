@@ -10,13 +10,14 @@ Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	%{_ver}
-Release:        0.%{_snap}.1
+Release:        0.%{_snap}.2
 Epoch:		7
 License:	LGPL
 Vendor:		The KDE Team
 Group:		X11/Libraries
 #Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_ver}/src/%{name}-%{version}.tar.bz2
 Source0:        http://team.pld.org.pl/~djurban/kde/%{name}-%{_snap}.tar.bz2
+Patch0:		%{name}-screensavers.patch
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-devel
 BuildRequires:	XFree86-devel
@@ -249,6 +250,7 @@ Tapety dla KDE.
 
 %prep
 %setup -q -n %{name}-%{_snap}
+%patch0 -p1
 
 %build
 kde_appsdir="%{_applnkdir}"; export kde_appsdir
@@ -260,7 +262,7 @@ CXXFLAGS="%{rpmcflags}"
 
 for plik in `find ./ -name \*.desktop` ; do
 		echo $plik
-		sed -i -e "s/[nb]/[no]/g"  $plik
+		sed -i -e "s/\[nb\]/\[no\]/g"  $plik
 done
 
 %configure \
@@ -274,10 +276,6 @@ done
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
-
-ALD=$RPM_BUILD_ROOT%{_applnkdir}
-install -d $ALD/.hidden
-mv $ALD/{System/ScreenSavers,.hidden}
 
 #mv $RPM_BUILD_ROOT%{_pixmapsdir}/{L,l}ocolor
 # Conflict with kdeaddons-kicker: (not verified yet)
@@ -391,9 +389,8 @@ rm -rf $RPM_BUILD_ROOT
 %files screensavers
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
-%{_datadir}/apps/kscreensaver
+%{_datadir}/apps/kscreensaver/*
 ##%{_datadir}/config/*
-%{_applnkdir}/.hidden/ScreenSavers/*
 
 %files sounds
 %defattr(644,root,root,755)
