@@ -1,7 +1,7 @@
 
 %define		_state		stable
 %define		_ver		3.2
-%define         _snap           030508
+%define         _snap           030511
 
 Summary:	K Desktop Environment - artwork
 Summary(es):	K Desktop Environment - Plugins e Scripts para aplicativos KDE
