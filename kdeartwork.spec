@@ -17,13 +17,13 @@ Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_ver}/src/%{name}-%{version}.tar.bz2
 # generated from kde-i18n
 #Source1:	kde-i18n-%{name}-%{version}.tar.bz2
+URL:		http://www.kde.org/
 BuildRequires:	OpenGL-devel
 BuildRequires:	XFree86-devel
 BuildRequires:	kdebase-devel
 BuildRequires:	kdelibs-devel
 BuildRequires:	libxml2-progs
 Requires:	kdelibs = %{version}
-URL:		http://www.kde.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	kdeartwork-locolor
 Obsoletes:	kdeartwork-kworldclock
@@ -51,10 +51,10 @@ Summary(pl):	Dekoracja okna dla KDE - CDE
 Group:		X11/Amusements
 
 %description -n kde-decoration-cde
-KDE Window Decoration - CDE
+KDE Window Decoration - CDE.
 
 %description -n kde-decoration-cde -l pl
-Dekoracja okna dla KDE - CDE
+Dekoracja okna dla KDE - CDE.
 
 %package -n kde-decoration-icewm
 Summary:	Extensions for KDE IceWM decoration
@@ -62,10 +62,10 @@ Summary(pl):	Rozszerzenie dekoracji okna "IceWM" dla KDE
 Group:		X11/Amusements
 
 %description -n kde-decoration-icewm
-Extensions for KDE "IceWM" decoration
+Extensions for KDE "IceWM" decoration.
 
 %description -n kde-decoration-icewm -l pl
-Rozszerzenie dekoracji okna IceWM dla KDE
+Rozszerzenie dekoracji okna IceWM dla KDE.
 
 %package -n kde-decoration-glow
 Summary:	KDE Window Decoration - Glow
@@ -73,10 +73,10 @@ Summary(pl):	Dekoracja okna dla KDE - Glow
 Group:		X11/Amusements
 
 %description -n kde-decoration-glow
-KDE Window Decoration - Glow
+KDE Window Decoration - Glow.
 
 %description -n kde-decoration-glow -l pl
-Dekoracja okna dla KDE - Glow
+Dekoracja okna dla KDE - Glow.
 
 %package -n kde-decoration-openlook
 Summary:	KDE Window Decoration - OpenLook
@@ -84,21 +84,21 @@ Summary(pl):	Dekoracja okna dla KDE - OpenLook
 Group:		X11/Amusements
 
 %description -n kde-decoration-openlook
-KDE Window Decoration - OpenLook
+KDE Window Decoration - OpenLook.
 
 %description -n kde-decoration-openlook -l pl
-Dekoracja okna dla KDE - OpenLook
+Dekoracja okna dla KDE - OpenLook.
 
 %package -n kde-icons-Technical
 Summary:	KDE Icons Theme - Technical
-Summary(pl):	Motyw ikon dla KDE - Crystal
+Summary(pl):	Motyw ikon dla KDE - Technical
 Group:		X11/Amusements
 
 %description -n kde-icons-Technical
-KDE Icons Theme - Technical
+KDE Icons Theme - Technical.
 
 %description -n kde-icons-Technical -l pl
-Motyw ikon dla KDE - Technical
+Motyw ikon dla KDE - Technical.
 
 %package -n kde-icons-ikons
 Summary:	KDE Icons Theme - ikons
@@ -106,10 +106,10 @@ Summary(pl):	Motyw ikon dla KDE - ikons
 Group:		X11/Amusements
 
 %description -n kde-icons-ikons
-KDE Icons Theme - ikons
+KDE Icons Theme - ikons.
 
 %description -n kde-icons-ikons -l pl
-Motyw ikon dla KDE - ikons
+Motyw ikon dla KDE - ikons.
 
 %package -n kde-icons-kdeclassic
 Summary:	KDE Icons Theme - kdeclassic
@@ -139,10 +139,10 @@ Summary(pl):	Motyw ikon dla KDE - slick
 Group:		X11/Amusements
 
 %description -n kde-icons-slick
-KDE Icons Theme - slick
+KDE Icons Theme - slick.
 
 %description -n kde-icons-slick -l pl
-Motyw ikon dla KDE - slick
+Motyw ikon dla KDE - slick.
 
 %package -n kde-style-dotnet
 Summary:	KDE Style - DotNet
@@ -150,10 +150,10 @@ Summary(pl):	Styl dla KDE - DotNet
 Group:		X11/Amusements
 
 %description -n kde-style-dotnet
-KDE Style - DotNet
+KDE Style - DotNet.
 
 %description -n kde-style-dotnet -l pl
-Styl dla KDE - DotNet
+Styl dla KDE - DotNet.
 
 %package kworldclock
 Summary:	Themes for kworldclock
@@ -185,10 +185,10 @@ Summary(pl):	D¼wiêki dla KDE
 Group:		X11/Amusements
 
 %description sounds
-KDE Sounds
+KDE Sounds.
 
 %description sounds -l pl
-D¬wiêki dla KDE
+D¼wiêki dla KDE.
 
 %package wallpapers
 Summary:	KDE Wallpapers
@@ -196,10 +196,10 @@ Summary(pl):	Tapety dla KDE
 Group:		X11/Amusements
 
 %description wallpapers
-KDE Wallpapers
+KDE Wallpapers.
 
 %description wallpapers -l pl
-Tapety dla KDE
+Tapety dla KDE.
 
 %prep
 %setup -q
