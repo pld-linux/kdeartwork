@@ -1,7 +1,7 @@
 
 %define		_state		snapshots
-%define		_ver		3.1.93
-%define		_snap		031114
+%define		_ver		3.1.94
+%define		_snap		031204
 
 Summary:	K Desktop Environment - artwork
 Summary(es):	K Desktop Environment - Plugins e Scripts para aplicativos KDE
@@ -17,7 +17,7 @@ Vendor:		The KDE Team
 Group:		X11/Libraries
 #Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_ver}/src/%{name}-%{version}.tar.bz2
 Source0:	http://www.kernel.pl/~adgor/kde/%{name}-%{_snap}.tar.bz2
-# Source0-md5:	bc922f253403ae291255a5e7f98722b3
+# Source0-md5:	9c27c42669f075c2c9f54d2c0a2d7358
 Patch0:		%{name}-screensavers.patch
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-devel
@@ -228,6 +228,18 @@ KDE Icons Theme - kdeclassic.
 %description -n kde-icons-kdeclassic -l pl
 Motyw ikon dla KDE - kdeclassic.
 
+%package -n kde-icons-kids
+Summary:	KDE Icons Theme - kids
+Summary(pl):	Motyw ikon dla KDE - kids
+Group:		X11/Amusements
+Requires:	kdelibs >= 9:%{version}
+
+%description -n kde-icons-kids
+KDE Icons Theme - kids.
+
+%description -n kde-icons-kids -l pl
+Motyw ikon dla KDE - kids.
+
 %package -n kde-icons-slick
 Summary:	KDE Icons Theme - slick
 Summary(pl):	Motyw ikon dla KDE - slick
@@ -428,6 +440,10 @@ rm -rf $RPM_BUILD_ROOT
 %files -n kde-icons-kdeclassic
 %defattr(644,root,root,755)
 %{_iconsdir}/kdeclassic
+
+%files -n kde-icons-kids
+%defattr(644,root,root,755)
+%{_iconsdir}/kids
 
 %files -n kde-icons-Locolor
 %defattr(644,root,root,755)
