@@ -12,7 +12,7 @@ Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	%{_ver}
-Release:	1
+Release:	2
 Epoch:		8
 License:	LGPL
 Vendor:		The KDE Team
@@ -346,6 +346,14 @@ Tapety dla KDE.
 %patch100 -p1
 %patch0 -p1
 %patch1 -p1
+# MAKE SURE SOMEONE CHEKCS IT IN 3.3.2 
+%if "%{version}" == "3.3.1"
+echo "SUBDIRS = kstep plastik glow cde icewm openlook kde1 system riscos" > kwin-styles/Makefile.am
+%else
+echo "Please check line 352 of and confirm whether it should/nt be used"
+exit 1
+%endif
+
 
 %build
 cp -f /usr/share/automake/config.sub admin
@@ -441,11 +449,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde3/kwin_plastik_config.so
 %{_datadir}/apps/kwin/plastik.desktop
 
-#%files -n kde-decoration-riscos
-#%defattr(644,root,root,755)
-#%{_libdir}/kde3/kwin_riscos.la
-#%attr(755,root,root) %{_libdir}/kde3/kwin_riscos.so
-#%{_datadir}/apps/kwin/riscos*
+%files -n kde-decoration-riscos
+%defattr(644,root,root,755)
+%{_libdir}/kde3/kwin3_riscos.la
+%attr(755,root,root) %{_libdir}/kde3/kwin3_riscos.so
+%{_datadir}/apps/kwin/riscos*
 
 %files -n kde-decoration-system
 %defattr(644,root,root,755)
