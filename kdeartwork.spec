@@ -12,7 +12,7 @@ Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	%{_ver}
-Release:	1
+Release:	2
 Epoch:		8
 License:	LGPL
 Vendor:		The KDE Team
@@ -449,9 +449,11 @@ Pliki umiêdzynarodawiaj±ce dla screensavers.
 %patch0 -p1
 
 %build
+cp -f /usr/share/automake/config.sub admin
 %{__make} -f admin/Makefile.common cvs
 
 %configure \
+	--with-qt-libraries=%{_libdir} \
 	--disable-rpath \
 	--enable-final
 
