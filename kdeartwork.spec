@@ -234,10 +234,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-ALD=$RPM_BUILD_ROOT%{_applnkdir}
-#install -d $ALD/.hidden
-#mv $ALD/{System/ScreenSavers,.hidden}
-
 #mv $RPM_BUILD_ROOT%{_pixmapsdir}/{L,l}ocolor
 # Conflict with kdeaddons-kicker: (not verified yet)
 #rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/ktimemon.png
