@@ -1,24 +1,13 @@
-%define		_ver		3.0.3
-#define		_sub_ver
-%define		_rel		2
-
-%{?_sub_ver:	%define	_version	%{_ver}%{_sub_ver}}
-%{!?_sub_ver:	%define	_version	%{_ver}}
-%{?_sub_ver:	%define	_release	0.%{_sub_ver}.%{_rel}}
-%{!?_sub_ver:	%define	_release	%{_rel}}
-%{!?_sub_ver:	%define	_ftpdir	stable}
-%{?_sub_ver:	%define	_ftpdir	unstable/kde-%{version}%{_sub_ver}}
-
 Summary:	K Desktop Environment - artwork
 #Summary(pl):	K Desktop Environment - artwork
 Name:		kdeartwork
-Version:	%{_version}
-Release:	%{_release}
+Version:	3.0.3
+Release:	3
 Epoch:		7
 License:	LGPL
 Vendor:		The KDE Team
 Group:		X11/Libraries
-Source0:	ftp://ftp.kde.org/pub/kde/%{_ftpdir}/%{version}/src/%{name}-%{version}.tar.bz2
+Source0:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.bz2
 # generated from kde-i18n
 Source1:	kde-i18n-%{name}-%{version}.tar.bz2
 BuildRequires:	XFree86-devel
@@ -51,7 +40,7 @@ Group:		X11/Amusements
 Screen savers for KDE.
 
 %description screensavers -l pl
-Wygaszacze ekranu dla KDE
+Wygaszacze ekranu dla KDE.
 
 %package themes
 Summary:	Themes for KDE
@@ -73,7 +62,7 @@ Group:		X11/Amusements
 Themes for kworldclock.
 
 %description themes-kworldclock -l pl
-Tematy dla kworldclock
+Tematy dla kworldclock.
 
 %prep
 %setup -q
