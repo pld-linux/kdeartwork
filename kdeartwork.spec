@@ -2,7 +2,7 @@
 # 	space.
 %define		_ver		3.0.2
 #define		_sub_ver
-%define		_rel		2
+%define		_rel		3
 
 %{?_sub_ver:	%define	_version	%{_ver}%{_sub_ver}}
 %{!?_sub_ver:	%define	_version	%{_ver}}
@@ -104,10 +104,12 @@ mv $RPM_BUILD_ROOT%{_pixmapsdir}/{L,l}ocolor
 
 bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT
 
+%find_lang %{name} --with-kde --all-name
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}
 %defattr(644,root,root,755)
 %{_pixmapsdir}/*
 %{_datadir}/wallpapers/*
