@@ -9,7 +9,7 @@ Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	%{_ver}
-Release:	2
+Release:	3
 Epoch:		7
 License:	LGPL
 Vendor:		The KDE Team
@@ -26,8 +26,6 @@ BuildRequires:	kdelibs-devel
 BuildRequires:	libxml2-progs
 Requires:	kdelibs = %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Obsoletes:	kdeartwork-locolor
-Obsoletes:	kdeartwork-kworldclock
 
 %define 	_noautoreqdep	libGL.so.1 libGLU.so.1
 %define		_htmldir	/usr/share/doc/kde/HTML
@@ -50,6 +48,8 @@ adicionais para o KDE.
 Summary:	KDE Window Decoration - CDE
 Summary(pl):	Dekoracja okna dla KDE - CDE
 Group:		X11/Amusements
+Obsoletes:	%{name}
+Obsoletes:	%{name}-themes
 
 %description -n kde-decoration-cde
 KDE Window Decoration - CDE.
@@ -61,6 +61,8 @@ Dekoracja okna dla KDE - CDE.
 Summary:	Extensions for KDE IceWM decoration
 Summary(pl):	Rozszerzenie dekoracji okna "IceWM" dla KDE
 Group:		X11/Amusements
+Obsoletes:	%{name}
+Obsoletes:	%{name}-themes
 
 %description -n kde-decoration-icewm
 Extensions for KDE "IceWM" decoration.
@@ -72,6 +74,8 @@ Rozszerzenie dekoracji okna IceWM dla KDE.
 Summary:	KDE Window Decoration - Glow
 Summary(pl):	Dekoracja okna dla KDE - Glow
 Group:		X11/Amusements
+Obsoletes:	%{name}
+Obsoletes:	%{name}-themes
 
 %description -n kde-decoration-glow
 KDE Window Decoration - Glow.
@@ -83,6 +87,8 @@ Dekoracja okna dla KDE - Glow.
 Summary:	KDE Window Decoration - OpenLook
 Summary(pl):	Dekoracja okna dla KDE - OpenLook
 Group:		X11/Amusements
+Obsoletes:	%{name}
+Obsoletes:	%{name}-themes
 
 %description -n kde-decoration-openlook
 KDE Window Decoration - OpenLook.
@@ -94,6 +100,8 @@ Dekoracja okna dla KDE - OpenLook.
 Summary:	KDE Icons Theme - Technical
 Summary(pl):	Motyw ikon dla KDE - Technical
 Group:		X11/Amusements
+Obsoletes:	%{name}
+Obsoletes:	%{name}-themes
 
 %description -n kde-icons-Technical
 KDE Icons Theme - Technical.
@@ -105,6 +113,8 @@ Motyw ikon dla KDE - Technical.
 Summary:	KDE Icons Theme - ikons
 Summary(pl):	Motyw ikon dla KDE - ikons
 Group:		X11/Amusements
+Obsoletes:	%{name}
+Obsoletes:	%{name}-themes
 
 %description -n kde-icons-ikons
 KDE Icons Theme - ikons.
@@ -116,6 +126,8 @@ Motyw ikon dla KDE - ikons.
 Summary:	KDE Icons Theme - kdeclassic
 Summary(pl):	Motyw ikon dla KDE - kdeclassic
 Group:		X11/Amusements
+Obsoletes:	%{name}
+Obsoletes:	%{name}-themes
 
 %description -n kde-icons-kdeclassic
 KDE Icons Theme - kdeclassic.
@@ -127,6 +139,10 @@ Motyw ikon dla KDE - kdeclassic.
 Summary:	KDE Icons Theme - locolor
 Summary(pl):	Motyw ikon dla KDE - locolor
 Group:		X11/Amusements
+Obsoletes:	%{name}
+Obsoletes:	%{name}-icons-locolor
+Obsoletes:	%{name}-locolor
+Obsoletes:	%{name}-themes
 
 %description -n kde-icons-Locolor
 KDE Icons Theme - locolor.
@@ -138,6 +154,8 @@ Motyw ikon dla KDE - locolor.
 Summary:	KDE Icons Theme - slick
 Summary(pl):	Motyw ikon dla KDE - slick
 Group:		X11/Amusements
+Obsoletes:	%{name}
+Obsoletes:	%{name}-themes
 
 %description -n kde-icons-slick
 KDE Icons Theme - slick.
@@ -149,6 +167,8 @@ Motyw ikon dla KDE - slick.
 Summary:	KDE Style - DotNet
 Summary(pl):	Styl dla KDE - DotNet
 Group:		X11/Amusements
+Obsoletes:	%{name}
+Obsoletes:	%{name}-themes
 
 %description -n kde-style-dotnet
 KDE Style - DotNet.
@@ -161,6 +181,8 @@ Summary:	Themes for kworldclock
 Summary(pl):	Motywy dla kworldclock
 Group:		X11/Amusements
 Requires:	kdetoys-kworldclock
+Obsoletes:	%{name}
+Obsoletes:	%{name}-themes-kworldclock
 
 %description kworldclock
 Themes for kworldclock.
@@ -173,6 +195,8 @@ Summary:	Screen savers for KDE
 Summary(pl):	Wygaszacze ekranu dla KDE
 Group:		X11/Amusements
 Requires:	kdebase-screensavers
+Obsoletes:	%{name}
+Obsoletes:	%{name}-themes
 
 %description screensavers
 Screen savers for KDE.
@@ -184,6 +208,8 @@ Wygaszacze ekranu dla KDE.
 Summary:	KDE Sounds
 Summary(pl):	D¼wiêki dla KDE
 Group:		X11/Amusements
+Obsoletes:	%{name}
+Obsoletes:	%{name}-themes
 
 %description sounds
 KDE Sounds.
@@ -195,6 +221,8 @@ D¼wiêki dla KDE.
 Summary:	KDE Wallpapers
 Summary(pl):	Tapety dla KDE
 Group:		X11/Amusements
+Obsoletes:	%{name}
+Obsoletes:	%{name}-themes
 
 %description wallpapers
 KDE Wallpapers.
