@@ -1,6 +1,7 @@
-
-%bcond_without  i18n    # dont build i18n subpackage
-
+#
+# Conditional build:
+%bcond_without	i18n	# don't build i18n subpackages
+#
 %define		_state		stable
 %define		_ver		3.2.0
 ##%define		_snap		040110
@@ -288,7 +289,6 @@ KDE Style - Plastik.
 %description -n kde-style-plastik -l pl
 Styl dla KDE - Plastik.
 
-
 %package kworldclock
 Summary:	Themes for kworldclock
 Summary(pl):	Motywy dla kworldclock
@@ -348,35 +348,34 @@ Tapety dla KDE.
 %package i18n
 Summary:	Common internationalization and localization files for kdeartwork
 Summary(pl):	Wspó³dzielone pliki umiêdzynarodawiaj±ce dla kdeartwork
-Group:	X11/Applications
+Group:		X11/Applications
 #Requires:	%{name} = %{epoch}:%{version}-%{release}
 Requires:	kdelibs-i18n  >= 9:%{version}
 
 %description i18n
 Internationalization and localization files for kdeartwork.
 
-%description -l pl i18n
+%description i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kdeartwork.
 
-
-%package  -n  kde-decoration-cde-i18n
+%package -n kde-decoration-cde-i18n
 Summary:	Internationalization and localization files for kde-decoration-cde
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde-decoration-cde
-Group:	X11/Applications
+Group:		X11/Applications
 Requires:	kde-decoration-cde = %{epoch}:%{version}-%{release}
 Requires:	%{name}-i18n = %{epoch}:%{version}-%{release}
 Requires:	kdebase-desktop-i18n >= 9:%{version}
 
-%description -n  kde-decoration-cde-i18n
+%description -n kde-decoration-cde-i18n
 Internationalization and localization files for kde-decoration-cde.
 
-%description -l pl  -n kde-decoration-cde-i18n
+%description -n kde-decoration-cde-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kde-decoration-cde.
 
 %package -n kde-decoration-icewm-i18n
 Summary:	Internationalization and localization files for kde-decoration-icewm
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde-decoration-icewm
-Group:	X11/Applications
+Group:		X11/Applications
 Requires:	kde-decoration-icewm = %{epoch}:%{version}-%{release}
 Requires:	%{name}-i18n = %{epoch}:%{version}-%{release}
 Requires:	kdebase-desktop-i18n >= 9:%{version}
@@ -384,13 +383,13 @@ Requires:	kdebase-desktop-i18n >= 9:%{version}
 %description -n kde-decoration-icewm-i18n
 Internationalization and localization files for kde-decoration-icewm.
 
-%description -l pl -n kde-decoration-icewm-i18n
+%description -n kde-decoration-icewm-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kde-decoration-icewm.
 
 %package -n kde-decoration-glow-i18n
 Summary:	Internationalization and localization files for kde-decoration-glow
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde-decoration-glow
-Group:	X11/Applications
+Group:		X11/Applications
 Requires:	kde-decoration-glow = %{epoch}:%{version}-%{release}
 Requires:	%{name}-i18n = %{epoch}:%{version}-%{release}
 Requires:	kdebase-desktop-i18n >= 9:%{version}
@@ -398,13 +397,13 @@ Requires:	kdebase-desktop-i18n >= 9:%{version}
 %description -n kde-decoration-glow-i18n
 Internationalization and localization files for kde-decoration-glow.
 
-%description -l pl -n kde-decoration-glow-i18n
+%description -n kde-decoration-glow-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kde-decoration-glow.
 
 %package -n kde-decoration-plastik-i18n
 Summary:	Internationalization and localization files for kde-decoration-plastik
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde-decoration-plastik
-Group:	X11/Applications
+Group:		X11/Applications
 Requires:	kde-decoration-plastik = %{epoch}:%{version}-%{release}
 Requires:	%{name}-i18n = %{epoch}:%{version}-%{release}
 Requires:	kdebase-desktop-i18n >= 9:%{version}
@@ -412,13 +411,13 @@ Requires:	kdebase-desktop-i18n >= 9:%{version}
 %description -n kde-decoration-plastik-i18n
 Internationalization and localization files for kde-decoration-plastik.
 
-%description -l pl -n kde-decoration-plastik-i18n
+%description -n kde-decoration-plastik-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kde-decoration-plastik.
 
 %package -n kde-style-plastik-i18n
 Summary:	Internationalization and localization files for kde-style-plastik
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde-style-plastik
-Group:	X11/Applications
+Group:		X11/Applications
 Requires:	kde-style-plastik = %{epoch}:%{version}-%{release}
 Requires:	%{name}-i18n = %{epoch}:%{version}-%{release}
 Requires:	kdebase-core-i18n >= 9:%{version}
@@ -426,13 +425,13 @@ Requires:	kdebase-core-i18n >= 9:%{version}
 %description -n kde-style-plastik-i18n
 Internationalization and localization files for kde-style-plastik.
 
-%description -l pl -n kde-style-plastik-i18n
+%description -n kde-style-plastik-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla kde-style-plastik.
 
 %package screensavers-i18n
 Summary:	Internationalization and localization files for screensavers
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla screensavers
-Group:	X11/Applications
+Group:		X11/Applications
 Requires:	%{name}-screensavers = %{epoch}:%{version}-%{release}
 Requires:	%{name}-i18n = %{epoch}:%{version}-%{release}
 Requires:	kdebase-screensavers-i18n >= 9:%{version}
@@ -440,9 +439,8 @@ Requires:	kdebase-screensavers-i18n >= 9:%{version}
 %description screensavers-i18n
 Internationalization and localization files for screensavers.
 
-%description -l pl screensavers-i18n
+%description screensavers-i18n -l pl
 Pliki umiêdzynarodawiaj±ce dla screensavers.
-
 
 %prep
 %setup -q
@@ -480,7 +478,6 @@ fi
 
 %find_lang desktop_kdeartwork --with-kde
 
-
 %find_lang kstyle_plastik_config --with-kde
 %find_lang kwin_cde_config --with-kde
 %find_lang kwin_glow_config --with-kde
@@ -495,20 +492,19 @@ cat kpartsaver.lang >> screensavers.lang
 %find_lang kxsconfig --with-kde
 cat kxsconfig.lang >> screensavers.lang
 
-
 %endif
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %if %{with i18n}
+%files i18n -f desktop_kdeartwork.lang
 %files -n kde-decoration-cde-i18n -f kwin_cde_config.lang
 %files -n kde-decoration-icewm-i18n -f kwin_icewm_config.lang
 %files -n kde-decoration-glow-i18n -f kwin_glow_config.lang
 %files -n kde-decoration-plastik-i18n -f kwin_plastik_config.lang
 %files -n kde-style-plastik-i18n -f kstyle_plastik_config.lang
 %files screensavers-i18n -f screensavers.lang
-%files i18n -f desktop_kdeartwork.lang
 %endif
 
 %files -n kde-decoration-cde
@@ -615,7 +611,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files kworldclock
 %defattr(644,root,root,755)
-%{_datadir}/apps/kworldclock/maps/[^d]*
+%{_datadir}/apps/kworldclock/maps/[!d]*
 %{_datadir}/apps/kworldclock/maps/depths/*
 
 %files screensavers
