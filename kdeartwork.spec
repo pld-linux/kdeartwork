@@ -9,7 +9,7 @@ Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	%{_ver}
-Release:	0.2
+Release:	0.3
 Epoch:		7
 License:	LGPL
 Vendor:		The KDE Team
@@ -34,6 +34,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define 	_noautoreqdep	libGL.so.1 libGLU.so.1
 
 %define		_prefix		/usr/X11R6
+%define		_mandir		%{_prefix}/man
 %define		_htmldir	/usr/share/doc/kde/HTML
 
 %description
@@ -54,7 +55,7 @@ adicionais para o KDE.
 Summary:	KDE Window Decoration - CDE
 Summary(pl):	Dekoracja okna dla KDE - CDE
 Group:		X11/Amusements
-Requires:	kdebase >= %{_version}
+Requires:	kdebase >= %{version}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
 
@@ -68,7 +69,7 @@ Dekoracja okna dla KDE - CDE.
 Summary:	Extensions for KDE IceWM decoration
 Summary(pl):	Rozszerzenie dekoracji okna "IceWM" dla KDE
 Group:		X11/Amusements
-Requires:	kde-decoration-icewm >= %{_version}
+Requires:	kde-decoration-icewm >= %{version}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
 
@@ -82,7 +83,7 @@ Rozszerzenie dekoracji okna IceWM dla KDE.
 Summary:	KDE Window Decoration - Glow
 Summary(pl):	Dekoracja okna dla KDE - Glow
 Group:		X11/Amusements
-Requires:	kdebase >= %{_version}
+Requires:	kdebase >= %{version}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
 
@@ -96,7 +97,7 @@ Dekoracja okna dla KDE - Glow.
 Summary:	KDE Window Decoration - OpenLook
 Summary(pl):	Dekoracja okna dla KDE - OpenLook
 Group:		X11/Amusements
-Requires:	kdebase >= %{_version}
+Requires:	kdebase >= %{version}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
 
@@ -232,7 +233,7 @@ Summary:	KDE Wallpapers
 Summary(pl):	Tapety dla KDE
 Group:		X11/Amusements
 # Holds %{_datadir}/wallpapers
-Requires:	kdebase >= %{_version}
+Requires:	kdebase >= %{version}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
 
@@ -271,6 +272,7 @@ done
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_mandir}/man1
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -300,10 +302,25 @@ bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT
 
 #%find_lang kdeartwork --with-kde --all-name
 
+%find_lang	klock			--with-kde
+%find_lang	kpartsaver		--with-kde
+cat klock.lang kpartsaver.lang > screensavers.lang
+#%find_lang	kxsconfig		--with-kde
+#%find_lang	hacks			--with-kde
+%find_lang	kwin_cde_config		--with-kde
+%find_lang	kwin_glow_config	--with-kde
+
+# probably obsolete
+#%find_lang	kless			--with-kde
+#%find_lang	klpq			--with-kde
+#%find_lang	ksysctrl		--with-kde
+
+install debian/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -n kde-decoration-cde
+%files -n kde-decoration-cde -f kwin_cde_config.lang
 %defattr(644,root,root,755)
 %{_libdir}/kde3/kwin_cde*.la
 %attr(755,root,root) %{_libdir}/kde3/kwin_cde*.so
@@ -313,7 +330,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_datadir}/apps/kwin/icewm-themes/*
 
-%files -n kde-decoration-glow
+%files -n kde-decoration-glow -f kwin_glow_config.lang
 %defattr(644,root,root,755)
 %{_libdir}/kde3/kwin_glow*.la
 %attr(755,root,root) %{_libdir}/kde3/kwin_glow*.so
@@ -356,11 +373,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kworldclock/maps/[^d]*
 %{_datadir}/apps/kworldclock/maps/depths/*
 
-%files screensavers
+%files screensavers -f screensavers.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/apps/kscreensaver/*
 #%{_datadir}/config/*
+%{_mandir}/man1/*.kss.*
 
 %files sounds
 %defattr(644,root,root,755)
