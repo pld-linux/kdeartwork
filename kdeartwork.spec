@@ -50,7 +50,7 @@ Wygaszacze ekranu dla KDE.
 Summary:	Themes for KDE
 Summary(pl):	Motywy dla KDE
 Group:		X11/Amusements
-Requires:	kdebase >= 3.0.0
+Requires:	kdebase-screensavers
 
 %description themes
 Themes for KDE.
