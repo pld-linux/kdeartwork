@@ -1,7 +1,7 @@
 
 %define		_state		snapshots
 %define		_ver		3.1.92
-%define         _snap           030930
+%define         _snap           031006
 
 Summary:	K Desktop Environment - artwork
 Summary(es):	K Desktop Environment - Plugins e Scripts para aplicativos KDE
@@ -17,7 +17,7 @@ Vendor:		The KDE Team
 Group:		X11/Libraries
 #Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_ver}/src/%{name}-%{version}.tar.bz2
 Source0:        http://www.kernel.pl/~adgor/kde/%{name}-%{_snap}.tar.bz2
-# Source0-md5:	909d3bc1c65b4cce60b36a8ecb06bd3a
+# Source0-md5:	1273269086653f61b0604b90a1d99548
 Patch0:		%{name}-screensavers.patch
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-devel
@@ -354,11 +354,13 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-#%files -n kde-decoration-cde
-#%defattr(644,root,root,755)
-#%{_libdir}/kde3/kwin_cde*.la
-#%attr(755,root,root) %{_libdir}/kde3/kwin_cde*.so
-#%{_datadir}/apps/kwin/cde*
+%files -n kde-decoration-cde
+%defattr(644,root,root,755)
+%{_libdir}/kde3/kwin3_cde.la
+%attr(755,root,root) %{_libdir}/kde3/kwin3_cde.so
+%{_libdir}/kde3/kwin_cde_config.la
+%attr(755,root,root) %{_libdir}/kde3/kwin_cde_config.so
+%{_datadir}/apps/kwin/cde.desktop
 
 #%files -n kde-decoration-icewm
 #%defattr(644,root,root,755)
