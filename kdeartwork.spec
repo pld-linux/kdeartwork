@@ -425,7 +425,7 @@ Pliki umiêdzynarodawiaj±ce dla kdeartwork.
 Summary:	Internationalization and localization files for kde-decoration-cde
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde-decoration-cde
 Group:	X11/Applications
-Requires:	%{name}-kde-decoration-cde = %{epoch}:%{version}-%{release}
+Requires:	kde-decoration-cde = %{epoch}:%{version}-%{release}
 Obsoletes:	kde-i18n-Affrikaans
 Obsoletes:	kde-i18n-Afrikaans
 Obsoletes:	kde-i18n-Arabic
@@ -500,7 +500,7 @@ Pliki umiêdzynarodawiaj±ce dla kde-decoration-cde.
 Summary:	Internationalization and localization files for kde-decoration-icewm
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde-decoration-icewm
 Group:	X11/Applications
-Requires:	%{name}-kde-decoration-icewm = %{epoch}:%{version}-%{release}
+Requires:	kde-decoration-icewm = %{epoch}:%{version}-%{release}
 Obsoletes:	kde-i18n-Affrikaans
 Obsoletes:	kde-i18n-Afrikaans
 Obsoletes:	kde-i18n-Arabic
@@ -575,7 +575,7 @@ Pliki umiêdzynarodawiaj±ce dla kde-decoration-icewm.
 Summary:	Internationalization and localization files for kde-decoration-glow
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde-decoration-glow
 Group:	X11/Applications
-Requires:	%{name}-kde-decoration-glow = %{epoch}:%{version}-%{release}
+Requires:	kde-decoration-glow = %{epoch}:%{version}-%{release}
 Obsoletes:	kde-i18n-Affrikaans
 Obsoletes:	kde-i18n-Afrikaans
 Obsoletes:	kde-i18n-Arabic
@@ -650,7 +650,7 @@ Pliki umiêdzynarodawiaj±ce dla kde-decoration-glow.
 Summary:	Internationalization and localization files for kde-decoration-plastik
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde-decoration-plastik
 Group:	X11/Applications
-Requires:	%{name}-kde-decoration-plastik = %{epoch}:%{version}-%{release}
+Requires:	kde-decoration-plastik = %{epoch}:%{version}-%{release}
 Obsoletes:	kde-i18n-Affrikaans
 Obsoletes:	kde-i18n-Afrikaans
 Obsoletes:	kde-i18n-Arabic
@@ -725,7 +725,7 @@ Pliki umiêdzynarodawiaj±ce dla kde-decoration-plastik.
 Summary:	Internationalization and localization files for kde-style-plastik
 Summary(pl):	Pliki umiêdzynarodawiaj±ce dla kde-style-plastik
 Group:	X11/Applications
-Requires:	%{name}-kde-style-plastik = %{epoch}:%{version}-%{release}
+Requires:	kde-style-plastik = %{epoch}:%{version}-%{release}
 Obsoletes:	kde-i18n-Affrikaans
 Obsoletes:	kde-i18n-Afrikaans
 Obsoletes:	kde-i18n-Arabic
