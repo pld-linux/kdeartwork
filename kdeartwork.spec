@@ -1,6 +1,7 @@
 
 %define		_state		stable
-%define		_ver		3.1.1
+%define		_ver		3.2
+%define         _snap           030329
 
 Summary:	K Desktop Environment - artwork
 Summary(es):	K Desktop Environment - Plugins e Scripts para aplicativos KDE
@@ -9,14 +10,13 @@ Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	%{_ver}
-Release:	1
+Release:        0.%{_snap}.1
 Epoch:		7
 License:	LGPL
 Vendor:		The KDE Team
 Group:		X11/Libraries
-Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_ver}/src/%{name}-%{version}.tar.bz2
-# generated from kde-i18n
-#Source1:	kde-i18n-%{name}-%{version}.tar.bz2
+#Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_ver}/src/%{name}-%{version}.tar.bz2
+Source0:        http://team.pld.org.pl/~djurban/kde/%{name}-%{_snap}.tar.bz2
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-devel
 BuildRequires:	XFree86-devel
@@ -89,6 +89,51 @@ KDE Window Decoration - OpenLook.
 
 %description -n kde-decoration-openlook -l pl
 Dekoracja okna dla KDE - OpenLook.
+
+
+%package -n kde-decoration-kde1
+Summary:        KDE Window Decoration - KDE 1
+Summary(pl):    Dekoracja okna dla KDE - KDE 1
+Group:          X11/Amusements
+
+%description -n kde-decoration-kde1
+KDE Window Decoration - KDE 1.
+
+%description -n kde-decoration-kde1 -l pl
+Dekoracja okna dla KDE - KDE 1.
+
+%package -n kde-decoration-kstep
+Summary:        KDE Window Decoration - Kstep
+Summary(pl):    Dekoracja okna dla KDE - Kstep
+Group:          X11/Amusements
+
+%description -n kde-decoration-kstep
+KDE Window Decoration - Kstep.
+
+%description -n kde-decoration-kstep -l pl
+Dekoracja okna dla KDE - Kstep.
+
+%package -n kde-decoration-riscos
+Summary:        KDE Window Decoration - Risc OS
+Summary(pl):    Dekoracja okna dla KDE - Risc OS
+Group:          X11/Amusements
+
+%description -n kde-decoration-riscos
+KDE Window Decoration - Risc OS.
+
+%description -n kde-decoration-riscos -l pl
+Dekoracja okna dla KDE - Risc OS.
+
+%package -n kde-decoration-system
+Summary:        KDE Window Decoration - System
+Summary(pl):    Dekoracja okna dla KDE - System
+Group:          X11/Amusements
+
+%description -n kde-decoration-system
+KDE Window Decoration - System.
+
+%description -n kde-decoration-system -l pl
+Dekoracja okna dla KDE - System.
 
 %package -n kde-icons-Technical
 Summary:	KDE Icons Theme - Technical
@@ -203,7 +248,7 @@ KDE Wallpapers.
 Tapety dla KDE.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{_snap}
 
 %build
 kde_appsdir="%{_applnkdir}"; export kde_appsdir
@@ -214,11 +259,8 @@ CFLAGS="%{rpmcflags}"
 CXXFLAGS="%{rpmcflags}"
 
 for plik in `find ./ -name \*.desktop` ; do
-	if [ -d $plik ]; then
 		echo $plik
-		sed -e "s/[nb]/[no]/g" > $plik.1
-		mv -f $plik.1 $plik
-	fi
+		sed -i -e "s/[nb]/[no]/g"  $plik
 done
 
 %configure \
@@ -273,7 +315,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n kde-decoration-icewm
 %defattr(644,root,root,755)
+%{_libdir}/kde3/kwin_icewm*.la
+%attr(755,root,root) %{_libdir}/kde3/kwin_icewm*.so
 %{_datadir}/apps/kwin/icewm-themes/*
+%{_datadir}/apps/kwin/icewm*.desktop
 
 %files -n kde-decoration-glow
 %defattr(644,root,root,755)
@@ -286,6 +331,31 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/kde3/kwin_openlook.la
 %attr(755,root,root) %{_libdir}/kde3/kwin_openlook.so
 %{_datadir}/apps/kwin/openlook*
+
+%files -n kde-decoration-kde1
+%defattr(644,root,root,755)
+%{_libdir}/kde3/kwin_kde1.la
+%attr(755,root,root) %{_libdir}/kde3/kwin_kde1.so
+%{_datadir}/apps/kwin/kde1*
+
+%files -n kde-decoration-kstep
+%defattr(644,root,root,755)
+%{_libdir}/kde3/kwin_kstep.la
+%attr(755,root,root) %{_libdir}/kde3/kwin_kstep.so
+%{_datadir}/apps/kwin/kstep*
+
+%files -n kde-decoration-riscos
+%defattr(644,root,root,755)
+%{_libdir}/kde3/kwin_riscos.la
+%attr(755,root,root) %{_libdir}/kde3/kwin_riscos.so
+%{_datadir}/apps/kwin/riscos*
+
+%files -n kde-decoration-system
+%defattr(644,root,root,755)
+%{_libdir}/kde3/kwin_system.la
+%attr(755,root,root) %{_libdir}/kde3/kwin_system.so
+%{_datadir}/apps/kwin/system*
+
 
 %files -n kde-icons-Technical
 %defattr(644,root,root,755)
@@ -322,7 +392,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/apps/kscreensaver
-%{_datadir}/config/*
+##%{_datadir}/config/*
 %{_applnkdir}/.hidden/ScreenSavers/*
 
 %files sounds
