@@ -16,7 +16,7 @@ Vendor:		The KDE Team
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_ver}/src/%{name}-%{version}.tar.bz2
 # Source0-md5:	a68f5b45060777b5d81952ec188db749
-Patch0:         %{name}-screensavers.patch
+Patch0:		%{name}-screensavers.patch
 Patch1:		%{name}-ac_am.patch
 # generated from kde-i18n
 #Source1:	kde-i18n-%{name}-%{version}.tar.bz2
@@ -64,7 +64,7 @@ Dekoracja okna dla KDE - CDE.
 Summary:	Extensions for KDE IceWM decoration
 Summary(pl):	Rozszerzenie dekoracji okna "IceWM" dla KDE
 Group:		X11/Amusements
-Requires:       kde-decoration-icewm >= %{_version}
+Requires:	kde-decoration-icewm >= %{_version}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
 
@@ -78,7 +78,7 @@ Rozszerzenie dekoracji okna IceWM dla KDE.
 Summary:	KDE Window Decoration - Glow
 Summary(pl):	Dekoracja okna dla KDE - Glow
 Group:		X11/Amusements
-Requires:       kdebase >= %{_version}
+Requires:	kdebase >= %{_version}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
 
@@ -92,7 +92,7 @@ Dekoracja okna dla KDE - Glow.
 Summary:	KDE Window Decoration - OpenLook
 Summary(pl):	Dekoracja okna dla KDE - OpenLook
 Group:		X11/Amusements
-Requires:       kdebase >= %{_version}
+Requires:	kdebase >= %{_version}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
 
@@ -228,7 +228,7 @@ Summary:	KDE Wallpapers
 Summary(pl):	Tapety dla KDE
 Group:		X11/Amusements
 # Holds %{_datadir}/wallpapers
-Requires:       kdebase >= %{_version}
+Requires:	kdebase >= %{_version}
 Obsoletes:	%{name}
 Obsoletes:	%{name}-themes
 
