@@ -1,6 +1,6 @@
 
 %define		_state		unstable
-%define		_kdever		kde-3.1-beta2
+%define		_kdever		kde-3.1-rc2
 
 Summary:	K Desktop Environment - artwork
 Summary(es):	K Desktop Environment - Plugins e Scripts para aplicativos KDE
@@ -8,7 +8,7 @@ Summary(ko):	KDE¿ë
 Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
-Version:	3.0.8
+Version:	3.0.98
 Release:	1
 Epoch:		7
 License:	LGPL
@@ -94,21 +94,6 @@ KDE Window Decoration - OpenLook
 %description -n kde-decoration-openlook -l pl
 Dekoracja okna dla KDE - OpenLook
 
-%package -n kde-icons-Crystal
-Summary:	KDE Icons Theme - Crystal
-Summary(pl):	Motyw ikon dla KDE - Crystal
-Group:		X11/Amusements
-
-%description -n kde-icons-Crystal
-KDE Icons Theme - Crystal.
-This is the older version of Crystal theme which is
-currently append to kdelibs as standard KDE theme.
-
-%description -n kde-icons-Crystal -l pl
-Motyw ikon dla KDE - Crystal.
-Jest to starsza wersja tematu Crystal - dodanego obecnie
-do KDE jako motyw standardowy.
-
 %package -n kde-icons-Technical
 Summary:	KDE Icons Theme - Technical
 Summary(pl):	Motyw ikon dla KDE - Crystal
@@ -131,18 +116,27 @@ KDE Icons Theme - ikons
 %description -n kde-icons-ikons -l pl
 Motyw ikon dla KDE - ikons
 
-%package -n kde-icons-locolor
+%package -n kde-icons-kdeclassic
+Summary:	KDE Icons Theme - kdeclassic
+Summary(pl):	Motyw ikon dla KDE - kdeclassic
+Group:		X11/Amusements
+
+%description -n kde-icons-kdeclassic
+KDE Icons Theme - kdeclassic.
+
+%description -n kde-icons-kdeclassic -l pl
+Motyw ikon dla KDE - kdeclassic.
+
+%package -n kde-icons-Locolor
 Summary:	KDE Icons Theme - locolor
 Summary(pl):	Motyw ikon dla KDE - locolor
 Group:		X11/Amusements
 
-%description -n kde-icons-locolor
+%description -n kde-icons-Locolor
 KDE Icons Theme - locolor.
-This package contains support for stendard locolor theme.
 
-%description -n kde-icons-locolor -l pl
+%description -n kde-icons-Locolor -l pl
 Motyw ikon dla KDE - locolor.
-Ten pakiet zawiera uzupe³nienie standardowego motywu locolor.
 
 %package -n kde-icons-slick
 Summary:	KDE Icons Theme - slick
@@ -237,26 +231,26 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-mv $RPM_BUILD_ROOT%{_pixmapsdir}/{L,l}ocolor
+#mv $RPM_BUILD_ROOT%{_pixmapsdir}/{L,l}ocolor
 # Conflict with kdeaddons-kicker: (not verified yet)
-rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/ktimemon.png
+#rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/ktimemon.png
 # Conflict with kdebase:
-rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/bell.png
+#rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/bell.png
 # Conflict with kdegames-kspaceduel: (not verifiet yet)
-rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/kspaceduel.png
+#rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/kspaceduel.png
 # Conflict with kdegames-lskat:
-rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/lskat.png
+#rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/lskat.png
 # Conflict with kdenetwork-ksirc:
-rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/ksirc.png
+#rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/ksirc.png
 # Conflict with kdesdk:
-rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/mimetypes/gettext.png
-rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/kbabel.png
+#rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/mimetypes/gettext.png
+#rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/kbabel.png
 # Conflicts with kdetoys-kteatime:
 #rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/16x16/apps/kteatime.png
 # Conflict with kdetoys-ktux:
-rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/ktux.png
+#rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/ktux.png
 # Conflict with koffice-kspread: (not verified yet)
-rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/kspreadcalc.png
+#rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/kspreadcalc.png
 
 #bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT
 
@@ -284,10 +278,6 @@ rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/kspreadcalc.png
 %attr(755,root,root) %{_libdir}/kde3/kwin_openlook*
 %{_datadir}/apps/kwin/openlook*
 
-%files -n kde-icons-Crystal
-%defattr(644,root,root,755)
-%{_pixmapsdir}/Crystal
-
 %files -n kde-icons-Technical
 %defattr(644,root,root,755)
 %{_pixmapsdir}/Technical
@@ -296,13 +286,13 @@ rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/kspreadcalc.png
 %defattr(644,root,root,755)
 %{_pixmapsdir}/ikons
 
-%files -n kde-icons-locolor
+%files -n kde-icons-kdeclassic
 %defattr(644,root,root,755)
-%{_pixmapsdir}/locolor/*/actions/*
-%{_pixmapsdir}/locolor/*/apps/*
-%{_pixmapsdir}/locolor/*/devices
-%{_pixmapsdir}/locolor/*/filesystems
-%{_pixmapsdir}/locolor/*/mimetypes/*
+%{_pixmapsdir}/kdeclassic
+
+%files -n kde-icons-Locolor
+%defattr(644,root,root,755)
+%{_pixmapsdir}/Locolor
 
 %files -n kde-icons-slick
 %defattr(644,root,root,755)
