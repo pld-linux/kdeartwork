@@ -8,17 +8,6 @@
 +desktopdir = $(kde_datadir)/kscreensaver
  
  EXTRA_DIST = $(desktop_DATA) vm.xpm vm.xbm kscience.png  particle.png image.png
---- kdeartwork-030329/kscreensaver/kdesavers/Makefile.in~	Sat Mar 29 01:01:55 2003
-+++ kdeartwork-030329/kscreensaver/kdesavers/Makefile.in	Tue Apr  1 11:26:12 2003
-@@ -316,7 +316,7 @@
-                KClock.desktop $(GL_DESKTOP_FILES) $(KCLOCK_DESKTOP_FILE)
- 
- 
--desktopdir = $(kde_appsdir)/System/ScreenSavers
-+desktopdir = $(kde_datadir)/kscreensaver
- 
- EXTRA_DIST = $(desktop_DATA) vm.xpm vm.xbm kscience.png  particle.png image.png
- subdir = kscreensaver/kdesavers
 --- kdeartwork-030329/kscreensaver/kpartsaver/Makefile.am~	Tue Apr  1 10:25:29 2003
 +++ kdeartwork-030329/kscreensaver/kpartsaver/Makefile.am	Tue Apr  1 11:26:56 2003
 @@ -10,7 +10,7 @@
@@ -30,17 +19,6 @@
  
  messages: rc.cpp
  	$(XGETTEXT) *.cpp -o $(podir)/kpartsaver.pot
---- kdeartwork-030329/kscreensaver/kpartsaver/Makefile.in~	Sat Mar 29 01:01:55 2003
-+++ kdeartwork-030329/kscreensaver/kpartsaver/Makefile.in	Tue Apr  1 11:27:22 2003
-@@ -267,7 +267,7 @@
- #>- METASOURCES = AUTO
- 
- desktop_DATA = kpartsaver.desktop
--desktopdir = $(kde_appsdir)/System/ScreenSavers
-+desktopdir = $(kde_datadir)/kscreensaver
- subdir = kscreensaver/kpartsaver
- mkinstalldirs = $(SHELL) $(top_srcdir)/admin/mkinstalldirs
- CONFIG_HEADER = $(top_builddir)/config.h
 --- kdeartwork-030329/kscreensaver/kxsconfig/Makefile.am~	Sat Oct  5 01:03:32 2002
 +++ kdeartwork-030329/kscreensaver/kxsconfig/Makefile.am	Tue Apr  1 11:31:03 2003
 @@ -40,7 +40,7 @@
@@ -52,36 +30,14 @@
  
  install-data-local:
  	$(mkinstalldirs) $(DESTDIR)$(screensaverdir)
---- kdeartwork-030329/kscreensaver/kxsconfig/Makefile.in~	Sat Mar 29 01:01:55 2003
-+++ kdeartwork-030329/kscreensaver/kxsconfig/Makefile.in	Tue Apr  1 11:32:40 2003
-@@ -276,7 +276,7 @@
+--- kdeartwork-030914/kscreensaver/xsavers/Makefile.am~	2003-09-11 02:03:55.000000000 +0200
++++ kdeartwork-030914/kscreensaver/xsavers/Makefile.am	2003-09-16 18:28:07.000000000 +0200
+@@ -30,7 +30,7 @@
+ ########## Meta objects ##########
  
- #>- METASOURCES = AUTO
- 
--screensaverdir = $(kde_appsdir)/System/ScreenSavers
-+screensaverdir = $(kde_datadir)/kscreensaver
- subdir = kscreensaver/kxsconfig
- mkinstalldirs = $(SHELL) $(top_srcdir)/admin/mkinstalldirs
- CONFIG_HEADER = $(top_builddir)/config.h
---- kdeartwork-030329/kscreensaver/xsavers/Makefile.am~	Tue Sep  3 02:03:48 2002
-+++ kdeartwork-030329/kscreensaver/xsavers/Makefile.am	Tue Apr  1 11:29:07 2003
-@@ -49,7 +49,7 @@
- desktop_DATA = KBouboule.desktop KMorph3D.desktop KPipes.desktop \
- 	KPyro.desktop KRock.desktop KSlidescreen.desktop KSpace.desktop \
-     KSwarm.desktop
+ desktop_DATA = KSpace.desktop KSwarm.desktop
 -desktopdir = $(kde_appsdir)/System/ScreenSavers
 +desktopdir = $(kde_datadir)/kscreensaver
  
  EXTRA_DIST = $(desktop_DATA)
  
---- kdeartwork-030329/kscreensaver/xsavers/Makefile.in~	Sat Mar 29 01:01:55 2003
-+++ kdeartwork-030329/kscreensaver/xsavers/Makefile.in	Tue Apr  1 11:29:31 2003
-@@ -305,7 +305,7 @@
- 	KPyro.desktop KRock.desktop KSlidescreen.desktop KSpace.desktop \
-     KSwarm.desktop
- 
--desktopdir = $(kde_appsdir)/System/ScreenSavers
-+desktopdir = $(kde_datadir)/kscreensaver
- 
- EXTRA_DIST = $(desktop_DATA)
- subdir = kscreensaver/xsavers
