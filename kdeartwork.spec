@@ -1,4 +1,4 @@
-#$Revision: 1.33 $, $Date: 2003-05-13 20:29:50 $
+#$Revision: 1.34 $, $Date: 2003-05-13 21:12:35 $
 
 %define		_state		stable
 %define		_ver		3.1.2
@@ -252,11 +252,9 @@ CFLAGS="%{rpmcflags}"
 CXXFLAGS="%{rpmcflags}"
 
 for plik in `find ./ -name \*.desktop` ; do
-	if [ -d $plik ]; then
 		echo $plik
 		sed -e 's/\[nb\]/[no]/g' $plik > ${plik}.1
 		mv -f ${plik}.1 $plik
-	fi
 done
 
 %{__make} -f admin/Makefile.common cvs
