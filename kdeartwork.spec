@@ -9,14 +9,14 @@ Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	%{_ver}
-Release:	0.1
+Release:	1
 Epoch:		8
 License:	LGPL
 Vendor:		The KDE Team
 Group:		X11/Libraries
-Source0:	http://download.kde.org/%{_state}/%{_ver}/src/%{name}-%{version}.tar.bz2
+Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_ver}/src/%{name}-%{_ver}.tar.bz2	
+# Source0-md5:	86bc54962ffee206fda15acfd228d52c
 #Source0:	http://ep09.pld-linux.org/~djurban/kde/%{name}-%{version}.tar.bz2
-# Source0-md5:	cc2b1f2116c998387ea4ea998720934a
 Icon:		kde-artwork.xpm
 Patch100:	%{name}-branch.diff
 Patch0:		%{name}-screensavers.patch
