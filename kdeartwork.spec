@@ -1,7 +1,7 @@
 
 %define		_state		snapshots
 %define		_ver		3.1.93
-%define		_snap		031105
+%define		_snap		031114
 
 Summary:	K Desktop Environment - artwork
 Summary(es):	K Desktop Environment - Plugins e Scripts para aplicativos KDE
@@ -17,7 +17,7 @@ Vendor:		The KDE Team
 Group:		X11/Libraries
 #Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_ver}/src/%{name}-%{version}.tar.bz2
 Source0:	http://www.kernel.pl/~adgor/kde/%{name}-%{_snap}.tar.bz2
-# Source0-md5:	9a8abf019a29be3c4d45d35f6306ebf1
+# Source0-md5:	bc922f253403ae291255a5e7f98722b3
 Patch0:		%{name}-screensavers.patch
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-devel
@@ -460,7 +460,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/apps/kscreensaver/*
-##%{_datadir}/config/*
+# TODO: Why these aren't installing??
+#%{_datadir}/config/*
 
 %files sounds
 %defattr(644,root,root,755)
