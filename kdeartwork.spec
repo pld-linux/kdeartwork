@@ -257,7 +257,7 @@ rm -rf $RPM_BUILD_ROOT
 #%find_lang kdeartwork --with-kde --all-name
 
 %clean
-#rm -rf $RPM_BUILD_ROOT
+rm -rf $RPM_BUILD_ROOT
 
 %files -n kde-decoration-cde
 %defattr(644,root,root,755)
