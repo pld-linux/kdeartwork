@@ -32,7 +32,7 @@ BuildRequires:	OpenGL-devel
 BuildRequires:	ed
 BuildRequires:	kdebase-devel >= %{_minbaseevr}
 BuildRequires:	libxml2-progs
-BuildRequires:	unsermake
+#BuildRequires:	unsermake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define 	_noautoreqdep	libGL.so.1 libGLU.so.1
