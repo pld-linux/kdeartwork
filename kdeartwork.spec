@@ -5,7 +5,7 @@ Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	3.0.4
-Release:	1
+Release:	2
 Epoch:		7
 License:	LGPL
 Vendor:		The KDE Team
@@ -103,6 +103,7 @@ CXXFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_mandir}/man1
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
@@ -129,6 +130,13 @@ rm -f $RPM_BUILD_ROOT%{_pixmapsdir}/locolor/{16x16,32x32}/apps/kspreadcalc.png
 
 bzip2 -dc %{SOURCE1} | tar xf - -C $RPM_BUILD_ROOT
 
+install debian/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
+
+for f in `find $RPM_BUILD_ROOT%{_applnkdir} -name '.directory' -o -name '*.desktop'` ; do
+	awk -v F=$f '/^Icon=/ && !/\.xpm$/ && !/\.png$/ { $0 = $0 ".png";} { print $0; } END { if(F == ".directory") print "Type=Directory"; }' < $f > $f.tmp
+	mv -f $f{.tmp,}
+done
+
 %find_lang kdeartwork --with-kde --all-name
 
 %clean
@@ -150,6 +158,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*.kss
 %{_datadir}/apps/kscreensaver
 %{_applnkdir}/System/ScreenSavers
+%{_mandir}/man1/*
 
 %files themes
 %defattr(644,root,root,755)
