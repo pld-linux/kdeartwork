@@ -29,6 +29,7 @@ URL:		http://www.kde.org/
 Icon:		kde-artwork.xpm
 BuildRequires:	OpenGL-devel
 BuildRequires:	ed
+BuildRequires:	sed >= 4.0
 BuildRequires:	kdebase-devel >= %{_minbaseevr}
 BuildRequires:	libxml2-progs
 #BuildRequires:	unsermake
@@ -351,12 +352,12 @@ Tapety dla KDE.
 #%%patch100 -p1
 %patch0 -p1
 %patch1 -p1
-# MAKE SURE SOMEONE CHEKCS IT IN 3.4.0+
+# MAKE SURE SOMEONE CHECKS IT IN 3.4.0+
 %if "%{version}" == "3.4.0"
-# ls ../BUILD/kdeartwork-3.4.0/kwin-styles/*/ -d |cut -d/ -f5
-echo "SUBDIRS = cde glow icewm kde1 kstep openlook riscos system" > kwin-styles/Makefile.am
+sed -i -e 's/^SUBDIRS.*/SUBDIRS = kstep glow cde icewm openlook kde1 system riscos/' kwin-styles/Makefile.am
 %else
-echo "Please check line 352 of and confirm whether it shouldn't be used"
+# FIXME what is this purpose, check what? patch100?
+echo "Please check line kdeartwork.spec:353 of and confirm whether it shouldn't be used"
 exit 1
 %endif
 
