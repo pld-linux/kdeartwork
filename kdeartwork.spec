@@ -3,11 +3,11 @@
 # - Splitting kde-emoticons subpkg
 
 %define		_state		stable
-%define		_kdever		3.4
-%define		_ver		3.4.0
+%define		_kdever		3.4.1
+%define		_ver		3.4.1
 
-%define		_minlibsevr	9:3.4.0
-%define		_minbaseevr	9:3.4.0
+%define		_minlibsevr	9:3.4.1
+%define		_minbaseevr	9:3.4.1
 
 Summary:	K Desktop Environment - artwork
 Summary(es):	K Desktop Environment - Plugins e Scripts para aplicativos KDE
@@ -16,13 +16,13 @@ Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	%{_ver}
-Release:	1
+Release:	0.1
 Epoch:		8
 License:	LGPL
 Vendor:		The KDE Team
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_kdever}/src/%{name}-%{_ver}.tar.bz2
-# Source0-md5:	89df94d9e6c63887e5a66312b6514d0d
+# Source0-md5:	0f58245c2fa3c58dbe139da43037a203
 Patch0:		%{name}-screensavers.patch
 Patch1:		%{name}-xscreensaver-dir.patch
 URL:		http://www.kde.org/
@@ -352,14 +352,6 @@ Tapety dla KDE.
 #%%patch100 -p1
 %patch0 -p1
 %patch1 -p1
-# MAKE SURE SOMEONE CHECKS IT IN 3.4.0+
-%if "%{version}" == "3.4.0"
-sed -i -e 's/^SUBDIRS.*/SUBDIRS = kstep glow cde icewm openlook kde1 system riscos/' kwin-styles/Makefile.am
-%else
-# FIXME what is this purpose, check what? patch100?
-echo "Please check line kdeartwork.spec:353 of and confirm whether it shouldn't be used"
-exit 1
-%endif
 
 %build
 cp -f /usr/share/automake/config.sub admin
