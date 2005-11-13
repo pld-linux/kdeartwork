@@ -3,11 +3,11 @@
 # - Splitting kde-emoticons subpkg
 
 %define		_state		stable
-%define		_kdever		3.4.3
-%define		_ver		3.4.3
+%define		_kdever		3.5
+%define		_ver		3.5.0
 
-%define		_minlibsevr	9:3.4.3
-%define		_minbaseevr	9:3.4.3
+%define		_minlibsevr	9:3.5.0
+%define		_minbaseevr	9:3.5.0
 
 Summary:	K Desktop Environment - artwork
 Summary(es):	K Desktop Environment - Plugins e Scripts para aplicativos KDE
@@ -16,13 +16,13 @@ Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	%{_ver}
-Release:	1
+Release:	0.1
 Epoch:		8
 License:	LGPL
 Vendor:		The KDE Team
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_kdever}/src/%{name}-%{_ver}.tar.bz2
-# Source0-md5:	a571991c6e21321177febafadb61efaa
+# Source0-md5:	240c319bab0244436e0c2163bfd5fbfd
 Patch0:		%{name}-screensavers.patch
 Patch1:		%{name}-xscreensaver-dir.patch
 URL:		http://www.kde.org/
@@ -162,6 +162,21 @@ KDE Window Decoration - System.
 
 %description -n kde-decoration-system -l pl
 Dekoracja okna dla KDE - System.
+
+%package -n kde-decoration-smoothblend
+Summary:	KDE Window Decoration - Smoothblend
+Summary(pl):	Dekoracja okna dla KDE - Smoothblend
+Group:		X11/Amusements
+Requires:	kdebase-desktop >= %{_minbaseevr}
+Obsoletes:	kdeartwork
+Obsoletes:	kdeartwork-themes
+
+%description -n kde-decoration-smoothblend
+KDE Window Decoration - Smoothblend.
+
+%description -n kde-decoration-smoothblend -l pl
+Dekoracja okna dla KDE - Smoothblend.
+
 
 %package -n kde-emoticons
 Summary:	KDE emoticons themes
@@ -451,6 +466,12 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde3/kwin3_system.so
 %{_datadir}/apps/kwin/system.desktop
 
+%files -n kde-decoration-smoothblend
+%defattr(644,root,root,755)
+%{_libdir}/kde3/kwin*_smoothblend*.la
+%attr(755,root,root) %{_libdir}/kde3/kwin*_smoothblend*.so
+%{_datadir}/apps/kwin/smoothblend.desktop
+
 %files -n kde-emoticons
 %defattr(644,root,root,755)
 %{_datadir}/emoticons
@@ -492,7 +513,7 @@ rm -rf $RPM_BUILD_ROOT
 %files kworldclock
 %defattr(644,root,root,755)
 %{_datadir}/apps/kworldclock/maps/[!d]*
-%{_datadir}/apps/kworldclock/maps/depths/*
+#%{_datadir}/apps/kworldclock/maps/depths/*
 
 %files screensavers
 %defattr(644,root,root,755)
@@ -504,8 +525,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/*.kss.1*
 
 # KDE xscreensaver wrappers (should R: xscreensaver?)
-%attr(755,root,root) %{_bindir}/kxsconfig
-%attr(755,root,root) %{_bindir}/kxsrun
+#%attr(755,root,root) %{_bindir}/kxsconfig
+#%attr(755,root,root) %{_bindir}/kxsrun
 # extrusion.desktop is for xscreensaver-GLE, the rest for xscreensaver{,-GL}
 %{_datadir}/apps/kscreensaver/[!Kk]*.desktop
 %{_datadir}/apps/kscreensaver/k[!p]*.desktop
