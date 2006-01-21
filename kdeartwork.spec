@@ -26,7 +26,6 @@ Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_kdever}/src/%{name}-%{_ver}.tar.
 Patch0:		%{name}-screensavers.patch
 Patch1:		%{name}-xscreensaver-dir.patch
 URL:		http://www.kde.org/
-Icon:		kde-artwork.xpm
 BuildRequires:	OpenGL-devel
 BuildRequires:	ed
 BuildRequires:	sed >= 4.0
