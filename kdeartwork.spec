@@ -378,7 +378,7 @@ cp -f /usr/share/automake/config.sub admin
 	XSCREENSAVER=/usr/%{_lib}/xscreensaver/flame \
 	XSCREENSAVER_CONFIG=/etc/X11/xscreensaver \
 	--disable-rpath \
-	--enable-final \
+	--disable-final \
 	--with-qt-libraries=%{_libdir} \
 %if "%{_lib}" == "lib64"
 	--enable-libsuffix=64 \
