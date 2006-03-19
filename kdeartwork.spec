@@ -31,7 +31,6 @@ BuildRequires:	ed
 BuildRequires:	sed >= 4.0
 BuildRequires:	kdebase-devel >= %{_minbaseevr}
 BuildRequires:	libxml2-progs
-#BuildRequires:	unsermake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define 	_noautoreqdep	libGL.so.1 libGLU.so.1
@@ -369,8 +368,6 @@ Tapety dla KDE.
 
 %build
 cp -f /usr/share/automake/config.sub admin
-
-#export UNSERMAKE=/usr/share/unsermake/unsermake
 
 %{__make} -f admin/Makefile.common cvs
 
