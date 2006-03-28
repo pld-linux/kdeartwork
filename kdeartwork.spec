@@ -3,11 +3,11 @@
 # - Splitting kde-emoticons subpkg
 
 %define		_state		stable
-%define		_kdever		3.5.1
-%define		_ver		3.5.1
+%define		_kdever		3.5.2
+%define		_ver		3.5.2
 
-%define		_minlibsevr	9:3.5.1
-%define		_minbaseevr	9:3.5.1
+%define		_minlibsevr	9:3.5.2
+%define		_minbaseevr	9:3.5.2
 
 Summary:	K Desktop Environment - artwork
 Summary(es):	K Desktop Environment - Plugins e Scripts para aplicativos KDE
@@ -22,7 +22,7 @@ License:	LGPL
 Vendor:		The KDE Team
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{_kdever}/src/%{name}-%{_ver}.tar.bz2
-# Source0-md5:	8053bb1a1b2a5844b29f5f96328b1d96
+# Source0-md5:	211801e7ab7a5e113821625b931f338c
 Patch0:		%{name}-screensavers.patch
 Patch1:		%{name}-xscreensaver-dir.patch
 URL:		http://www.kde.org/
@@ -207,6 +207,18 @@ KDE Icons Theme - locolor.
 
 %description -n kde-icons-Locolor -l pl
 Motyw ikon dla KDE - locolor.
+
+%package -n kde-icons-hicolor
+Summary:	KDE Icons Theme - hicolor
+Summary(pl):	Motyw ikon dla KDE - hicolor
+Group:		X11/Amusements
+Requires:	kdelibs >= %{_minlibsevr}
+
+%description -n kde-icons-hicolor
+KDE Icons Theme - hicolor.
+
+%description -n kde-icons-hicolor -l pl
+Motyw ikon dla KDE - hicolor.
 
 %package -n kde-icons-Technical
 Summary:	KDE Icons Theme - Technical
@@ -397,11 +409,13 @@ rm -rf $RPM_BUILD_ROOT
 install kscreensaver/kxsconfig/ScreenSavers/*.desktop $RPM_BUILD_ROOT%{_datadir}/apps/kscreensaver
 rm -f $RPM_BUILD_ROOT%{_datadir}/apps/kscreensaver/pixmaps.desktop
 
+%if 0
 # Debian manpages
 install -d $RPM_BUILD_ROOT%{_mandir}/man1
 # these don't exist in 3.2:
 #rm -f debian/{kbouboule,kmatrix,kmorph3d,kpipes,kpyro,krock,kslidescreen}.kss.1
 install debian/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
+%endif
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -476,6 +490,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_iconsdir}/Locolor
 
+%files -n kde-icons-hicolor
+%defattr(644,root,root,755)
+%{_iconsdir}/hicolor
+
 %files -n kde-icons-ikons
 %defattr(644,root,root,755)
 %{_iconsdir}/ikons
@@ -518,7 +536,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kscreensaver/K*.desktop
 %{_datadir}/apps/kscreensaver/kpartsaver.desktop
 %{_datadir}/apps/kscreensaver/*.png
-%{_mandir}/man1/*.kss.1*
+#%{_mandir}/man1/*.kss.1*
 
 # KDE xscreensaver wrappers (should R: xscreensaver?)
 #%attr(755,root,root) %{_bindir}/kxsconfig
@@ -527,8 +545,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kscreensaver/[!Kk]*.desktop
 %{_datadir}/apps/kscreensaver/k[!p]*.desktop
 #%{_datadir}/config/*rc
-%{_mandir}/man1/kxsconfig.1*
-%{_mandir}/man1/kxsrun.1*
+#%{_mandir}/man1/kxsconfig.1*
+#%{_mandir}/man1/kxsrun.1*
 
 %files sounds
 %defattr(644,root,root,755)
