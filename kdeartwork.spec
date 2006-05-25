@@ -12,14 +12,14 @@ Summary(ko):	KDE¿ë
 Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
-Version:	3.5.2
+Version:	3.5.3
 Release:	1
 Epoch:		8
 License:	LGPL
 Vendor:		The KDE Team
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	211801e7ab7a5e113821625b931f338c
+# Source0-md5:	e0fc78bee18d81b4595c98964227a06c
 Patch0:		%{name}-screensavers.patch
 Patch1:		%{name}-xscreensaver-dir.patch
 URL:		http://www.kde.org/
@@ -487,9 +487,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_iconsdir}/Locolor
 
-%files -n kde-icons-hicolor
-%defattr(644,root,root,755)
-%{_iconsdir}/hicolor
+#%files -n kde-icons-hicolor
+#%defattr(644,root,root,755)
+#%{_iconsdir}/hicolor
 
 %files -n kde-icons-ikons
 %defattr(644,root,root,755)
