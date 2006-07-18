@@ -13,7 +13,7 @@ Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	3.5.3
-Release:	1
+Release:	2
 Epoch:		8
 License:	LGPL
 Vendor:		The KDE Team
@@ -536,11 +536,10 @@ rm -rf $RPM_BUILD_ROOT
 #%{_mandir}/man1/*.kss.1*
 
 # KDE xscreensaver wrappers (should R: xscreensaver?)
-#%attr(755,root,root) %{_bindir}/kxsconfig
-#%attr(755,root,root) %{_bindir}/kxsrun
+%attr(755,root,root) %{_bindir}/kxsconfig
+%attr(755,root,root) %{_bindir}/kxsrun
 # extrusion.desktop is for xscreensaver-GLE, the rest for xscreensaver{,-GL}
-%{_datadir}/apps/kscreensaver/[!Kk]*.desktop
-%{_datadir}/apps/kscreensaver/k[!p]*.desktop
+%{_datadir}/apps/kscreensaver/*.desktop
 #%{_datadir}/config/*rc
 #%{_mandir}/man1/kxsconfig.1*
 #%{_mandir}/man1/kxsrun.1*
