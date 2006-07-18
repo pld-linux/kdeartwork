@@ -382,7 +382,7 @@ cp -f /usr/share/automake/config.sub admin
 
 %configure \
 	XSCREENSAVER=/usr/%{_lib}/xscreensaver/flame \
-	XSCREENSAVER_CONFIG=/etc/X11/xscreensaver \
+	XSCREENSAVER_CONFIG=/usr/share/xscreensaver \
 	--disable-rpath \
 	--disable-final \
 	--with-qt-libraries=%{_libdir} \
