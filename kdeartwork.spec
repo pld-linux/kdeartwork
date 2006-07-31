@@ -530,8 +530,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/*.kss
 %{_datadir}/apps/kfiresaver
-%{_datadir}/apps/kscreensaver/K*.desktop
-%{_datadir}/apps/kscreensaver/kpartsaver.desktop
 %{_datadir}/apps/kscreensaver/*.png
 #%{_mandir}/man1/*.kss.1*
 
