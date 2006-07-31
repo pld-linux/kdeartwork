@@ -16,7 +16,6 @@ Version:	3.5.4
 Release:	1
 Epoch:		8
 License:	LGPL
-Vendor:		The KDE Team
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{name}-%{version}.tar.bz2
 # Source0-md5:	c7ff9048b9b68c976de08ed418598e40
@@ -25,9 +24,9 @@ Patch1:		%{name}-xscreensaver-dir.patch
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-devel
 BuildRequires:	ed
-BuildRequires:	sed >= 4.0
 BuildRequires:	kdebase-devel >= %{_minbaseevr}
 BuildRequires:	libxml2-progs
+BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define 	_noautoreqdep	libGL.so.1 libGLU.so.1
@@ -133,8 +132,8 @@ Dekoracja okna dla KDE - OpenLook.
 %package -n kde-decoration-riscos
 Summary:	KDE Window Decoration - Risc OS
 Summary(pl):	Dekoracja okna dla KDE - Risc OS
-Requires:	kdebase-desktop >= %{_minbaseevr}
 Group:		X11/Amusements
+Requires:	kdebase-desktop >= %{_minbaseevr}
 Obsoletes:	kdeartwork
 Obsoletes:	kdeartwork-themes
 
