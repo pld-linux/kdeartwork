@@ -13,7 +13,7 @@ Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	3.5.5
-Release:	0.1
+Release:	1
 Epoch:		8
 License:	LGPL
 Group:		X11/Libraries
@@ -380,9 +380,7 @@ Tapety dla KDE.
 
 %build
 cp -f /usr/share/automake/config.sub admin
-
 %{__make} -f admin/Makefile.common cvs
-
 %configure \
 	XSCREENSAVER=/usr/%{_lib}/xscreensaver/flame \
 	XSCREENSAVER_CONFIG=/usr/share/xscreensaver \
