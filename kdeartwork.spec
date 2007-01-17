@@ -12,18 +12,17 @@ Summary(ko):	KDE¿ë
 Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
-Version:	3.5.5
-Release:	2
+Version:	3.5.6
+Release:	1
 Epoch:		8
 License:	LGPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	8d35156b506cf870eb9641f72a304c8c
+# Source0-md5:	4c817eab517fba30fce8f3b40a6f019d
 Patch0:		kde-common-PLD.patch
 Patch1:		%{name}-screensavers.patch
 Patch2:		%{name}-xscreensaver-dir.patch
 Patch3:		kde-ac260-lt.patch
-Patch4:		kde-am.patch
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-devel
 BuildRequires:	ed
@@ -376,7 +375,6 @@ Tapety dla KDE.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
-%patch4 -p1
 
 %build
 cp -f /usr/share/automake/config.sub admin
