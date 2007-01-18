@@ -12,13 +12,13 @@ Summary(ko):	KDE¿ë
 Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
-Version:	3.5.5
-Release:	1
+Version:	3.5.6
+Release:	0.1
 Epoch:		8
 License:	LGPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	8d35156b506cf870eb9641f72a304c8c
+# Source0-md5:	4c817eab517fba30fce8f3b40a6f019d
 Patch0:		kde-common-PLD.patch
 Patch1:		%{name}-screensavers.patch
 Patch2:		%{name}-xscreensaver-dir.patch
