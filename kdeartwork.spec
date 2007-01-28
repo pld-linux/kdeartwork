@@ -13,7 +13,7 @@ Summary(pl):	K Desktop Environment - grafiki itp.
 Summary(pt_BR):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	3.5.6
-Release:	0.1
+Release:	1
 Epoch:		8
 License:	LGPL
 Group:		X11/Libraries
