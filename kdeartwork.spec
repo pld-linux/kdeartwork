@@ -7,10 +7,10 @@
 %define		_minbaseevr	9:%{version}
 
 Summary:	K Desktop Environment - artwork
-Summary(es.UTF-8):   K Desktop Environment - Plugins e Scripts para aplicativos KDE
-Summary(ko.UTF-8):   KDE용
-Summary(pl.UTF-8):   K Desktop Environment - grafiki itp.
-Summary(pt_BR.UTF-8):   K Desktop Environment - Plugins e Scripts para aplicações KDE
+Summary(es.UTF-8):	K Desktop Environment - Plugins e Scripts para aplicativos KDE
+Summary(ko.UTF-8):	KDE용
+Summary(pl.UTF-8):	K Desktop Environment - grafiki itp.
+Summary(pt_BR.UTF-8):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	3.5.6
 Release:	1
@@ -47,7 +47,7 @@ adicionais para o KDE.
 
 %package -n kde-decoration-cde
 Summary:	KDE Window Decoration - CDE
-Summary(pl.UTF-8):   Dekoracja okna dla KDE - CDE
+Summary(pl.UTF-8):	Dekoracja okna dla KDE - CDE
 Group:		X11/Amusements
 Requires:	kdebase-desktop >= %{_minbaseevr}
 Obsoletes:	kdeartwork
@@ -61,7 +61,7 @@ Dekoracja okna dla KDE - CDE.
 
 %package -n kde-decoration-glow
 Summary:	KDE Window Decoration - Glow
-Summary(pl.UTF-8):   Dekoracja okna dla KDE - Glow
+Summary(pl.UTF-8):	Dekoracja okna dla KDE - Glow
 Group:		X11/Amusements
 Requires:	kdebase-desktop >= %{_minbaseevr}
 Obsoletes:	kdeartwork
@@ -75,7 +75,7 @@ Dekoracja okna dla KDE - Glow.
 
 %package -n kde-decoration-icewm
 Summary:	Extensions for KDE IceWM decoration
-Summary(pl.UTF-8):   Rozszerzenie dekoracji okna "IceWM" dla KDE
+Summary(pl.UTF-8):	Rozszerzenie dekoracji okna "IceWM" dla KDE
 Group:		X11/Amusements
 Requires:	kdebase-desktop >= %{_minbaseevr}
 Obsoletes:	kdeartwork
@@ -89,7 +89,7 @@ Rozszerzenie dekoracji okna IceWM dla KDE.
 
 %package -n kde-decoration-kde1
 Summary:	KDE Window Decoration - KDE 1
-Summary(pl.UTF-8):   Dekoracja okna dla KDE - KDE 1
+Summary(pl.UTF-8):	Dekoracja okna dla KDE - KDE 1
 Group:		X11/Amusements
 Requires:	kdebase-desktop >= %{_minbaseevr}
 Obsoletes:	kdeartwork
@@ -103,7 +103,7 @@ Dekoracja okna dla KDE - KDE 1.
 
 %package -n kde-decoration-kstep
 Summary:	KDE Window Decoration - Kstep
-Summary(pl.UTF-8):   Dekoracja okna dla KDE - Kstep
+Summary(pl.UTF-8):	Dekoracja okna dla KDE - Kstep
 Group:		X11/Amusements
 Requires:	kdebase-desktop >= %{_minbaseevr}
 Obsoletes:	kdeartwork
@@ -117,7 +117,7 @@ Dekoracja okna dla KDE - Kstep.
 
 %package -n kde-decoration-openlook
 Summary:	KDE Window Decoration - OpenLook
-Summary(pl.UTF-8):   Dekoracja okna dla KDE - OpenLook
+Summary(pl.UTF-8):	Dekoracja okna dla KDE - OpenLook
 Group:		X11/Amusements
 Requires:	kdebase-desktop >= %{_minbaseevr}
 Obsoletes:	kdeartwork
@@ -131,7 +131,7 @@ Dekoracja okna dla KDE - OpenLook.
 
 %package -n kde-decoration-riscos
 Summary:	KDE Window Decoration - Risc OS
-Summary(pl.UTF-8):   Dekoracja okna dla KDE - Risc OS
+Summary(pl.UTF-8):	Dekoracja okna dla KDE - Risc OS
 Group:		X11/Amusements
 Requires:	kdebase-desktop >= %{_minbaseevr}
 Obsoletes:	kdeartwork
@@ -145,7 +145,7 @@ Dekoracja okna dla KDE - Risc OS.
 
 %package -n kde-decoration-system
 Summary:	KDE Window Decoration - System
-Summary(pl.UTF-8):   Dekoracja okna dla KDE - System
+Summary(pl.UTF-8):	Dekoracja okna dla KDE - System
 Group:		X11/Amusements
 Requires:	kdebase-desktop >= %{_minbaseevr}
 Obsoletes:	kdeartwork
@@ -159,7 +159,7 @@ Dekoracja okna dla KDE - System.
 
 %package -n kde-decoration-smoothblend
 Summary:	KDE Window Decoration - Smoothblend
-Summary(pl.UTF-8):   Dekoracja okna dla KDE - Smoothblend
+Summary(pl.UTF-8):	Dekoracja okna dla KDE - Smoothblend
 Group:		X11/Amusements
 Requires:	kdebase-desktop >= %{_minbaseevr}
 Obsoletes:	kdeartwork
@@ -174,7 +174,7 @@ Dekoracja okna dla KDE - Smoothblend.
 
 %package -n kde-emoticons
 Summary:	KDE emoticons themes
-Summary(pl.UTF-8):   Motywy emotikon dla KDE
+Summary(pl.UTF-8):	Motywy emotikon dla KDE
 Group:		X11/Amusements
 Requires:	kdelibs >= %{_minlibsevr}
 Obsoletes:	kdeartwork
@@ -190,7 +190,7 @@ Motywy emotikon dla KDE.
 
 %package -n kde-icons-Locolor
 Summary:	KDE Icons Theme - locolor
-Summary(pl.UTF-8):   Motyw ikon dla KDE - locolor
+Summary(pl.UTF-8):	Motyw ikon dla KDE - locolor
 Group:		X11/Amusements
 Requires:	kdelibs >= %{_minlibsevr}
 Obsoletes:	kdeartwork
@@ -206,7 +206,7 @@ Motyw ikon dla KDE - locolor.
 
 %package -n kde-icons-hicolor
 Summary:	KDE Icons Theme - hicolor
-Summary(pl.UTF-8):   Motyw ikon dla KDE - hicolor
+Summary(pl.UTF-8):	Motyw ikon dla KDE - hicolor
 Group:		X11/Amusements
 Requires:	kdelibs >= %{_minlibsevr}
 
@@ -218,7 +218,7 @@ Motyw ikon dla KDE - hicolor.
 
 %package -n kde-icons-Technical
 Summary:	KDE Icons Theme - Technical
-Summary(pl.UTF-8):   Motyw ikon dla KDE - Technical
+Summary(pl.UTF-8):	Motyw ikon dla KDE - Technical
 Group:		X11/Amusements
 Requires:	kdelibs >= %{_minlibsevr}
 Obsoletes:	kdeartwork
@@ -232,7 +232,7 @@ Motyw ikon dla KDE - Technical.
 
 %package -n kde-icons-ikons
 Summary:	KDE Icons Theme - ikons
-Summary(pl.UTF-8):   Motyw ikon dla KDE - ikons
+Summary(pl.UTF-8):	Motyw ikon dla KDE - ikons
 Group:		X11/Amusements
 Requires:	kdelibs >= %{_minlibsevr}
 Obsoletes:	kdeartwork
@@ -246,7 +246,7 @@ Motyw ikon dla KDE - ikons.
 
 %package -n kde-icons-kdeclassic
 Summary:	KDE Icons Theme - kdeclassic
-Summary(pl.UTF-8):   Motyw ikon dla KDE - kdeclassic
+Summary(pl.UTF-8):	Motyw ikon dla KDE - kdeclassic
 Group:		X11/Amusements
 Requires:	kdelibs >= %{_minlibsevr}
 Obsoletes:	kdeartwork
@@ -260,7 +260,7 @@ Motyw ikon dla KDE - kdeclassic.
 
 %package -n kde-icons-kids
 Summary:	KDE Icons Theme - kids
-Summary(pl.UTF-8):   Motyw ikon dla KDE - kids
+Summary(pl.UTF-8):	Motyw ikon dla KDE - kids
 Group:		X11/Amusements
 Requires:	kdelibs >= %{_minlibsevr}
 
@@ -272,7 +272,7 @@ Motyw ikon dla KDE - kids.
 
 %package -n kde-icons-slick
 Summary:	KDE Icons Theme - slick
-Summary(pl.UTF-8):   Motyw ikon dla KDE - slick
+Summary(pl.UTF-8):	Motyw ikon dla KDE - slick
 Group:		X11/Amusements
 Requires:	kdelibs >= %{_minlibsevr}
 Obsoletes:	kdeartwork
@@ -286,7 +286,7 @@ Motyw ikon dla KDE - slick.
 
 %package -n kde-style-dotnet
 Summary:	KDE Style - DotNet
-Summary(pl.UTF-8):   Styl dla KDE - DotNet
+Summary(pl.UTF-8):	Styl dla KDE - DotNet
 Group:		X11/Amusements
 Requires:	kdebase-core >= %{_minbaseevr}
 Obsoletes:	kdeartwork
@@ -300,7 +300,7 @@ Styl dla KDE - DotNet.
 
 %package -n kde-style-phase
 Summary:	KDE Style - Phase
-Summary(pl.UTF-8):   Styl dla KDE - Phase
+Summary(pl.UTF-8):	Styl dla KDE - Phase
 Group:		X11/Amusements
 Requires:	kdebase-core >= %{_minbaseevr}
 Obsoletes:	kdeartwork
@@ -314,7 +314,7 @@ Styl dla KDE - Phase.
 
 %package kworldclock
 Summary:	Themes for kworldclock
-Summary(pl.UTF-8):   Motywy dla kworldclock
+Summary(pl.UTF-8):	Motywy dla kworldclock
 Group:		X11/Amusements
 Requires:	kdetoys-kworldclock >= %{version}
 Obsoletes:	kdeartwork
@@ -328,7 +328,7 @@ Motywy dla kworldclock.
 
 %package screensavers
 Summary:	Screen savers for KDE
-Summary(pl.UTF-8):   Wygaszacze ekranu dla KDE
+Summary(pl.UTF-8):	Wygaszacze ekranu dla KDE
 Group:		X11/Amusements
 Requires:	kdebase-screensavers >= %{_minbaseevr}
 Obsoletes:	kdeartwork
@@ -342,7 +342,7 @@ Wygaszacze ekranu dla KDE.
 
 %package sounds
 Summary:	KDE Sounds
-Summary(pl.UTF-8):   Dźwięki dla KDE
+Summary(pl.UTF-8):	Dźwięki dla KDE
 Group:		X11/Amusements
 Requires:	kdebase-desktop >= %{_minbaseevr}
 Obsoletes:	kdeartwork
@@ -356,7 +356,7 @@ Dźwięki dla KDE.
 
 %package wallpapers
 Summary:	KDE Wallpapers
-Summary(pl.UTF-8):   Tapety dla KDE
+Summary(pl.UTF-8):	Tapety dla KDE
 Group:		X11/Amusements
 Requires:	kdelibs >= %{_minlibsevr}
 Obsoletes:	kdeartwork
