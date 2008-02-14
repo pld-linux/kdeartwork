@@ -31,8 +31,6 @@ BuildRequires:	libxml2-progs
 BuildRequires:	sed >= 4.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define 	_noautoreqdep	libGL.so.1 libGLU.so.1
-
 %description
 This package contains various graphics and such for KDE.
 
@@ -406,68 +404,59 @@ rm -rf $RPM_BUILD_ROOT
 install kscreensaver/kxsconfig/ScreenSavers/*.desktop $RPM_BUILD_ROOT%{_datadir}/apps/kscreensaver
 rm -f $RPM_BUILD_ROOT%{_datadir}/apps/kscreensaver/pixmaps.desktop
 
+rm -f $RPM_BUILD_ROOT%{_libdir}/kde3/*.la
+rm -f $RPM_BUILD_ROOT%{_libdir}/kde3/*/*/*.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files -n kde-decoration-cde
 %defattr(644,root,root,755)
-%{_libdir}/kde3/kwin3_cde.la
 %attr(755,root,root) %{_libdir}/kde3/kwin3_cde.so
-%{_libdir}/kde3/kwin_cde_config.la
 %attr(755,root,root) %{_libdir}/kde3/kwin_cde_config.so
 %{_datadir}/apps/kwin/cde.desktop
 
 %files -n kde-decoration-icewm
 %defattr(644,root,root,755)
-%{_libdir}/kde3/kwin3_icewm.la
 %attr(755,root,root) %{_libdir}/kde3/kwin3_icewm.so
-%{_libdir}/kde3/kwin_icewm_config.la
 %attr(755,root,root) %{_libdir}/kde3/kwin_icewm_config.so
 %{_datadir}/apps/kwin/icewm-themes
 %{_datadir}/apps/kwin/icewm.desktop
 
 %files -n kde-decoration-glow
 %defattr(644,root,root,755)
-%{_libdir}/kde3/kwin3_glow.la
 %attr(755,root,root) %{_libdir}/kde3/kwin3_glow.so
-%{_libdir}/kde3/kwin_glow_config.la
 %attr(755,root,root) %{_libdir}/kde3/kwin_glow_config.so
 %{_datadir}/apps/kwin/glow-themes
 %{_datadir}/apps/kwin/glow.desktop
 
 %files -n kde-decoration-kde1
 %defattr(644,root,root,755)
-%{_libdir}/kde3/kwin3_kde1.la
 %attr(755,root,root) %{_libdir}/kde3/kwin3_kde1.so
 %{_datadir}/apps/kwin/kde1*
 
 %files -n kde-decoration-kstep
 %defattr(644,root,root,755)
-%{_libdir}/kde3/kwin3_kstep.la
 %attr(755,root,root) %{_libdir}/kde3/kwin3_kstep.so
 %{_datadir}/apps/kwin/kstep*
 
 %files -n kde-decoration-openlook
 %defattr(644,root,root,755)
-%{_libdir}/kde3/kwin3_openlook.la
 %attr(755,root,root) %{_libdir}/kde3/kwin3_openlook.so
 %{_datadir}/apps/kwin/openlook.desktop
 
 %files -n kde-decoration-riscos
 %defattr(644,root,root,755)
-%{_libdir}/kde3/kwin3_riscos.la
 %attr(755,root,root) %{_libdir}/kde3/kwin3_riscos.so
 %{_datadir}/apps/kwin/riscos*
 
 %files -n kde-decoration-system
 %defattr(644,root,root,755)
-%{_libdir}/kde3/kwin3_system.la
 %attr(755,root,root) %{_libdir}/kde3/kwin3_system.so
 %{_datadir}/apps/kwin/system.desktop
 
 %files -n kde-decoration-smoothblend
 %defattr(644,root,root,755)
-%{_libdir}/kde3/kwin*_smoothblend*.la
 %attr(755,root,root) %{_libdir}/kde3/kwin*_smoothblend*.so
 %{_datadir}/apps/kwin/smoothblend.desktop
 
@@ -501,15 +490,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n kde-style-dotnet
 %defattr(644,root,root,755)
-%{_libdir}/kde3/plugins/styles/dotnet.la
 %attr(755,root,root) %{_libdir}/kde3/plugins/styles/dotnet.so
 %{_datadir}/apps/kstyle/themes/dotnet*
 
 %files -n kde-style-phase
 %defattr(644,root,root,755)
-%{_libdir}/kde3/kstyle_phase_config.la
 %attr(755,root,root) %{_libdir}/kde3/kstyle_phase_config.so
-%{_libdir}/kde3/plugins/styles/phasestyle.la
 %attr(755,root,root) %{_libdir}/kde3/plugins/styles/phasestyle.so
 %{_datadir}/apps/kstyle/themes/phase.themerc
 
