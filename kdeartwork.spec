@@ -12,13 +12,13 @@ Summary(ko.UTF-8):	KDE용
 Summary(pl.UTF-8):	K Desktop Environment - grafiki itp.
 Summary(pt_BR.UTF-8):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
-Version:	3.5.8
+Version:	3.5.9
 Release:	2
 Epoch:		8
 License:	LGPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	03becf82a233e6007e9372ffa5756d0b
+# Source0-md5:	ec526eba38421fd3b143682b8d683c86
 Patch0:		kde-common-PLD.patch
 Patch1:		%{name}-screensavers.patch
 Patch2:		%{name}-xscreensaver-dir.patch
@@ -393,19 +393,26 @@ cp -f /usr/share/automake/config.sub admin
 %{__make}
 
 %install
-rm -rf $RPM_BUILD_ROOT
+if [ ! -f makeinstall.stamp -o ! -d $RPM_BUILD_ROOT ]; then
+	rm -rf makeinstall.stamp installed.stamp $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	kde_htmldir=%{_kdedocdir}
+	%{__make} install \
+		DESTDIR=$RPM_BUILD_ROOT \
+		kde_htmldir=%{_kdedocdir}
 
-# Makefile installs these basing on XSCREENSAVER_DIR/* files -
-# let's do it manually to avoid BR: xscreensaver{,-GL,-GLE}
-install kscreensaver/kxsconfig/ScreenSavers/*.desktop $RPM_BUILD_ROOT%{_datadir}/apps/kscreensaver
-rm -f $RPM_BUILD_ROOT%{_datadir}/apps/kscreensaver/pixmaps.desktop
+	touch makeinstall.stamp
+fi
 
-rm -f $RPM_BUILD_ROOT%{_libdir}/kde3/*.la
-rm -f $RPM_BUILD_ROOT%{_libdir}/kde3/*/*/*.la
+if [ ! -f installed.stamp ]; then
+	# Makefile installs these basing on XSCREENSAVER_DIR/* files -
+	# let's do it manually to avoid BR: xscreensaver{,-GL,-GLE}
+	install kscreensaver/kxsconfig/ScreenSavers/*.desktop $RPM_BUILD_ROOT%{_datadir}/apps/kscreensaver
+	rm -f $RPM_BUILD_ROOT%{_datadir}/apps/kscreensaver/pixmaps.desktop
+
+	rm -f $RPM_BUILD_ROOT%{_libdir}/kde3/*.la
+	rm -f $RPM_BUILD_ROOT%{_libdir}/kde3/*/*/*.la
+	touch installed.stamp
+fi
 
 %clean
 rm -rf $RPM_BUILD_ROOT
