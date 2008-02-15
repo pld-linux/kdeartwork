@@ -13,7 +13,7 @@ Summary(pl.UTF-8):	K Desktop Environment - grafiki itp.
 Summary(pt_BR.UTF-8):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	3.5.9
-Release:	0.1	
+Release:	1
 Epoch:		8
 License:	LGPL
 Group:		X11/Libraries
@@ -170,7 +170,6 @@ KDE Window Decoration - Smoothblend.
 
 %description -n kde-decoration-smoothblend -l pl.UTF-8
 Dekoracja okna dla KDE - Smoothblend.
-
 
 %package -n kde-emoticons
 Summary:	KDE emoticons themes
@@ -393,19 +392,26 @@ cp -f /usr/share/automake/config.sub admin
 %{__make}
 
 %install
-rm -rf $RPM_BUILD_ROOT
+if [ ! -f makeinstall.stamp -o ! -d $RPM_BUILD_ROOT ]; then
+	rm -rf makeinstall.stamp installed.stamp $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT \
-	kde_htmldir=%{_kdedocdir}
+	%{__make} install \
+		DESTDIR=$RPM_BUILD_ROOT \
+		kde_htmldir=%{_kdedocdir}
 
-# Makefile installs these basing on XSCREENSAVER_DIR/* files -
-# let's do it manually to avoid BR: xscreensaver{,-GL,-GLE}
-install kscreensaver/kxsconfig/ScreenSavers/*.desktop $RPM_BUILD_ROOT%{_datadir}/apps/kscreensaver
-rm -f $RPM_BUILD_ROOT%{_datadir}/apps/kscreensaver/pixmaps.desktop
+	touch makeinstall.stamp
+fi
 
-rm -f $RPM_BUILD_ROOT%{_libdir}/kde3/*.la
-rm -f $RPM_BUILD_ROOT%{_libdir}/kde3/*/*/*.la
+if [ ! -f installed.stamp ]; then
+	# Makefile installs these basing on XSCREENSAVER_DIR/* files -
+	# let's do it manually to avoid BR: xscreensaver{,-GL,-GLE}
+	install kscreensaver/kxsconfig/ScreenSavers/*.desktop $RPM_BUILD_ROOT%{_datadir}/apps/kscreensaver
+	rm -f $RPM_BUILD_ROOT%{_datadir}/apps/kscreensaver/pixmaps.desktop
+
+	rm -f $RPM_BUILD_ROOT%{_libdir}/kde3/*.la
+	rm -f $RPM_BUILD_ROOT%{_libdir}/kde3/*/*/*.la
+	touch installed.stamp
+fi
 
 %clean
 rm -rf $RPM_BUILD_ROOT
