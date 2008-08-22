@@ -12,13 +12,13 @@ Summary(ko.UTF-8):	KDE용
 Summary(pl.UTF-8):	K Desktop Environment - grafiki itp.
 Summary(pt_BR.UTF-8):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
-Version:	3.5.9
+Version:	3.5.10
 Release:	1
 Epoch:		8
 License:	LGPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{name}-%{version}.tar.bz2
-# Source0-md5:	ec526eba38421fd3b143682b8d683c86
+# Source0-md5:	6e6f089dc0f1dabb0f138641600d0b59
 Patch0:		kde-common-PLD.patch
 Patch1:		%{name}-screensavers.patch
 Patch2:		%{name}-xscreensaver-dir.patch
@@ -170,6 +170,7 @@ KDE Window Decoration - Smoothblend.
 
 %description -n kde-decoration-smoothblend -l pl.UTF-8
 Dekoracja okna dla KDE - Smoothblend.
+
 
 %package -n kde-emoticons
 Summary:	KDE emoticons themes
