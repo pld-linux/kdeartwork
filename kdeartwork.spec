@@ -13,12 +13,13 @@ Summary(pl.UTF-8):	K Desktop Environment - grafiki itp.
 Summary(pt_BR.UTF-8):	K Desktop Environment - Plugins e Scripts para aplicações KDE
 Name:		kdeartwork
 Version:	3.5.10
-Release:	1
+Release:	2
 Epoch:		8
 License:	LGPL
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{name}-%{version}.tar.bz2
 # Source0-md5:	6e6f089dc0f1dabb0f138641600d0b59
+Patch100:	%{name}-branch.diff
 Patch0:		kde-common-PLD.patch
 Patch1:		%{name}-screensavers.patch
 Patch2:		%{name}-xscreensaver-dir.patch
@@ -370,7 +371,7 @@ Tapety dla KDE.
 
 %prep
 %setup -q
-#%%patch100 -p1
+%patch100 -p1
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
