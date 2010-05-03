@@ -1,5 +1,8 @@
 # TODO:
 # - Splitting kde-emoticons subpkg
+#
+# Conditional build:
+%bcond_with	arts			# build with aRts support
 
 %define		_state		stable
 %define		_minlibsevr	9:%{version}
@@ -22,6 +25,7 @@ Patch0:		kde-common-PLD.patch
 Patch1:		%{name}-screensavers.patch
 Patch2:		%{name}-xscreensaver-dir.patch
 Patch3:		kde-ac260-lt.patch
+Patch4:		kde-am.patch
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-devel
 BuildRequires:	ed
@@ -373,6 +377,7 @@ Tapety dla KDE.
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p1
 
 %build
 cp -f /usr/share/automake/config.sub admin
@@ -383,6 +388,7 @@ cp -f /usr/share/automake/config.sub admin
 	--%{?debug:en}%{!?debug:dis}able-debug%{?debug:=full} \
 	%{!?debug:--disable-rpath} \
 	--disable-final \
+	--with%{!?with_arts:out}-arts \
 %if "%{_lib}" == "lib64"
 	--enable-libsuffix=64 \
 %endif
