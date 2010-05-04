@@ -1,0 +1,11 @@
+--- kdeartwork-3.5.10/kscreensaver/kdesavers//Makefile.am~	2010-05-03 18:51:56.591046636 +0300
++++ kdeartwork-3.5.10/kscreensaver/kdesavers//Makefile.am	2010-05-04 12:38:02.126076370 +0300
+@@ -95,7 +95,7 @@
+ desktop_DATA = KBanner.desktop KPolygon.desktop \
+                KSlideshow.desktop KLines-saver.desktop KLorenz.desktop \
+                KBlob.desktop KVm.desktop \
+-               KClock.desktop $(X11_DESKTOP_FILES) $(GL_DESKTOP_FILES) $(LIBART_DESKTOP_FILES) $(ARTS_GL_DESKTOP_FILES)
++               $(X11_DESKTOP_FILES) $(GL_DESKTOP_FILES) $(LIBART_DESKTOP_FILES) $(ARTS_GL_DESKTOP_FILES)
+ 
+ desktopdir = $(kde_datadir)/kscreensaver
+ 
